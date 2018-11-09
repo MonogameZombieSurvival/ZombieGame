@@ -6,7 +6,7 @@ using Microsoft.Xna.Framework.Media;
 using System;
 using System.Collections.Generic;
 using System.Threading;
-
+using System.Timers;
 namespace Game2
 {
     /// <summary>
@@ -30,6 +30,8 @@ namespace Game2
 
         private static GraphicsDeviceManager graphics;
 
+        int timer = 0;
+
         public static Rectangle ScreenSize
         {
             get
@@ -37,6 +39,20 @@ namespace Game2
                 return graphics.GraphicsDevice.Viewport.Bounds;
             }
         }
+
+    
+
+        
+
+
+
+
+
+
+        /// <summary>
+        /// Timer 
+        /// </summary>
+
 
         /*
         private static ContentManager _content;
@@ -59,6 +75,7 @@ namespace Game2
           //  graphics.IsFullScreen = true;
             // _content = Content;
         }
+
 
         public static void AddGameObject(GameObject go)
         {
@@ -90,24 +107,25 @@ namespace Game2
         protected override void LoadContent()
         {
             //backgroundMusic = Content.Load<Song>("BlindShift");
-          //  MediaPlayer.Play(backgroundMusic);
+            //  MediaPlayer.Play(backgroundMusic);
             //MediaPlayer.IsRepeating = true;
 
-
+          
             //Background Img
             backgroundImg = Content.Load<Texture2D>("bg-grass");
 
-
-
+            // Create a timer with a two second interval.
+         
+            // Hook up the Elapsed event for the timer. 
+                     
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("ExampleFont");
 
             collisionTexture = Content.Load<Texture2D>("CollisionTexture");
 
- 
 
-     
+            gameObjects.Add(new Asteroid(0, 0, Content));
             player = new Player(Content);
             gameObjects.Add(player);
 
@@ -116,13 +134,14 @@ namespace Game2
             Random rnd = new Random();
             for (int i = 0; i < 10; i++)
             {
-                gameObjects.Add(new Asteroid(rnd.Next(1, 3), Content,player.playerPosition));
+                gameObjects.Add(new Asteroid(Content));
                 Thread.Sleep(100);
             }
 
+            gameObjects.Add(new Asteroid(200, 200,Content));
+
+
         }
-
-
 
         //go = new AnimatedGameObject(4,20,Content,"HeroStrip");
 
@@ -135,6 +154,23 @@ namespace Game2
             // TODO: Unload any non ContentManager content here
         }
 
+        public void SpawnAnymens(int spawnCircle)
+        {
+            
+            spawnCircle *= 60;
+            if(timer == spawnCircle)
+            {
+                
+                
+                    gameObjects.Add( new Asteroid(200, 200, Content));
+                    
+                
+                timer = 0;
+            }
+
+            timer += 1;
+        }
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -144,9 +180,13 @@ namespace Game2
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
-           
 
-            
+
+          //  SpawnAnymens(10);
+
+          
+
+           
             foreach (GameObject go in gameObjects)
             {
                 go.Update(gameTime);

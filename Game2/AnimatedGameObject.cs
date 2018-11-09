@@ -18,10 +18,10 @@ namespace Game2
     {
         Rectangle[] animationRectangles;
 
-        float animationFPS = 10;
-        int currentAnimationIndex = 0;
-        double timeElapsed = 0;
-
+      protected  float animationFPS = 10;
+       protected int currentAnimationIndex = 0;
+       protected double timeElapsed = 0;
+        protected int FrameCount=0;
         
         public override Rectangle CollisionBox
         {
@@ -43,6 +43,7 @@ namespace Game2
             for (int i = 0; i < frameCount; i++)
             {
                 animationRectangles[i] = new Rectangle(i * (sprite.Width / frameCount), 0, (sprite.Width / frameCount), sprite.Height);
+                
             }
             currentAnimationIndex = 0;
         }

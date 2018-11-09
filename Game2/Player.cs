@@ -77,7 +77,7 @@ namespace Game2
                 rotation -= (float)(rotationSpeed * gameTime.ElapsedGameTime.TotalSeconds);
             }
 
-            
+
 
 
             direction = new Vector2((float)Math.Cos(rotation-MathHelper.Pi*0.0f), (float)Math.Sin(rotation - MathHelper.Pi * 0.0f));

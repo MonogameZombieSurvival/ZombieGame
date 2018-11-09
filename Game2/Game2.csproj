@@ -70,6 +70,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Asteroid.cs" />
+    <Compile Include="BloodeEffect.cs" />
+    <Compile Include="Bloood.cs" />
     <Compile Include="Bullet.cs" />
     <Compile Include="Camera.cs" />
     <Compile Include="Explosion.cs" />

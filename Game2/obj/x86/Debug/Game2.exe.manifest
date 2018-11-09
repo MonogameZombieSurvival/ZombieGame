@@ -31,14 +31,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="162216">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="163240">
       <assemblyIdentity name="Game2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>WHO/wfmLYBg3lsrQhayM0d77TyRLesRarLTjreGpXJc=</dsig:DigestValue>
+        <dsig:DigestValue>oEjk1PzmR4xpKKMB9ac3XxvKiyYmdxUs4wpr3E8Mkck=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -471,6 +471,15 @@
       <dsig:DigestValue>dJ0Hd0hFRZYKx4AZor9/KVKklJXoCBvDmHmKwoaEVzo=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\blood - right 1_0.xnb" size="16777301">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>rS6iM0cnTWRX940nkB68Y5XEQy32+s+EJt54bN3OTAI=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\blood.xnb" size="12629">
     <hash>
       <dsig:Transforms>
@@ -543,6 +552,24 @@
       <dsig:DigestValue>MM0LAcZOmpdlcGEa5j1F5gB/XynkhLkTK5h1FXyZ7ps=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\kisspng-animation.xnb" size="16777301">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>L9bW3VyPVBILtjBCcetRN30zgIZTl4rWkUYnaaSeLf4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\kisspngbloode.xnb" size="406485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>oYzIRS2FexXS89JefiRYex7yBVSKNG0gvRmDN2i7VGk=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Player.xnb" size="83029">
     <hash>
       <dsig:Transforms>
@@ -559,6 +586,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>qocHp28uMzjpoZJNw6B+9/oyi3KByk6DsIDgPk1812Y=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sheet_Splatter.xnb" size="582485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ZknR11dS4cIkoAzpvzgql8+fEjXkZVIwXXX/V68Cstc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sheet_Splatter1.xnb" size="56981">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>QDL69BnzGcCsSVPHYkNR3K8Qxyw6Vi6j348y65AZB38=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\skeleton-attack_0.xnb" size="374053">

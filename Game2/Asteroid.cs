@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System.Threading;
 
 namespace Game2
 {
@@ -16,41 +17,72 @@ namespace Game2
     {
 
       
-        private Vector2 playerPosition;
+        
         float moveSpeed = 100;
          Random rand = new Random();
-        private int size;
-       
         /// <summary>
         /// Gets the Size of the Asteroid
         /// </summary>
-        public int Size { get => size; }
-
+        private int holdNumber;
+   
 
 
         /// <summary>
-        /// Asteroid constructor that sets the size of the asteroid. Asteroid color and starting position is selected at random .
+        /// summens zzombies random out size mape set you own sobies on side and randow range;
         /// </summary>
-        /// <param name="size">Size should between 1 to 4 and is used to select the correct texture</param>
         /// <param name="content">Content Manager for loading resources</param>
-        public Asteroid(int size, ContentManager content, Vector2 PlayerPosition) :this(new Vector2(new Random().Next(GameWorld.ScreenSize.Width), new Random().Next(GameWorld.ScreenSize.Height)), size, content)
+        /// 
+
+
+        public Asteroid(int HoldNumber, int SpawnDistansfromEachOther,  ContentManager content) : base(content, "zombiesmall")
         {
-            
-            position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), rand.Next(GameWorld.ScreenSize.Height));
-            
+            position = new Vector2(200,200);
+            //if (holdNumber <= 100)
+            //{
+            //    position = new Vector2(rand.Next(-200, 0), rand.Next(GameWorld.ScreenSize.Height));// from left side
+            //}
+            //else if (holdNumber >= 100 && holdNumber <= 200)
+            //{
+            //    position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), rand.Next(-200, 0));//from top
+            //}
+            //else if (holdNumber >= 200 && holdNumber <= 300)
+            //{
+            //    position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), GameWorld.ScreenSize.Height + rand.Next(0, 200));//form button
+            //}
+            //else if (holdNumber >= 300 && holdNumber <= 400)
+            //{
+            //    position = new Vector2(GameWorld.ScreenSize.Width + rand.Next(0, 200), rand.Next(GameWorld.ScreenSize.Height));//from right side
+            //}
         }
 
+
         /// <summary>
-        /// Asteroid constructor that sets the size of the asteroid. Asteroid color and starting position is selected at random .
+        /// summens zzombies random out size mape;
         /// </summary>
-        /// <param name="startPosition">Starting position of the asteroid</param>
-        /// <param name="size">Size should between 1 to 4 and is used to select the correct texture</param>
         /// <param name="content">Content Manager for loading resources</param>
-        public Asteroid(Vector2 startPosition,int size, ContentManager content) : base(content, "zombiesmall")
-        {
-            this.size = size;
-            position = startPosition;
-           
+        public Asteroid(ContentManager content) : base(content, "zombiesmall")
+        {                   
+            holdNumber = rand.Next(0, 400);
+            Thread.Sleep(100);
+          
+
+            position = new Vector2(GameWorld.ScreenSize.Width + rand.Next(0, 200), rand.Next(GameWorld.ScreenSize.Height));
+            if (holdNumber <= 100)
+            {
+                position = new Vector2(rand.Next(-200, 0), rand.Next(GameWorld.ScreenSize.Height));// from left side
+            }
+            else if (holdNumber >= 100 && holdNumber <= 200)
+            {
+                position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), rand.Next(-200, 0));//randowmtop
+            }
+            else if (holdNumber >= 200 && holdNumber <= 300)
+            {
+                position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), GameWorld.ScreenSize.Height + rand.Next(0, 200));//form
+            }
+            else if (holdNumber >= 300 && holdNumber <= 400)
+            {
+                position = new Vector2(GameWorld.ScreenSize.Width + rand.Next(0, 200), rand.Next(GameWorld.ScreenSize.Height));//from right side
+            }
         }
 
         /// <summary>
@@ -58,6 +90,7 @@ namespace Game2
         /// </summary>
         private void SetRandomDirection()
         {
+
             Random rnd = new Random();
             Direction = new Vector2((rnd.Next(0, 2) * 2 - 1), (rnd.Next(0, 2) * 2 - 1)); //Set direction vector components to -1 or 1
             Direction.Normalize(); //Normalizes vector so that it is only a unit vector
@@ -66,11 +99,15 @@ namespace Game2
 
         private void SetDiraction()
         {
-           
-            
+
+
             Direction = realTimeplayerPosition - position;
             Direction.Normalize();
+
         }
+      
+
+      
         /// <summary>
         /// Update method that moves the asteroid in a specified direction. If asteroid is outside screen it sets a new random direction
         /// </summary>
@@ -78,9 +115,25 @@ namespace Game2
         public override void Update(GameTime gameTime)
         {
 
-            SetDiraction();
-            position +=  Direction *(float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds); //Added direction vector to current position
+            rotation -= MathHelper.ToRadians(3);
 
+
+            SetDiraction();
+
+            position += Direction * (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds); //Added direction vector to current position
+
+
+            rotation -= (float)(100 * gameTime.ElapsedGameTime.TotalSeconds);
+
+            Direction = new Vector2((float)Math.Cos(rotation - MathHelper.Pi * 0.0f), (float)Math.Sin(rotation - MathHelper.Pi * 0.0f));
+
+            position += Direction * (float)(gameTime.ElapsedGameTime.TotalSeconds);
+
+            
+
+            
+
+            position += Direction * (float)(gameTime.ElapsedGameTime.TotalSeconds);
             //If Asteroid is outside screen set it to a new random direction
             if (!GameWorld.ScreenSize.Intersects(this.CollisionBox))
             {
@@ -95,11 +148,14 @@ namespace Game2
         /// <param name="otherObject">The object it collided with</param>
         public override void DoCollision(GameObject otherObject)
         {
-            if (otherObject is Player || otherObject is Bullet)
+            if (otherObject is Bullet)
             {
-                Explosion ex = new Explosion(Size + 1, Position, content);
-                GameWorld.AddGameObject(ex);
+                Bloood blood = new Bloood( 1, Position, content);
+                BloodeEffect bloodeEffect = new BloodeEffect(1, position, content);
+                GameWorld.AddGameObject(blood);
+                GameWorld.AddGameObject(bloodeEffect);
                 GameWorld.RemoveGameObject(this);
+
             }
             /*
             if (otherObject is Bullet)
