@@ -16,6 +16,7 @@ namespace Game2
         private const float moveSpeed = 100;
         private const float rotationSpeed = MathHelper.Pi;
         public Vector2 direction = new Vector2(0,-1);
+        GameTimer gameTimer = new GameTimer();
         private double lastShoot = 0;
         private int killCount;
         public int KillCount
@@ -25,6 +26,11 @@ namespace Game2
                 return KillCount;
             }
         }
+
+
+        private double LastAttck;
+        private int CheckforSecPast = 1;
+        private int KillSpeedy;
         public Vector2 playerPosition {
             get
             {
@@ -100,20 +106,29 @@ namespace Game2
                 lastShoot = 0;
             }
 
+            LastAttck += gameTime.ElapsedGameTime.TotalSeconds;
+           
 
             base.Update(gameTime);
         }
-
+    
+     
+        /// <summary>
+        /// enemys obejt kan attack hvert second hvor play vil misye healt og der komme en bloods animation og sætter til 0 
+        /// </summary>
+        /// <param name="otherObject"></param>
         public override void DoCollision(GameObject otherObject)
         {
-            if (otherObject is Enemy)
+
+
+            if (otherObject is Enemy && LastAttck>1 )
             {
 
                 PlayerBlood playerBlood = new PlayerBlood(1, position, content);
                 GameWorld.AddGameObject(playerBlood);
 
-
-
+               
+                LastAttck = 0;
                 health--;
             }
 

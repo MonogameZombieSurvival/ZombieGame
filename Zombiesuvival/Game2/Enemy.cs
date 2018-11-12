@@ -155,7 +155,7 @@ namespace Game2
             {
                 Bloood blood = new Bloood( 1, Position, content);
                 BloodeEffect bloodeEffect = new BloodeEffect(1, position, content);
-                GameWorld.AddGameObject(blood);
+                GameWorld.AddEFfect(blood);
                 GameWorld.AddGameObject(bloodeEffect);
 
                 GameWorld.RemoveGameObject(this);
@@ -163,16 +163,7 @@ namespace Game2
                 GameWorld.addKill();
 
             }
-            /*
-            if (otherObject is Bullet)
-            { 
-                GameWorld.RemoveGameObject(otherObject);
-                for (int i = 0; i < Size; i++)
-                {
-                    GameWorld.AddGameObject(new Asteroid(position, size - 1, content));
-                }
-            }
-            */
+         
         }
 
     }

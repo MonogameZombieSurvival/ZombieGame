@@ -19,6 +19,10 @@ namespace Game2
 
         public List<GameObject> gameObjects = new List<GameObject>();
         private static List<GameObject> toBeAdded = new List<GameObject>();
+
+
+        public List<GameObject> Effects = new List<GameObject>();
+        private static List<GameObject> toBeAddedEffect = new List<GameObject>();
         private static List<GameObject> toBeRemoved = new List<GameObject>();
 
 
@@ -36,7 +40,8 @@ namespace Game2
         
       
         private int WaveTimeOutPut;
-        private int level =1;     
+        private int level =1;
+        private int NumberOfgameObejts;
         static private int kills;
         public int Kills
         {
@@ -103,6 +108,11 @@ namespace Game2
         {
             toBeAdded.Add(go);
         }
+        public static void AddEFfect(GameObject go)
+        {
+            toBeAddedEffect.Add(go);
+        }
+
 
         public static void RemoveGameObject(GameObject go)
         {
@@ -136,6 +146,8 @@ namespace Game2
             //Background Img
             backgroundImg = Content.Load<Texture2D>("bg-grass");
 
+            player = new Player(Content);
+            gameObjects.Add(player);
             // Create a timer with a two second interval.
          
             // Hook up the Elapsed event for the timer. 
@@ -152,8 +164,6 @@ namespace Game2
             Spawnspeed = new GameTimer();
             gametimer = new GameTimer();
            
-            player = new Player(Content);
-            gameObjects.Add(player);
 
 
             //Adds randomized asteroids to game
@@ -217,6 +227,7 @@ namespace Game2
                 Exit();
 
 
+           
             if (level == 1)
             {
 
@@ -256,6 +267,9 @@ namespace Game2
             }
             toBeRemoved.Clear();
 
+
+            Effects.AddRange(toBeAddedEffect);
+            toBeAddedEffect.Clear();
             gameObjects.AddRange(toBeAdded);
             toBeAdded.Clear();
 
@@ -274,7 +288,19 @@ namespace Game2
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             spriteBatch.Draw(backgroundImg, new Rectangle(0, 0, 1280, 720), Color.White);
-            
+
+            NumberOfgameObejts = Effects.Count;
+            foreach(GameObject GO in Effects)
+            {
+                GO.Draw(spriteBatch);
+#if DEBUG
+                DrawCollisionBox(GO);
+#endif
+            }
+
+            spriteBatch.End();
+            spriteBatch.Begin();
+
             foreach (GameObject go in gameObjects)
             {
                 go.Draw(spriteBatch);
@@ -283,7 +309,9 @@ namespace Game2
 #endif
             }
 
-            spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(600, 5), Color.White);   
+
+
+            spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(580, 5), Color.White);   
             spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5,5), Color.White);
             spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
             
