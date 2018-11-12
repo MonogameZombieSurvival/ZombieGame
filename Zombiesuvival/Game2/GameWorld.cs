@@ -42,6 +42,16 @@ namespace Game2
         private int WaveTimeOutPut;
         private int level =1;
         private int NumberOfgameObejts;
+        static private int healthHold;
+        public int HealhHold
+        {
+
+            get
+            {
+                return healthHold;
+            }
+        }
+
         static private int kills;
         public int Kills
         {
@@ -65,17 +75,17 @@ namespace Game2
         {
             kills += 1;
             
-
+            
         }
-    
-
-        
 
 
+        public static void DealDamngeToPlayer(int damnge)
+        {
 
+            healthHold -= damnge;
 
-
-
+            
+        }
         /// <summary>
         /// Timer 
         /// </summary>
@@ -147,6 +157,7 @@ namespace Game2
             backgroundImg = Content.Load<Texture2D>("bg-grass");
 
             player = new Player(Content);
+            healthHold = player.Health;
             gameObjects.Add(player);
             // Create a timer with a two second interval.
          
@@ -213,9 +224,9 @@ namespace Game2
             }
 
         }
-       
-        //}
-       
+
+
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -245,13 +256,18 @@ namespace Game2
 
             Setlevel(WaveTimeOutPut);
             
-                
+               
             foreach (GameObject go in gameObjects)
             {
-                go.Update(gameTime);
 
+                player.Health = healthHold;
+                go.Update(gameTime);
+               
                 go.GetPlayerPosition(player.playerPosition);
-                go.GetPlayerRot(player.playerRot);
+                go.GetPlayerRot(player.playerRot);                      
+                go.GetPlayerHealth(player.Health);
+                
+               
                 foreach (GameObject other in gameObjects)
                 {
                     if (go != other && go.IsColliding(other))
@@ -259,6 +275,7 @@ namespace Game2
                         go.DoCollision(other);
                     }
                 }
+                
             }
 
             foreach (GameObject go in toBeRemoved)
@@ -278,6 +295,7 @@ namespace Game2
             }
 
 
+       
 
         /// <summary>
         /// This is called when the game should draw itself.

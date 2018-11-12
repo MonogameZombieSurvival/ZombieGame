@@ -11,7 +11,7 @@ namespace Game2
 {
     class BloodeEffect:AnimatedGameObject
     {
-        private SoundEffectInstance BulletHitSoundEffect;// mangler;
+      /*  private SoundEffectInstance BulletHitSoundEffect*/// mangler;
         public BloodeEffect(int size, Vector2 startPosition, ContentManager content) : base(16, 44, startPosition, content, "kisspngbloode")
         {
             //  explosionSound = content.Load<SoundEffect>("8bit_bomb_explosion").CreateInstance();
@@ -29,7 +29,7 @@ namespace Game2
             //{
             //    // GameWorld.RemoveGameObject(this);
             //}
-            
+           
             base.Update(gameTime);
         }
     }

@@ -25,7 +25,8 @@ namespace Game2
         /// Gets the Size of the Asteroid
         /// </summary>
         private int holdNumber;
-   
+        private int damnge = 1;
+        private double LastAttck=0;
 
 
         /// <summary>
@@ -132,16 +133,12 @@ namespace Game2
 
             position += Direction * (float)(gameTime.ElapsedGameTime.TotalSeconds);
 
-            
 
-            
 
-            position += Direction * (float)(gameTime.ElapsedGameTime.TotalSeconds);
-            //If Asteroid is outside screen set it to a new random direction
-            if (!GameWorld.ScreenSize.Intersects(this.CollisionBox))
-            {
-                SetRandomDirection();
-            }
+            LastAttck += gameTime.ElapsedGameTime.TotalSeconds;
+
+
+
 
         }
 
@@ -151,9 +148,10 @@ namespace Game2
         /// <param name="otherObject">The object it collided with</param>
         public override void DoCollision(GameObject otherObject)
         {
+
             if (otherObject is Bullet)
             {
-                Bloood blood = new Bloood( 1, Position, content);
+                Bloood blood = new Bloood(1, Position, content);
                 BloodeEffect bloodeEffect = new BloodeEffect(1, position, content);
                 GameWorld.AddEFfect(blood);
                 GameWorld.AddGameObject(bloodeEffect);
@@ -163,7 +161,18 @@ namespace Game2
                 GameWorld.addKill();
 
             }
-         
+
+            if (otherObject is Player  && LastAttck > 0.5f)
+            {
+
+                PlayerBlood playerBlood = new PlayerBlood(1, realTimeplayerPosition, content);
+                GameWorld.DealDamngeToPlayer(damnge);
+                GameWorld.AddGameObject(playerBlood);
+             
+                
+                LastAttck = 0;
+            }
+
         }
 
     }

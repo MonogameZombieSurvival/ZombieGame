@@ -28,7 +28,7 @@ namespace Game2
         }
 
 
-        private double LastAttck;
+       
         private int CheckforSecPast = 1;
         private int KillSpeedy;
         public Vector2 playerPosition {
@@ -41,11 +41,14 @@ namespace Game2
 
 
         private int health;
-        
 
         public int Health
         {
             get { return health; }
+            set
+            {
+                health = value;
+            }
         }
 
    
@@ -106,7 +109,6 @@ namespace Game2
                 lastShoot = 0;
             }
 
-            LastAttck += gameTime.ElapsedGameTime.TotalSeconds;
            
 
             base.Update(gameTime);
@@ -121,15 +123,13 @@ namespace Game2
         {
 
 
-            if (otherObject is Enemy && LastAttck>1 )
+            if (otherObject is Enemy  )
             {
 
-                PlayerBlood playerBlood = new PlayerBlood(1, position, content);
-                GameWorld.AddGameObject(playerBlood);
-
                
-                LastAttck = 0;
-                health--;
+
+
+
             }
 
         }

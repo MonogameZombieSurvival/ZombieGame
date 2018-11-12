@@ -19,7 +19,8 @@ namespace Game2
         public Vector2 Position { get => position; }
         protected Vector2 realTimeplayerPosition;
         protected float realTimeplayerRot;
-
+        protected int Playerhealth;
+        protected int la= 700;
         protected ContentManager content;
         public float playerRot
         {
@@ -75,10 +76,20 @@ namespace Game2
         public void GetPlayerPosition(Vector2 PlayerPosition)
         {
               realTimeplayerPosition = PlayerPosition;
-     }
+        }
         public void GetPlayerRot(float PlayerRot)
         {
             realTimeplayerRot = PlayerRot;
+        }
+        public void GetPlayerHealth(int playerHeath)
+        {
+            Playerhealth = playerHeath;
+        }
+        
+        public int returnPlayerHealth()
+        {
+           
+            return la;
         }
         /// <summary>
         /// Constructor the sets the staring position of the GameObject
