@@ -4,29 +4,29 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/8bit_bomb_explosion.wav</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/bg-grass.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/BlindShift.mp3</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/blood - right 1_0.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/blood.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/bullet.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/CollisionTexture.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/ExampleFont.spritefont</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/explosion_1.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/explosion_2.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/explosion_3.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/explosion_4.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/KillCount.spritefont</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/kisspngbloode.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/PlayerBlood.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/playerImg.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/Sheet_Splatter.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/Sheet_Splatter1.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/skeleton-attack_0.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/smallbullet.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/survivor-idle_handgun_0.png</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/WaveTimer.spritefont</File>
-    <File>C:/Users/Kuikai/Desktop/myresp-sitry/Zombiesuvival/Game2/Content/zombiesmall.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/8bit_bomb_explosion.wav</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bg-grass.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/BlindShift.mp3</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/blood - right 1_0.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/blood.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bullet.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/CollisionTexture.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/ExampleFont.spritefont</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/explosion_1.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/explosion_2.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/explosion_3.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/explosion_4.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/KillCount.spritefont</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/kisspngbloode.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/PlayerBlood.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/playerImg.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/Sheet_Splatter.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/Sheet_Splatter1.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/skeleton-attack_0.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/smallbullet.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/survivor-idle_handgun_0.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/WaveTimer.spritefont</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombiesmall.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

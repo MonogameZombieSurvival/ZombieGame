@@ -20,7 +20,7 @@ namespace Game2
         
         float moveSpeed = 100;
          Random rand = new Random();
-       
+        Vector2 distance;
         /// <summary>
         /// Gets the Size of the Asteroid
         /// </summary>
@@ -119,7 +119,11 @@ namespace Game2
         public override void Update(GameTime gameTime)
         {
 
-            rotation -= MathHelper.ToRadians(3);
+
+            distance.X = realTimeplayerPosition.X - position.X;
+            distance.Y = realTimeplayerPosition.Y - position.Y;
+
+            rotation = (float)Math.Atan2(distance.Y, distance.X);
 
 
             SetDiraction();
@@ -127,7 +131,7 @@ namespace Game2
             position += Direction * (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds); //Added direction vector to current position
 
 
-            rotation -= (float)(100 * gameTime.ElapsedGameTime.TotalSeconds);
+            
 
             Direction = new Vector2((float)Math.Cos(rotation - MathHelper.Pi * 0.0f), (float)Math.Sin(rotation - MathHelper.Pi * 0.0f));
 

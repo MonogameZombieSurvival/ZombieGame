@@ -15,7 +15,7 @@ namespace Game2
     {
         private const float moveSpeed = 100;
         private const float rotationSpeed = MathHelper.Pi;
-        public Vector2 direction = new Vector2(0,-1);
+        public Vector2 direction = new Vector2();
         GameTimer gameTimer = new GameTimer();
         private double lastShoot = 0;
         private int killCount;
@@ -63,7 +63,21 @@ namespace Game2
 
         public override void Update(GameTime gameTime)
         {
+
+
+
+
+            MouseState mouse = Mouse.GetState();
+                
+                direction.X = mouse.X - position.X;
+            direction.Y = mouse.Y - position.Y;
+
+            rotation = (float)Math.Atan2(direction.Y, direction.X);
+
             
+           
+           
+
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
                 position.X -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
@@ -85,14 +99,14 @@ namespace Game2
 
 
             
-            if (Keyboard.GetState().IsKeyDown(Keys.Right))
-            {
-                rotation += (float)(rotationSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.Left))
-            {
-                rotation -= (float)(rotationSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-            }
+            //if (Keyboard.GetState().IsKeyDown(Keys.Right))
+            //{
+            //    rotation += (float)(rotationSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+            //}
+            //if (Keyboard.GetState().IsKeyDown(Keys.Left))
+            //{
+            //    rotation -= (float)(rotationSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+            //}
 
 
 
@@ -103,7 +117,7 @@ namespace Game2
 
 
             lastShoot += gameTime.ElapsedGameTime.TotalSeconds;
-            if (Keyboard.GetState().IsKeyDown(Keys.Space) && lastShoot > 0.3f)
+            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > 0.3f)
             {
                 GameWorld.AddGameObject(new Bullet(direction, position, content));
                 lastShoot = 0;
