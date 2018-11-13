@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/CollisionTexture.png</SourceFile>
-  <SourceTime>2018-11-10T19:22:45.0328513+01:00</SourceTime>
-  <DestFile>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bin/Windows/Content/CollisionTexture.xnb</DestFile>
-  <DestTime>2018-11-12T18:49:30.1002338+01:00</DestTime>
+  <SourceFile>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/CollisionTexture.png</SourceFile>
+  <SourceTime>2018-11-12T18:53:10.2163305+01:00</SourceTime>
+  <DestFile>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/bin/Windows/Content/CollisionTexture.xnb</DestFile>
+  <DestTime>2018-11-12T18:54:39.1510632+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-09-23T23:55:52+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

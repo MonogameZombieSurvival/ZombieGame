@@ -25,7 +25,7 @@ namespace Game2
         /// Gets the Size of the Asteroid
         /// </summary>
         private int holdNumber;
-        private int damnge = 1;
+        private int damnge = 10;
         private double LastAttck=0;
 
 
@@ -163,7 +163,7 @@ namespace Game2
                 GameWorld.RemoveGameObject(this);
 
                 GameWorld.addKill();
-
+     
             }
 
             if (otherObject is Player  && LastAttck > 0.5f)
@@ -175,6 +175,11 @@ namespace Game2
              
                 
                 LastAttck = 0;
+            }
+            if (otherObject is Bullet)
+            {
+                GameWorld.RemoveGameObject(otherObject);
+
             }
 
         }

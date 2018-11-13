@@ -14,7 +14,7 @@ namespace Game2
     /// </summary>
     public class GameWorld : Game
     {
-
+        
         private SpriteBatch spriteBatch;
 
         public List<GameObject> gameObjects = new List<GameObject>();
@@ -31,8 +31,9 @@ namespace Game2
         private SpriteFont WaveTimer;
         private SpriteFont KillCount;
         private Texture2D collisionTexture;
-        //private Song backgroundMusic;
+        private Song backgroundMusic;
         private Texture2D backgroundImg;
+        private Texture2D backgroundImgEnd;
         Random rand = new Random();
 
         GameTimer gametimer;
@@ -148,14 +149,14 @@ namespace Game2
         /// </summary>
         protected override void LoadContent()
         {
-            //backgroundMusic = Content.Load<Song>("BlindShift");
-            //  MediaPlayer.Play(backgroundMusic);
-            //MediaPlayer.IsRepeating = true;
+            backgroundMusic = Content.Load<Song>("zombiesound");
+            MediaPlayer.Play(backgroundMusic);
+            MediaPlayer.IsRepeating = true;
 
           
             //Background Img
             backgroundImg = Content.Load<Texture2D>("bg-grass");
-
+            backgroundImgEnd = Content.Load<Texture2D>("gameover");
             player = new Player(Content);
             healthHold = player.Health;
             gameObjects.Add(player);
@@ -227,6 +228,7 @@ namespace Game2
 
 
 
+        
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -237,18 +239,26 @@ namespace Game2
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+       
+            
 
-           
             if (level == 1)
             {
 
-                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.5, 0.01);
+                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.1, 0.01);
                 SpawnAnymens(spawtimeBetwenneEnemys);
             }
             if (level == 2)
             {
 
-                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.2, 0.01);
+                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.4, 0.01);
+
+                SpawnAnymens(spawtimeBetwenneEnemys);
+            }
+            if (level == 3)
+            {
+
+                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.3, 0.01);
 
                 SpawnAnymens(spawtimeBetwenneEnemys);
             }
@@ -328,11 +338,28 @@ namespace Game2
             }
 
 
+            if (healthHold <= 0)
+            {
+                spriteBatch.Draw(backgroundImgEnd, new Rectangle(0, 0, 1280, 720), Color.White);
+                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                {
+                    gameObjects.Clear();
+                   
+                    level = 0;
+                    kills = 0;
+                    healthHold = 1000;
 
+                    base.Draw(gameTime);
+                }
+
+
+                //Exit();
+            }
+            if (healthHold != 0) { 
             spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(580, 5), Color.White);   
             spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5,5), Color.White);
             spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
-            
+            }
             spriteBatch.End();
             base.Draw(gameTime);
         }

@@ -31,14 +31,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="165800">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="166824">
       <assemblyIdentity name="Game2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Hugt+YGcgwDUSBuSu3mmLV0kmQcdthoby6BqMa75r3c=</dsig:DigestValue>
+        <dsig:DigestValue>efERwHtx849RLb66T4ne994VQ5Q3vfuU26jui32pdDs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -552,6 +552,15 @@
       <dsig:DigestValue>MM0LAcZOmpdlcGEa5j1F5gB/XynkhLkTK5h1FXyZ7ps=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\gameover.xnb" size="4326785">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>kQsPkcDKfwoh9wLidK0DBxbzVpj1BX/q/YgUshV6ACM=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\KillCount.xnb" size="21524">
     <hash>
       <dsig:Transforms>
@@ -667,6 +676,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>BLH+3jnSWWk1UROZsuIY4vcH3ZM7zMRPjCEiHvlCIUo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\zombiesound.wma" size="2618282">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+hAeQ7qElttV/cDgD/LL67VZDXlpTC4a/V4S49+9hs0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\zombiesound.xnb" size="129">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8TtoqsXqLK5M6j2tDj+vJb8OVlrNyUDXe4F82l73Ks4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Icon.ico" size="147541">
