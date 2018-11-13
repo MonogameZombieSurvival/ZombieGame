@@ -798,3 +798,4 @@ C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\obj\x86\Deb
 C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\gameover.xnb
 C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\zombiesound.xnb
 C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\zombiesound.wma
+C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\bosszombie.xnb

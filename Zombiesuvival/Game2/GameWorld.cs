@@ -217,6 +217,16 @@ namespace Game2
             }          
         }
 
+        public void SpawnBoss(double spawnCircle)
+        {
+            if (spawnCircle <= 0.0001)
+            {
+
+
+                gameObjects.Add(new Boss(rand.Next(0, 400), rand.Next(0, 400), Content));
+            }
+        }
+
         public void Setlevel(int WavetimeOutput)
         {
             if(WaveTimeOutPut == 0)
@@ -244,9 +254,9 @@ namespace Game2
 
             if (level == 1)
             {
-              
                 spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.5, 0.01);
                 SpawnAnymens(spawtimeBetwenneEnemys);
+                SpawnBoss(spawtimeBetwenneEnemys);
             }
             if (level == 2)
             {
