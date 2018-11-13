@@ -32,6 +32,7 @@ namespace Game2
         private SpriteFont KillCount;
         private Texture2D collisionTexture;
         private Song backgroundMusic;
+        private Texture2D Sighte;
         private Texture2D backgroundImg;
         private Texture2D backgroundImgEnd;
         Random rand = new Random();
@@ -139,7 +140,7 @@ namespace Game2
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            this.IsMouseVisible = true;
+           // this.IsMouseVisible = true;
             base.Initialize();
         }
 
@@ -157,6 +158,7 @@ namespace Game2
             //Background Img
             backgroundImg = Content.Load<Texture2D>("bg-grass");
             backgroundImgEnd = Content.Load<Texture2D>("gameover");
+            Sighte = Content.Load<Texture2D>("sighte");
             player = new Player(Content);
             healthHold = player.Health;
             gameObjects.Add(player);
@@ -339,7 +341,7 @@ namespace Game2
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin();
             spriteBatch.Draw(backgroundImg, new Rectangle(0, 0, 1280, 720), Color.White);
-
+            MouseState mouse = Mouse.GetState();
             NumberOfgameObejts = Effects.Count;
             foreach(GameObject GO in Effects)
             {
@@ -410,6 +412,7 @@ namespace Game2
                 spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5, 5), Color.White);
                 spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
             }
+            spriteBatch.Draw(Sighte, new Vector2(mouse.X, mouse.Y), null, Color.White);
             spriteBatch.End();
             base.Draw(gameTime);
         }

@@ -7,14 +7,14 @@
     <framework targetVersion="4.5" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Game2.exe.manifest" size="35088">
+    <dependentAssembly dependencyType="install" codebase="Game2.exe.manifest" size="35484">
       <assemblyIdentity name="Game2.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Snkq2rYPQp4Xk2yKG/YVqvztuz1vReTiYoKCwuWmses=</dsig:DigestValue>
+        <dsig:DigestValue>yYuHQXQTobhK+WczGm7WJDV80WhOYVmGdeZcdpjboyE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

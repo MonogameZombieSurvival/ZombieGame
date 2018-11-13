@@ -31,14 +31,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="168872">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="169384">
       <assemblyIdentity name="Game2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>dSLavGfvFfu96NkFQwi2Gb5e5y8hI0IYkx8Kn7A8VO4=</dsig:DigestValue>
+        <dsig:DigestValue>FZr1BSKmCfpB/5qnsEOswV7x7vID97yIUuu2CDdKp54=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -640,6 +640,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>QDL69BnzGcCsSVPHYkNR3K8Qxyw6Vi6j348y65AZB38=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\sighte.xnb" size="1173">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>oVPl4woWKQvoS7ABQnFiJq+RY88t4UZha/VXsDAGrcw=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\skeleton-attack_0.xnb" size="374053">

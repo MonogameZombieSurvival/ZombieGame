@@ -231,6 +231,18 @@
 /processorParam:TextureFormat=Color
 /build:Sheet_Splatter1.png
 
+#begin sighte.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:sighte.png
+
 #begin skeleton-attack_0.png
 /importer:TextureImporter
 /processor:TextureProcessor
