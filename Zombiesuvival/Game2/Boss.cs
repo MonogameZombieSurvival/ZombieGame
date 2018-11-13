@@ -22,7 +22,7 @@ namespace Game2
         private int holdNumber;
         private int damnge = 100;
         private double LastAttck = 0;
-        private int bosshealth = 100;
+        private int bosshealth = 10;
 
         /// <summary>
         /// summens zzombies random out size mape set you own sobies on side and randow range;
@@ -154,7 +154,7 @@ namespace Game2
                 BloodeEffect bloodeEffect = new BloodeEffect(1, position, content);
                 GameWorld.AddEFfect(blood);
                 GameWorld.AddGameObject(bloodeEffect);
-                bosshealth--;
+                bosshealth --;
                 if (bosshealth == 0) {
                     GameWorld.RemoveGameObject(this);
 

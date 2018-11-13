@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -36,6 +37,7 @@ namespace Game2
         private Texture2D backgroundImg;
         private Texture2D backgroundImgEnd;
         private Texture2D backgroundImgWin;
+        private Song bossSound;
         Random rand = new Random();
 
         GameTimer gametimer;
@@ -155,7 +157,10 @@ namespace Game2
             MediaPlayer.Play(backgroundMusic);
             MediaPlayer.IsRepeating = true;
 
-          
+            bossSound = Content.Load<Song>("bosssound");
+            
+
+
             //Background Img
             backgroundImg = Content.Load<Texture2D>("bg-grass");
             backgroundImgEnd = Content.Load<Texture2D>("gameover");
@@ -225,6 +230,9 @@ namespace Game2
             {
                 if (ammount < ammountBoss) {
                     ammount++;
+
+                    MediaPlayer.Play(bossSound);
+
                     gameObjects.Add(new Boss(rand.Next(0, 400), rand.Next(0, 400), Content));
                 }
             }
@@ -259,8 +267,8 @@ namespace Game2
             {
                 spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.7, 0.01);
                 SpawnAnymens(spawtimeBetwenneEnemys);
-         
-           } /*
+                SpawnBoss(spawtimeBetwenneEnemys, 1);
+            }
             if (level == 2)
             {
 
@@ -281,10 +289,9 @@ namespace Game2
 
                 spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.4, 0.01);
                 SpawnAnymens(spawtimeBetwenneEnemys);
-                SpawnBoss(spawtimeBetwenneEnemys, 1);
+              
             }
-            */
-            if (level == 2)
+            if (level == 5)
             {
 
                
@@ -373,37 +380,29 @@ namespace Game2
                 {
                     gameObjects.Clear();
                     Effects.Clear();
-
                     gameObjects.Add(player = new Player(Content));
-                    // WaveTimeOutPut = 1;
-                   
-                   // new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2);
-
                     gametimer = new GameTimer();
                     level = 1;
                     kills = 0;
                     healthHold = 1000;
-                  gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
+                    gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
+                }
+              
 
                 }
-                if (level == 2) {
-                    spriteBatch.Draw(backgroundImgWin, new Rectangle(0, 0, 1280, 720), Color.White);
-                    if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-                    {
-                        gameObjects.Clear();
-                        Effects.Clear();
-
-                        gameObjects.Add(player = new Player(Content));
-                      
-
-                        gametimer = new GameTimer();
-                        level = 1;
-                        kills = 0;
-                        healthHold = 1000;
-                        gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
-
-                    }
-
+            if (level == 5)
+            {
+                spriteBatch.Draw(backgroundImgWin, new Rectangle(0, 0, 1280, 720), Color.White);
+                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                {
+                    gameObjects.Clear();
+                    Effects.Clear();
+                    gameObjects.Add(player = new Player(Content));
+                    gametimer = new GameTimer();
+                    level = 1;
+                    kills = 0;
+                    healthHold = 1000;
+                    gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
                 }
 
                 //Exit();

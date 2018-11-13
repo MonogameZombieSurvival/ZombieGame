@@ -892,3 +892,5 @@ C:\Users\mikke\OneDrive\Skrivebord\ZombieGame\Zombiesuvival\Game2\obj\x86\Debug\
 C:\Users\mikke\OneDrive\Skrivebord\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\sighte.xnb
 C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\sighte.xnb
 C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\winscreen.xnb
+C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\bosssound.wma
+C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\bosssound.xnb

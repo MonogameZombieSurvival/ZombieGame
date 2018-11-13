@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/bosssound.mp3</File>
     <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/winscreen.jpg</File>
     <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/bosszombie.png</File>
     <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/zombiesound.mp3</File>

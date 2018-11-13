@@ -61,6 +61,12 @@
 /processorParam:TextureFormat=Color
 /build:blood.png
 
+#begin bosssound.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:bosssound.mp3
+
 #begin bosszombie.png
 /importer:TextureImporter
 /processor:TextureProcessor
