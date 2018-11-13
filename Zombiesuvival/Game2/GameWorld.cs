@@ -35,6 +35,7 @@ namespace Game2
         private Texture2D Sighte;
         private Texture2D backgroundImg;
         private Texture2D backgroundImgEnd;
+        private Texture2D backgroundImgWin;
         Random rand = new Random();
 
         GameTimer gametimer;
@@ -158,6 +159,7 @@ namespace Game2
             //Background Img
             backgroundImg = Content.Load<Texture2D>("bg-grass");
             backgroundImgEnd = Content.Load<Texture2D>("gameover");
+            backgroundImgWin = Content.Load<Texture2D>("winscreen");
             Sighte = Content.Load<Texture2D>("sighte");
             player = new Player(Content);
             healthHold = player.Health;
@@ -255,10 +257,10 @@ namespace Game2
 
             if (level == 1)
             {
-                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.10, 0.01);
+                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.7, 0.01);
                 SpawnAnymens(spawtimeBetwenneEnemys);
          
-            }
+           } /*
             if (level == 2)
             {
 
@@ -281,7 +283,8 @@ namespace Game2
                 SpawnAnymens(spawtimeBetwenneEnemys);
                 SpawnBoss(spawtimeBetwenneEnemys, 1);
             }
-            if (level == 5)
+            */
+            if (level == 2)
             {
 
                
@@ -383,17 +386,15 @@ namespace Game2
                   gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
 
                 }
-                if (level == 5) {
-                    spriteBatch.Draw(backgroundImgEnd, new Rectangle(0, 0, 1280, 720), Color.White);
+                if (level == 2) {
+                    spriteBatch.Draw(backgroundImgWin, new Rectangle(0, 0, 1280, 720), Color.White);
                     if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                     {
                         gameObjects.Clear();
                         Effects.Clear();
 
                         gameObjects.Add(player = new Player(Content));
-                        // WaveTimeOutPut = 1;
-
-                        // new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2);
+                      
 
                         gametimer = new GameTimer();
                         level = 1;

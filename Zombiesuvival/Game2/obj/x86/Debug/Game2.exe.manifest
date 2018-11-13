@@ -31,14 +31,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="169384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="168872">
       <assemblyIdentity name="Game2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>FZr1BSKmCfpB/5qnsEOswV7x7vID97yIUuu2CDdKp54=</dsig:DigestValue>
+        <dsig:DigestValue>nA9eiJHkK7kJyvjW8pt9xtzlxKJCk5x8bkLoldOOT7o=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -685,6 +685,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>28Wj1X6hDYSKhPNpV9F7VgSpLZ/TQWN4srOSDh9mPCE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\winscreen.xnb" size="1565761">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>YefRJPqj3bnaXnDqbiSvGsaSfm3Hyd5sPtDoRcJ9uGE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\zombiesmall.xnb" size="18285">
