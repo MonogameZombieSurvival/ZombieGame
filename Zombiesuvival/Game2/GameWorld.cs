@@ -245,7 +245,7 @@ namespace Game2
             if (level == 1)
             {
               
-                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.1, 0.01);
+                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.5, 0.01);
                 SpawnAnymens(spawtimeBetwenneEnemys);
             }
             if (level == 2)
@@ -344,8 +344,11 @@ namespace Game2
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                 {
                     gameObjects.Clear();
-                    gameObjects.Add(player);
+                    gameObjects.Add(player = new Player(Content));
                     // WaveTimeOutPut = 1;
+                   
+                   // new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2);
+
                     gametimer = new GameTimer();
                     level = 1;
                     kills = 0;

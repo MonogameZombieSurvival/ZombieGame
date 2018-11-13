@@ -22,7 +22,7 @@ namespace Game2
         {
             if (explosionSound.State != SoundState.Playing)
             {
-               // GameWorld.RemoveGameObject(this);
+              //  GameWorld.RemoveGameObject(this);
             }
             base.Update(gameTime);
         }

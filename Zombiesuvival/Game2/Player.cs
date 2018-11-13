@@ -18,6 +18,7 @@ namespace Game2
         public Vector2 direction = new Vector2();
         GameTimer gameTimer = new GameTimer();
         private double lastShoot = 0;
+        private SoundEffectInstance explosionSound;
         private int killCount;
         public int KillCount
         {
@@ -121,6 +122,8 @@ namespace Game2
             {
                 GameWorld.AddGameObject(new Bullet(direction, position, content));
                 lastShoot = 0;
+                explosionSound = content.Load<SoundEffect>("8bit_bomb_explosion").CreateInstance();
+                explosionSound.Play();
             }
 
            

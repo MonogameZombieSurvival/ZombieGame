@@ -159,7 +159,7 @@ namespace Game2
                 BloodeEffect bloodeEffect = new BloodeEffect(1, position, content);
                 GameWorld.AddEFfect(blood);
                 GameWorld.AddGameObject(bloodeEffect);
-
+            
                 GameWorld.RemoveGameObject(this);
 
                 GameWorld.addKill();
