@@ -25,7 +25,7 @@ namespace Game2
         private static List<GameObject> toBeAddedEffect = new List<GameObject>();
         private static List<GameObject> toBeRemoved = new List<GameObject>();
 
-
+        
         private Player player;
         private SpriteFont font;
         private SpriteFont WaveTimer;
@@ -38,8 +38,8 @@ namespace Game2
 
         GameTimer gametimer;
         GameTimer Spawnspeed;
-        
-      
+
+        private int ammount = 0;
         private int WaveTimeOutPut;
         private int level =1;
         private int NumberOfgameObejts;
@@ -211,19 +211,18 @@ namespace Game2
         {          
             if(spawnCircle <=0.0001)
             {
-              
-                     
-                    gameObjects.Add(new Enemy(rand.Next(0, 400), rand.Next(0, 400), Content));                                       
+              gameObjects.Add(new Enemy(rand.Next(0, 400), rand.Next(0, 400), Content));                                       
             }          
         }
 
-        public void SpawnBoss(double spawnCircle)
+        public void SpawnBoss(double spawnCircle, int ammountBoss)
         {
             if (spawnCircle <= 0.0001)
             {
-
-
-                gameObjects.Add(new Boss(rand.Next(0, 400), rand.Next(0, 400), Content));
+                if (ammount < ammountBoss) {
+                    ammount++;
+                    gameObjects.Add(new Boss(rand.Next(0, 400), rand.Next(0, 400), Content));
+                }
             }
         }
 
@@ -254,24 +253,38 @@ namespace Game2
 
             if (level == 1)
             {
-                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.5, 0.01);
+                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.10, 0.01);
                 SpawnAnymens(spawtimeBetwenneEnemys);
-                SpawnBoss(spawtimeBetwenneEnemys);
+         
             }
             if (level == 2)
             {
 
-                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.4, 0.01);
+                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.6, 0.01);
 
                 SpawnAnymens(spawtimeBetwenneEnemys);
             }
             if (level == 3)
             {
 
-                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.3, 0.01);
+                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.5, 0.01);
 
                 SpawnAnymens(spawtimeBetwenneEnemys);
             }
+
+            if (level == 4)
+            {
+
+                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.4, 0.01);
+                SpawnAnymens(spawtimeBetwenneEnemys);
+                SpawnBoss(spawtimeBetwenneEnemys, 1);
+            }
+            if (level == 5)
+            {
+
+               
+            }
+
 
             WaveTimeOutPut = gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
             Setlevel(WaveTimeOutPut);
@@ -368,11 +381,31 @@ namespace Game2
                   gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
 
                 }
+                if (level == 5) {
+                    spriteBatch.Draw(backgroundImgEnd, new Rectangle(0, 0, 1280, 720), Color.White);
+                    if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                    {
+                        gameObjects.Clear();
+                        Effects.Clear();
 
+                        gameObjects.Add(player = new Player(Content));
+                        // WaveTimeOutPut = 1;
+
+                        // new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2);
+
+                        gametimer = new GameTimer();
+                        level = 1;
+                        kills = 0;
+                        healthHold = 1000;
+                        gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
+
+                    }
+
+                }
 
                 //Exit();
             }
-            if (healthHold > 0) {
+            if (healthHold > 0 || level == 5) {
                 spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(580, 5), Color.White);
                 spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5, 5), Color.White);
                 spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
