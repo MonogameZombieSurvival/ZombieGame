@@ -244,7 +244,7 @@ namespace Game2
 
             if (level == 1)
             {
-
+              
                 spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.1, 0.01);
                 SpawnAnymens(spawtimeBetwenneEnemys);
             }
@@ -262,8 +262,8 @@ namespace Game2
 
                 SpawnAnymens(spawtimeBetwenneEnemys);
             }
-            WaveTimeOutPut = gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
 
+            WaveTimeOutPut = gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
             Setlevel(WaveTimeOutPut);
             
                
@@ -344,21 +344,23 @@ namespace Game2
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                 {
                     gameObjects.Clear();
-                   
-                    level = 0;
+                    gameObjects.Add(player);
+                    // WaveTimeOutPut = 1;
+                    gametimer = new GameTimer();
+                    level = 1;
                     kills = 0;
                     healthHold = 1000;
+                  gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
 
-                    base.Draw(gameTime);
                 }
 
 
                 //Exit();
             }
-            if (healthHold != 0) { 
-            spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(580, 5), Color.White);   
-            spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5,5), Color.White);
-            spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
+            if (healthHold > 0) {
+                spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(580, 5), Color.White);
+                spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5, 5), Color.White);
+                spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
             }
             spriteBatch.End();
             base.Draw(gameTime);
