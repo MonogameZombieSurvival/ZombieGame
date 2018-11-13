@@ -344,6 +344,8 @@ namespace Game2
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                 {
                     gameObjects.Clear();
+                    Effects.Clear();
+
                     gameObjects.Add(player = new Player(Content));
                     // WaveTimeOutPut = 1;
                    
