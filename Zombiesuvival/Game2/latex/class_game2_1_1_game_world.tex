@@ -1,0 +1,224 @@
+\hypertarget{class_game2_1_1_game_world}{}\section{Game2.\+Game\+World Class Reference}
+\label{class_game2_1_1_game_world}\index{Game2.\+Game\+World@{Game2.\+Game\+World}}
+
+
+This is the main type for your game.  
+
+
+Inheritance diagram for Game2.\+Game\+World\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game2_1_1_game_world}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game2_1_1_game_world_acecdd046d813514fe4a381fac3392417}{Game\+World}} ()
+\item 
+void \mbox{\hyperlink{class_game2_1_1_game_world_a268f162de7a1df8df00d740342465e41}{Spawn\+Enemies}} (double spawn\+Circle)
+\begin{DoxyCompactList}\small\item\em Spawn Enemies and the boss also sets level based on wave time \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game2_1_1_game_world_aa7f3f55732bc5adbd85898bb55523bad}{Spawn\+Boss}} (double spawn\+Circle, int ammount\+Boss)
+\item 
+void \mbox{\hyperlink{class_game2_1_1_game_world_a562424129dedeb22c5cc98d7a3f45a70}{Setlevel}} (int Wavetime\+Output)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_game2_1_1_game_world_acde506006de6e0361c5175597cb07df2}{add\+Kill}} ()
+\item 
+static void \mbox{\hyperlink{class_game2_1_1_game_world_a5ab430402255839068ec6c074a827f10}{Deal\+Damnge\+To\+Player}} (int damnge)
+\item 
+static void \mbox{\hyperlink{class_game2_1_1_game_world_a39e2b721c387b979bf3b71cae226607d}{Add\+Game\+Object}} (\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} go)
+\item 
+static void \mbox{\hyperlink{class_game2_1_1_game_world_a65a39808ffc51f5dbda1e3af966af50e}{Add\+E\+Ffect}} (\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} go)
+\item 
+static void \mbox{\hyperlink{class_game2_1_1_game_world_a00bb1f85c2b674fe4a6b06b6887859cc}{Remove\+Game\+Object}} (\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} go)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} $>$ \mbox{\hyperlink{class_game2_1_1_game_world_a8843df0d3c8de0ca7c7f37f9cebce878}{game\+Objects}} = new List$<$\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}$>$()
+\item 
+List$<$ \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} $>$ \mbox{\hyperlink{class_game2_1_1_game_world_a7c01e067c7488bd5a80b810c5183e3af}{Effects}} = new List$<$\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}$>$()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_game2_1_1_game_world_a8488fd97f682ca3cc0d3defe5094bb7f}{Initialize}} ()
+\begin{DoxyCompactList}\small\item\em Allows the game to perform any initialization it needs to before starting to run. This is where it can query for any required services and load any non-\/graphic related content. Calling base.\+Initialize will enumerate through any components and initialize them as well. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_game2_1_1_game_world_a4bf53e37ff1497b08076b29ba9cc6494}{Load\+Content}} ()
+\begin{DoxyCompactList}\small\item\em Load\+Content will be called once per game and is the place to load all of your content. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_game2_1_1_game_world_a653a301b00ac7b3fd16260d5c30d8f36}{Update}} (Game\+Time game\+Time)
+\begin{DoxyCompactList}\small\item\em Allows the game to run logic such as updating the world, levels, checking for collisions, gathering input, and playing audio. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_game2_1_1_game_world_a2d3b767def6473b528eb4ea3bf54e37d}{Draw}} (Game\+Time game\+Time)
+\begin{DoxyCompactList}\small\item\em This is called when the game should draw itself. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_game2_1_1_game_world_a8289db0e2223e4d88fca02dd8a4281b3}{Healh\+Hold}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+int \mbox{\hyperlink{class_game2_1_1_game_world_a9a7020d26597ee1ff08e5ade7686a482}{Kills}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+static Rectangle \mbox{\hyperlink{class_game2_1_1_game_world_a33e4b367438dde0cb88d9fab8439c0e5}{Screen\+Size}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is the main type for your game. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game2_1_1_game_world_acecdd046d813514fe4a381fac3392417}\label{class_game2_1_1_game_world_acecdd046d813514fe4a381fac3392417}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Game\+World@{Game\+World}}
+\index{Game\+World@{Game\+World}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Game\+World()}{GameWorld()}}
+{\footnotesize\ttfamily Game2.\+Game\+World.\+Game\+World (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game2_1_1_game_world_a65a39808ffc51f5dbda1e3af966af50e}\label{class_game2_1_1_game_world_a65a39808ffc51f5dbda1e3af966af50e}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Add\+E\+Ffect@{Add\+E\+Ffect}}
+\index{Add\+E\+Ffect@{Add\+E\+Ffect}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Add\+E\+Ffect()}{AddEFfect()}}
+{\footnotesize\ttfamily static void Game2.\+Game\+World.\+Add\+E\+Ffect (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}}]{go }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_a39e2b721c387b979bf3b71cae226607d}\label{class_game2_1_1_game_world_a39e2b721c387b979bf3b71cae226607d}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Add\+Game\+Object@{Add\+Game\+Object}}
+\index{Add\+Game\+Object@{Add\+Game\+Object}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Add\+Game\+Object()}{AddGameObject()}}
+{\footnotesize\ttfamily static void Game2.\+Game\+World.\+Add\+Game\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}}]{go }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_acde506006de6e0361c5175597cb07df2}\label{class_game2_1_1_game_world_acde506006de6e0361c5175597cb07df2}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!add\+Kill@{add\+Kill}}
+\index{add\+Kill@{add\+Kill}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{add\+Kill()}{addKill()}}
+{\footnotesize\ttfamily static void Game2.\+Game\+World.\+add\+Kill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_a5ab430402255839068ec6c074a827f10}\label{class_game2_1_1_game_world_a5ab430402255839068ec6c074a827f10}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Deal\+Damnge\+To\+Player@{Deal\+Damnge\+To\+Player}}
+\index{Deal\+Damnge\+To\+Player@{Deal\+Damnge\+To\+Player}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Deal\+Damnge\+To\+Player()}{DealDamngeToPlayer()}}
+{\footnotesize\ttfamily static void Game2.\+Game\+World.\+Deal\+Damnge\+To\+Player (\begin{DoxyParamCaption}\item[{int}]{damnge }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_a2d3b767def6473b528eb4ea3bf54e37d}\label{class_game2_1_1_game_world_a2d3b767def6473b528eb4ea3bf54e37d}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Draw@{Draw}}
+\index{Draw@{Draw}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily override void Game2.\+Game\+World.\+Draw (\begin{DoxyParamCaption}\item[{Game\+Time}]{game\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+This is called when the game should draw itself. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Time} & Provides a snapshot of timing values.\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game2_1_1_game_world_a8488fd97f682ca3cc0d3defe5094bb7f}\label{class_game2_1_1_game_world_a8488fd97f682ca3cc0d3defe5094bb7f}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Initialize()}{Initialize()}}
+{\footnotesize\ttfamily override void Game2.\+Game\+World.\+Initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Allows the game to perform any initialization it needs to before starting to run. This is where it can query for any required services and load any non-\/graphic related content. Calling base.\+Initialize will enumerate through any components and initialize them as well. 
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_a4bf53e37ff1497b08076b29ba9cc6494}\label{class_game2_1_1_game_world_a4bf53e37ff1497b08076b29ba9cc6494}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Load\+Content@{Load\+Content}}
+\index{Load\+Content@{Load\+Content}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Load\+Content()}{LoadContent()}}
+{\footnotesize\ttfamily override void Game2.\+Game\+World.\+Load\+Content (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Load\+Content will be called once per game and is the place to load all of your content. 
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_a00bb1f85c2b674fe4a6b06b6887859cc}\label{class_game2_1_1_game_world_a00bb1f85c2b674fe4a6b06b6887859cc}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Remove\+Game\+Object@{Remove\+Game\+Object}}
+\index{Remove\+Game\+Object@{Remove\+Game\+Object}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Remove\+Game\+Object()}{RemoveGameObject()}}
+{\footnotesize\ttfamily static void Game2.\+Game\+World.\+Remove\+Game\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}}]{go }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_a562424129dedeb22c5cc98d7a3f45a70}\label{class_game2_1_1_game_world_a562424129dedeb22c5cc98d7a3f45a70}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Setlevel@{Setlevel}}
+\index{Setlevel@{Setlevel}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Setlevel()}{Setlevel()}}
+{\footnotesize\ttfamily void Game2.\+Game\+World.\+Setlevel (\begin{DoxyParamCaption}\item[{int}]{Wavetime\+Output }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_aa7f3f55732bc5adbd85898bb55523bad}\label{class_game2_1_1_game_world_aa7f3f55732bc5adbd85898bb55523bad}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Spawn\+Boss@{Spawn\+Boss}}
+\index{Spawn\+Boss@{Spawn\+Boss}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Spawn\+Boss()}{SpawnBoss()}}
+{\footnotesize\ttfamily void Game2.\+Game\+World.\+Spawn\+Boss (\begin{DoxyParamCaption}\item[{double}]{spawn\+Circle,  }\item[{int}]{ammount\+Boss }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_a268f162de7a1df8df00d740342465e41}\label{class_game2_1_1_game_world_a268f162de7a1df8df00d740342465e41}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Spawn\+Enemies@{Spawn\+Enemies}}
+\index{Spawn\+Enemies@{Spawn\+Enemies}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Spawn\+Enemies()}{SpawnEnemies()}}
+{\footnotesize\ttfamily void Game2.\+Game\+World.\+Spawn\+Enemies (\begin{DoxyParamCaption}\item[{double}]{spawn\+Circle }\end{DoxyParamCaption})}
+
+
+
+Spawn Enemies and the boss also sets level based on wave time 
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_a653a301b00ac7b3fd16260d5c30d8f36}\label{class_game2_1_1_game_world_a653a301b00ac7b3fd16260d5c30d8f36}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Update@{Update}}
+\index{Update@{Update}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily override void Game2.\+Game\+World.\+Update (\begin{DoxyParamCaption}\item[{Game\+Time}]{game\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Allows the game to run logic such as updating the world, levels, checking for collisions, gathering input, and playing audio. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Time} & Provides a snapshot of timing values.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game2_1_1_game_world_a7c01e067c7488bd5a80b810c5183e3af}\label{class_game2_1_1_game_world_a7c01e067c7488bd5a80b810c5183e3af}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Effects@{Effects}}
+\index{Effects@{Effects}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Effects}{Effects}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}$>$ Game2.\+Game\+World.\+Effects = new List$<$\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}$>$()}
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_a8843df0d3c8de0ca7c7f37f9cebce878}\label{class_game2_1_1_game_world_a8843df0d3c8de0ca7c7f37f9cebce878}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!game\+Objects@{game\+Objects}}
+\index{game\+Objects@{game\+Objects}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{game\+Objects}{gameObjects}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}$>$ Game2.\+Game\+World.\+game\+Objects = new List$<$\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}$>$()}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_game2_1_1_game_world_a8289db0e2223e4d88fca02dd8a4281b3}\label{class_game2_1_1_game_world_a8289db0e2223e4d88fca02dd8a4281b3}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Healh\+Hold@{Healh\+Hold}}
+\index{Healh\+Hold@{Healh\+Hold}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Healh\+Hold}{HealhHold}}
+{\footnotesize\ttfamily int Game2.\+Game\+World.\+Healh\+Hold\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_a9a7020d26597ee1ff08e5ade7686a482}\label{class_game2_1_1_game_world_a9a7020d26597ee1ff08e5ade7686a482}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Kills@{Kills}}
+\index{Kills@{Kills}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Kills}{Kills}}
+{\footnotesize\ttfamily int Game2.\+Game\+World.\+Kills\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_world_a33e4b367438dde0cb88d9fab8439c0e5}\label{class_game2_1_1_game_world_a33e4b367438dde0cb88d9fab8439c0e5}} 
+\index{Game2\+::\+Game\+World@{Game2\+::\+Game\+World}!Screen\+Size@{Screen\+Size}}
+\index{Screen\+Size@{Screen\+Size}!Game2\+::\+Game\+World@{Game2\+::\+Game\+World}}
+\subsubsection{\texorpdfstring{Screen\+Size}{ScreenSize}}
+{\footnotesize\ttfamily Rectangle Game2.\+Game\+World.\+Screen\+Size\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_world_8cs}{Game\+World.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\hypertarget{class_game2_1_1_enemy}{}\section{Game2.\+Enemy Class Reference}
+\label{class_game2_1_1_enemy}\index{Game2.\+Enemy@{Game2.\+Enemy}}
+
+
+Class that represents a zombie  
+
+
+Inheritance diagram for Game2.\+Enemy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game2_1_1_enemy}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game2_1_1_enemy_ac96eace4797abdd8d99c0e67348f1f7d}{Enemy}} (int Hold\+Number, int Spawn\+Distansfrom\+Each\+Other, Content\+Manager \mbox{\hyperlink{class_game2_1_1_game_object_ae8a9e4574e531d2fbb2168a155f2ac53}{content}})
+\begin{DoxyCompactList}\small\item\em Spawns zombies at random sides of the map \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game2_1_1_enemy_abb82db1812e2fa2b074f0bc0c53471d1}{Enemy}} (Content\+Manager \mbox{\hyperlink{class_game2_1_1_game_object_ae8a9e4574e531d2fbb2168a155f2ac53}{content}})
+\begin{DoxyCompactList}\small\item\em Spawns zombies at random sides of the map \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_game2_1_1_enemy_a5e3fdb40fb9884bda064eb671896d264}{Update}} (Game\+Time game\+Time)
+\begin{DoxyCompactList}\small\item\em Update method that moves the zombies in direction of the player. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_game2_1_1_enemy_a574b0e99f86ce3a5e126484518020dac}{Do\+Collision}} (\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} other\+Object)
+\begin{DoxyCompactList}\small\item\em Collide actions if bullet zombies die and boss loses health. If bullet it gets removed and if player it gets damage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class that represents a zombie 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game2_1_1_enemy_ac96eace4797abdd8d99c0e67348f1f7d}\label{class_game2_1_1_enemy_ac96eace4797abdd8d99c0e67348f1f7d}} 
+\index{Game2\+::\+Enemy@{Game2\+::\+Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Game2\+::\+Enemy@{Game2\+::\+Enemy}}
+\subsubsection{\texorpdfstring{Enemy()}{Enemy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Game2.\+Enemy.\+Enemy (\begin{DoxyParamCaption}\item[{int}]{Hold\+Number,  }\item[{int}]{Spawn\+Distansfrom\+Each\+Other,  }\item[{Content\+Manager}]{content }\end{DoxyParamCaption})}
+
+
+
+Spawns zombies at random sides of the map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & Content Manager for loading resources\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game2_1_1_enemy_abb82db1812e2fa2b074f0bc0c53471d1}\label{class_game2_1_1_enemy_abb82db1812e2fa2b074f0bc0c53471d1}} 
+\index{Game2\+::\+Enemy@{Game2\+::\+Enemy}!Enemy@{Enemy}}
+\index{Enemy@{Enemy}!Game2\+::\+Enemy@{Game2\+::\+Enemy}}
+\subsubsection{\texorpdfstring{Enemy()}{Enemy()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Game2.\+Enemy.\+Enemy (\begin{DoxyParamCaption}\item[{Content\+Manager}]{content }\end{DoxyParamCaption})}
+
+
+
+Spawns zombies at random sides of the map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & Content Manager for loading resources\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game2_1_1_enemy_a574b0e99f86ce3a5e126484518020dac}\label{class_game2_1_1_enemy_a574b0e99f86ce3a5e126484518020dac}} 
+\index{Game2\+::\+Enemy@{Game2\+::\+Enemy}!Do\+Collision@{Do\+Collision}}
+\index{Do\+Collision@{Do\+Collision}!Game2\+::\+Enemy@{Game2\+::\+Enemy}}
+\subsubsection{\texorpdfstring{Do\+Collision()}{DoCollision()}}
+{\footnotesize\ttfamily override void Game2.\+Enemy.\+Do\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}}]{other\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Collide actions if bullet zombies die and boss loses health. If bullet it gets removed and if player it gets damage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other\+Object} & The object it collided with\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_game2_1_1_game_object_aa811d23c405b9aa28ab922901d0a3002}{Game2.\+Game\+Object}}.
+
+\mbox{\Hypertarget{class_game2_1_1_enemy_a5e3fdb40fb9884bda064eb671896d264}\label{class_game2_1_1_enemy_a5e3fdb40fb9884bda064eb671896d264}} 
+\index{Game2\+::\+Enemy@{Game2\+::\+Enemy}!Update@{Update}}
+\index{Update@{Update}!Game2\+::\+Enemy@{Game2\+::\+Enemy}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily override void Game2.\+Enemy.\+Update (\begin{DoxyParamCaption}\item[{Game\+Time}]{game\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update method that moves the zombies in direction of the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_game2_1_1_game_object_a360a294d8a55dcc747c44f8cc1aefe28}{Game2.\+Game\+Object}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_enemy_8cs}{Enemy.\+cs}}\end{DoxyCompactItemize}

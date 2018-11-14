@@ -1,0 +1,304 @@
+\hypertarget{class_game2_1_1_game_object}{}\section{Game2.\+Game\+Object Class Reference}
+\label{class_game2_1_1_game_object}\index{Game2.\+Game\+Object@{Game2.\+Game\+Object}}
+Inheritance diagram for Game2.\+Game\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game2_1_1_game_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_game2_1_1_game_object_a043206229a679b32a1bee4f50e8e7ace}{Is\+Colliding}} (\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} other\+Object)
+\begin{DoxyCompactList}\small\item\em Checks if the current object collides with another object \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game2_1_1_game_object_aa811d23c405b9aa28ab922901d0a3002}{Do\+Collision}} (\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} other\+Object)
+\begin{DoxyCompactList}\small\item\em Enabled the \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} to handle collisions in a custom way \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game2_1_1_game_object_ad2a99e120df1d04d1a737bbf9b8fb2a0}{Game\+Object}} (Content\+Manager \mbox{\hyperlink{class_game2_1_1_game_object_ae8a9e4574e531d2fbb2168a155f2ac53}{content}}, string sprite\+Name)
+\begin{DoxyCompactList}\small\item\em The default constructor for a \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game2_1_1_game_object_a3379bff2fa0d79ae4eeea4f1e9609064}{Get\+Player\+Position}} (Vector2 Player\+Position)
+\begin{DoxyCompactList}\small\item\em Gets the position and rotaion of player \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game2_1_1_game_object_aae6ebb6727aabac812b8bcc68aba2484}{Get\+Player\+Rot}} (float Player\+Rot)
+\item 
+void \mbox{\hyperlink{class_game2_1_1_game_object_add937595f4f6918a828af495c08bce3d}{Get\+Player\+Health}} (int player\+Heath)
+\item 
+int \mbox{\hyperlink{class_game2_1_1_game_object_a9db72e4b451539bf698e5e1dcd6e12c4}{return\+Player\+Health}} ()
+\item 
+\mbox{\hyperlink{class_game2_1_1_game_object_a52d0c63362ab13bf5d0433c42b9b4ffb}{Game\+Object}} (Vector2 start\+Position, Content\+Manager \mbox{\hyperlink{class_game2_1_1_game_object_ae8a9e4574e531d2fbb2168a155f2ac53}{content}}, string sprite\+Name)
+\begin{DoxyCompactList}\small\item\em Constructor the sets the staring position of the \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game2_1_1_game_object_a360a294d8a55dcc747c44f8cc1aefe28}{Update}} (Game\+Time game\+Time)
+\begin{DoxyCompactList}\small\item\em Enabled the \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} to have game logic defined \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_game2_1_1_game_object_ade17d36d8d908594bc434e215052393b}{Draw}} (Sprite\+Batch sprite\+Batch)
+\begin{DoxyCompactList}\small\item\em Enables the \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} to be drawn. The std. functionality is to draw its sprite. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Texture2D \mbox{\hyperlink{class_game2_1_1_game_object_abd502421a8463bab3dc736266be6de26}{sprite}}
+\item 
+float \mbox{\hyperlink{class_game2_1_1_game_object_a97359c68fe62861ff5ad578130367493}{rotation}}
+\item 
+Vector2 \mbox{\hyperlink{class_game2_1_1_game_object_a5bc3b9c88ad0ce089558862431923192}{Direction}}
+\item 
+Vector2 \mbox{\hyperlink{class_game2_1_1_game_object_a1564c00bda65516c2486548dda1cbc1c}{position}}
+\item 
+Vector2 \mbox{\hyperlink{class_game2_1_1_game_object_a8e9bcc1b5d686ef1a49337744fb3c0c1}{real\+Timeplayer\+Position}}
+\item 
+float \mbox{\hyperlink{class_game2_1_1_game_object_a8103636301612d46cbfaf40a295cf889}{real\+Timeplayer\+Rot}}
+\item 
+int \mbox{\hyperlink{class_game2_1_1_game_object_a58bb9938314474563d84b283ab651178}{Playerhealth}}
+\item 
+int \mbox{\hyperlink{class_game2_1_1_game_object_a983dc42585d2eefbc27bd59a2e39a467}{la}} = 700
+\item 
+Content\+Manager \mbox{\hyperlink{class_game2_1_1_game_object_ae8a9e4574e531d2fbb2168a155f2ac53}{content}}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Vector2 \mbox{\hyperlink{class_game2_1_1_game_object_af5b0b48192336247e09d52a7fc6f56ad}{Position}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+float \mbox{\hyperlink{class_game2_1_1_game_object_a7983716d3a4ed64a1a2200642a301079}{player\+Rot}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+virtual Rectangle \mbox{\hyperlink{class_game2_1_1_game_object_ab6a6d45b66a978f710da6a3ec0588083}{Collision\+Box}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em The Collision Box of the \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}. The default box is based upon the \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} position and sprite size \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game2_1_1_game_object_ad2a99e120df1d04d1a737bbf9b8fb2a0}\label{class_game2_1_1_game_object_ad2a99e120df1d04d1a737bbf9b8fb2a0}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Game\+Object@{Game\+Object}}
+\index{Game\+Object@{Game\+Object}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Game\+Object()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Game2.\+Game\+Object.\+Game\+Object (\begin{DoxyParamCaption}\item[{Content\+Manager}]{content,  }\item[{string}]{sprite\+Name }\end{DoxyParamCaption})}
+
+
+
+The default constructor for a \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & Reference to a Content\+Manager for loading resources\\
+\hline
+{\em sprite\+Name} & The name of the texture resource the should be used for the sprite\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Microsoft.\+Xna.\+Framework.\+Content.\+Content\+Load\+Exception} & Thrown if a matching texture cant be found for sprite\+Name\\
+\hline
+\end{DoxyExceptions}
+\mbox{\Hypertarget{class_game2_1_1_game_object_a52d0c63362ab13bf5d0433c42b9b4ffb}\label{class_game2_1_1_game_object_a52d0c63362ab13bf5d0433c42b9b4ffb}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Game\+Object@{Game\+Object}}
+\index{Game\+Object@{Game\+Object}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Game\+Object()}{GameObject()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Game2.\+Game\+Object.\+Game\+Object (\begin{DoxyParamCaption}\item[{Vector2}]{start\+Position,  }\item[{Content\+Manager}]{content,  }\item[{string}]{sprite\+Name }\end{DoxyParamCaption})}
+
+
+
+Constructor the sets the staring position of the \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Position} & \\
+\hline
+{\em content} & Reference to a Content\+Manager for loading resources\\
+\hline
+{\em sprite\+Name} & The name of the texture resource the should be used for the sprite\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Microsoft.\+Xna.\+Framework.\+Content.\+Content\+Load\+Exception} & Thrown if a matching texture cant be found for sprite\+Name\\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game2_1_1_game_object_aa811d23c405b9aa28ab922901d0a3002}\label{class_game2_1_1_game_object_aa811d23c405b9aa28ab922901d0a3002}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Do\+Collision@{Do\+Collision}}
+\index{Do\+Collision@{Do\+Collision}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Do\+Collision()}{DoCollision()}}
+{\footnotesize\ttfamily virtual void Game2.\+Game\+Object.\+Do\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}}]{other\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Enabled the \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} to handle collisions in a custom way 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other\+Object} & The \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} that the current \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} collides with\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_game2_1_1_boss_a8331b445604b8737664d58bf02f82ce1}{Game2.\+Boss}}, and \mbox{\hyperlink{class_game2_1_1_enemy_a574b0e99f86ce3a5e126484518020dac}{Game2.\+Enemy}}.
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_ade17d36d8d908594bc434e215052393b}\label{class_game2_1_1_game_object_ade17d36d8d908594bc434e215052393b}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Draw@{Draw}}
+\index{Draw@{Draw}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily virtual void Game2.\+Game\+Object.\+Draw (\begin{DoxyParamCaption}\item[{Sprite\+Batch}]{sprite\+Batch }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Enables the \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} to be drawn. The std. functionality is to draw its sprite. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite\+Batch} & The spritebatch to use for drawing\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game2_1_1_game_object_add937595f4f6918a828af495c08bce3d}\label{class_game2_1_1_game_object_add937595f4f6918a828af495c08bce3d}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Get\+Player\+Health@{Get\+Player\+Health}}
+\index{Get\+Player\+Health@{Get\+Player\+Health}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Get\+Player\+Health()}{GetPlayerHealth()}}
+{\footnotesize\ttfamily void Game2.\+Game\+Object.\+Get\+Player\+Health (\begin{DoxyParamCaption}\item[{int}]{player\+Heath }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_a3379bff2fa0d79ae4eeea4f1e9609064}\label{class_game2_1_1_game_object_a3379bff2fa0d79ae4eeea4f1e9609064}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Get\+Player\+Position@{Get\+Player\+Position}}
+\index{Get\+Player\+Position@{Get\+Player\+Position}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Get\+Player\+Position()}{GetPlayerPosition()}}
+{\footnotesize\ttfamily void Game2.\+Game\+Object.\+Get\+Player\+Position (\begin{DoxyParamCaption}\item[{Vector2}]{Player\+Position }\end{DoxyParamCaption})}
+
+
+
+Gets the position and rotaion of player 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Player\+Position} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game2_1_1_game_object_aae6ebb6727aabac812b8bcc68aba2484}\label{class_game2_1_1_game_object_aae6ebb6727aabac812b8bcc68aba2484}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Get\+Player\+Rot@{Get\+Player\+Rot}}
+\index{Get\+Player\+Rot@{Get\+Player\+Rot}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Get\+Player\+Rot()}{GetPlayerRot()}}
+{\footnotesize\ttfamily void Game2.\+Game\+Object.\+Get\+Player\+Rot (\begin{DoxyParamCaption}\item[{float}]{Player\+Rot }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_a043206229a679b32a1bee4f50e8e7ace}\label{class_game2_1_1_game_object_a043206229a679b32a1bee4f50e8e7ace}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Is\+Colliding@{Is\+Colliding}}
+\index{Is\+Colliding@{Is\+Colliding}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Is\+Colliding()}{IsColliding()}}
+{\footnotesize\ttfamily bool Game2.\+Game\+Object.\+Is\+Colliding (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}}]{other\+Object }\end{DoxyParamCaption})}
+
+
+
+Checks if the current object collides with another object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other\+Object} & The other \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} that should be tested against\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns true if current object collides with other\+Object otherwise false
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_game2_1_1_game_object_a9db72e4b451539bf698e5e1dcd6e12c4}\label{class_game2_1_1_game_object_a9db72e4b451539bf698e5e1dcd6e12c4}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!return\+Player\+Health@{return\+Player\+Health}}
+\index{return\+Player\+Health@{return\+Player\+Health}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{return\+Player\+Health()}{returnPlayerHealth()}}
+{\footnotesize\ttfamily int Game2.\+Game\+Object.\+return\+Player\+Health (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_a360a294d8a55dcc747c44f8cc1aefe28}\label{class_game2_1_1_game_object_a360a294d8a55dcc747c44f8cc1aefe28}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Update@{Update}}
+\index{Update@{Update}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily virtual void Game2.\+Game\+Object.\+Update (\begin{DoxyParamCaption}\item[{Game\+Time}]{game\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Enabled the \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} to have game logic defined 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Time} & The elasped time since last update call\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_game2_1_1_boss_ab120124b7af0edebcb1664e2feaa6590}{Game2.\+Boss}}, \mbox{\hyperlink{class_game2_1_1_enemy_a5e3fdb40fb9884bda064eb671896d264}{Game2.\+Enemy}}, and \mbox{\hyperlink{class_game2_1_1_bullet_a2cf7c4b1a587f2b7e92611d5f6173d3e}{Game2.\+Bullet}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game2_1_1_game_object_ae8a9e4574e531d2fbb2168a155f2ac53}\label{class_game2_1_1_game_object_ae8a9e4574e531d2fbb2168a155f2ac53}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!content@{content}}
+\index{content@{content}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{content}{content}}
+{\footnotesize\ttfamily Content\+Manager Game2.\+Game\+Object.\+content\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_a5bc3b9c88ad0ce089558862431923192}\label{class_game2_1_1_game_object_a5bc3b9c88ad0ce089558862431923192}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Direction@{Direction}}
+\index{Direction@{Direction}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Direction}{Direction}}
+{\footnotesize\ttfamily Vector2 Game2.\+Game\+Object.\+Direction\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_a983dc42585d2eefbc27bd59a2e39a467}\label{class_game2_1_1_game_object_a983dc42585d2eefbc27bd59a2e39a467}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!la@{la}}
+\index{la@{la}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{la}{la}}
+{\footnotesize\ttfamily int Game2.\+Game\+Object.\+la = 700\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_a58bb9938314474563d84b283ab651178}\label{class_game2_1_1_game_object_a58bb9938314474563d84b283ab651178}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Playerhealth@{Playerhealth}}
+\index{Playerhealth@{Playerhealth}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Playerhealth}{Playerhealth}}
+{\footnotesize\ttfamily int Game2.\+Game\+Object.\+Playerhealth\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_a1564c00bda65516c2486548dda1cbc1c}\label{class_game2_1_1_game_object_a1564c00bda65516c2486548dda1cbc1c}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!position@{position}}
+\index{position@{position}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{position}{position}}
+{\footnotesize\ttfamily Vector2 Game2.\+Game\+Object.\+position\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_a8e9bcc1b5d686ef1a49337744fb3c0c1}\label{class_game2_1_1_game_object_a8e9bcc1b5d686ef1a49337744fb3c0c1}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!real\+Timeplayer\+Position@{real\+Timeplayer\+Position}}
+\index{real\+Timeplayer\+Position@{real\+Timeplayer\+Position}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{real\+Timeplayer\+Position}{realTimeplayerPosition}}
+{\footnotesize\ttfamily Vector2 Game2.\+Game\+Object.\+real\+Timeplayer\+Position\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_a8103636301612d46cbfaf40a295cf889}\label{class_game2_1_1_game_object_a8103636301612d46cbfaf40a295cf889}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!real\+Timeplayer\+Rot@{real\+Timeplayer\+Rot}}
+\index{real\+Timeplayer\+Rot@{real\+Timeplayer\+Rot}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{real\+Timeplayer\+Rot}{realTimeplayerRot}}
+{\footnotesize\ttfamily float Game2.\+Game\+Object.\+real\+Timeplayer\+Rot\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_a97359c68fe62861ff5ad578130367493}\label{class_game2_1_1_game_object_a97359c68fe62861ff5ad578130367493}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!rotation@{rotation}}
+\index{rotation@{rotation}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{rotation}{rotation}}
+{\footnotesize\ttfamily float Game2.\+Game\+Object.\+rotation\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_abd502421a8463bab3dc736266be6de26}\label{class_game2_1_1_game_object_abd502421a8463bab3dc736266be6de26}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!sprite@{sprite}}
+\index{sprite@{sprite}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{sprite}{sprite}}
+{\footnotesize\ttfamily Texture2D Game2.\+Game\+Object.\+sprite\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_game2_1_1_game_object_ab6a6d45b66a978f710da6a3ec0588083}\label{class_game2_1_1_game_object_ab6a6d45b66a978f710da6a3ec0588083}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Collision\+Box@{Collision\+Box}}
+\index{Collision\+Box@{Collision\+Box}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Collision\+Box}{CollisionBox}}
+{\footnotesize\ttfamily virtual Rectangle Game2.\+Game\+Object.\+Collision\+Box\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The Collision Box of the \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}. The default box is based upon the \mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} position and sprite size 
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_a7983716d3a4ed64a1a2200642a301079}\label{class_game2_1_1_game_object_a7983716d3a4ed64a1a2200642a301079}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!player\+Rot@{player\+Rot}}
+\index{player\+Rot@{player\+Rot}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{player\+Rot}{playerRot}}
+{\footnotesize\ttfamily float Game2.\+Game\+Object.\+player\+Rot\hspace{0.3cm}{\ttfamily [get]}}
+
+\mbox{\Hypertarget{class_game2_1_1_game_object_af5b0b48192336247e09d52a7fc6f56ad}\label{class_game2_1_1_game_object_af5b0b48192336247e09d52a7fc6f56ad}} 
+\index{Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}!Position@{Position}}
+\index{Position@{Position}!Game2\+::\+Game\+Object@{Game2\+::\+Game\+Object}}
+\subsubsection{\texorpdfstring{Position}{Position}}
+{\footnotesize\ttfamily Vector2 Game2.\+Game\+Object.\+Position\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_object_8cs}{Game\+Object.\+cs}}\end{DoxyCompactItemize}
