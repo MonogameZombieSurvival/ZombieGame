@@ -14,10 +14,6 @@
     <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/bullet.png</File>
     <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/CollisionTexture.png</File>
     <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/ExampleFont.spritefont</File>
-    <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/explosion_1.png</File>
-    <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/explosion_2.png</File>
-    <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/explosion_3.png</File>
-    <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/explosion_4.png</File>
     <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/gameover.png</File>
     <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/KillCount.spritefont</File>
     <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/kisspngbloode.png</File>
@@ -34,10 +30,6 @@
     <File>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/zombiesound.mp3</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

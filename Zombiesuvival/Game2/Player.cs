@@ -10,7 +10,9 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game2
 {
-
+    /// <summary>
+    /// Class that represents the player
+    /// </summary>
     class Player : AnimatedGameObject
     {
         private const float moveSpeed = 100;
@@ -19,7 +21,7 @@ namespace Game2
         GameTimer gameTimer = new GameTimer();
         private double lastShoot = 0;
         private SoundEffectInstance explosionSound;
-        private int killCount;
+     
         public int KillCount
         {
             get
@@ -28,18 +30,12 @@ namespace Game2
             }
         }
 
-
-       
-        private int CheckforSecPast = 1;
-        private int KillSpeedy;
         public Vector2 playerPosition {
             get
             {
                 return position;
             }
                 }
-       
-
 
         private int health;
 
@@ -51,33 +47,29 @@ namespace Game2
                 health = value;
             }
         }
-
-   
-
+        /// <summary>
+        /// Sets the player stats and health
+        /// </summary>
+        /// <param name="content"></param>
         public Player(ContentManager content) : base(1,5, new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2), content, "playerImg")
         {
             this.content = content;
             health = 1000;
-            
-            
         }
 
+        /// <summary>
+        /// Sets controls mouse and keyboard,
+        /// aswell as rotation and gun sound effect
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
-
-
-
-
             MouseState mouse = Mouse.GetState();
                 
-                direction.X = mouse.X - position.X;
+            direction.X = mouse.X - position.X;
             direction.Y = mouse.Y - position.Y;
 
             rotation = (float)Math.Atan2(direction.Y, direction.X);
-
-            
-           
-           
 
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
@@ -98,24 +90,8 @@ namespace Game2
                 position.Y += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
             }
 
-
-            
-            //if (Keyboard.GetState().IsKeyDown(Keys.Right))
-            //{
-            //    rotation += (float)(rotationSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-            //}
-            //if (Keyboard.GetState().IsKeyDown(Keys.Left))
-            //{
-            //    rotation -= (float)(rotationSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-            //}
-
-
-
-
             direction = new Vector2((float)Math.Cos(rotation-MathHelper.Pi*0.0f), (float)Math.Sin(rotation - MathHelper.Pi * 0.0f));
-
             position += direction * (float)(gameTime.ElapsedGameTime.TotalSeconds);
-
 
             lastShoot += gameTime.ElapsedGameTime.TotalSeconds;
             if (mouse.LeftButton == ButtonState.Pressed && lastShoot > 0.3f)
@@ -125,32 +101,7 @@ namespace Game2
                 explosionSound = content.Load<SoundEffect>("8bit_bomb_explosion").CreateInstance();
                 explosionSound.Play();
             }
-
-           
-
             base.Update(gameTime);
         }
-    
-     
-        /// <summary>
-        /// enemys obejt kan attack hvert second hvor play vil misye healt og der komme en bloods animation og sætter til 0 
-        /// </summary>
-        /// <param name="otherObject"></param>
-        public override void DoCollision(GameObject otherObject)
-        {
-
-
-            if (otherObject is Enemy  )
-            {
-
-               
-
-
-
-            }
-
-        }
-
-      
     }
 }

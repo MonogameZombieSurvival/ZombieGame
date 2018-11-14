@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Content;
 namespace Game2
 {
     /// <summary>
-    /// Class that represents a Bullet fired from the spaceship
+    /// Class that represents a Bullet fired from the player
     /// </summary>
     class Bullet : GameObject
     {
@@ -41,7 +41,5 @@ namespace Game2
                 GameWorld.RemoveGameObject(this);
             }
         }
-
-        
     }
 }
