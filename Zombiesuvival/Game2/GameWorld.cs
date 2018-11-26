@@ -22,13 +22,20 @@ namespace Game2
         private static List<GameObject> toBeAdded = new List<GameObject>();
 
 
+        public List<GameObject> solidObejts = new List<GameObject>();
+        private static List<GameObject> toBeAddeSolid = new List<GameObject>();
+
         public List<GameObject> Effects = new List<GameObject>();
         private static List<GameObject> toBeAddedEffect = new List<GameObject>();
         private static List<GameObject> toBeRemoved = new List<GameObject>();
 
-        
+        Solid solid;
+       private BloodEffect blood;
+      
+
         private Player player;
         private SpriteFont font;
+        
         private SpriteFont WaveTimer;
         private SpriteFont KillCount;
         private Texture2D collisionTexture;
@@ -38,10 +45,16 @@ namespace Game2
         private Texture2D backgroundImgEnd;
         private Texture2D backgroundImgWin;
         private Song bossSound;
+        Camera camera;
         Random rand = new Random();
 
         GameTimer gametimer;
         GameTimer Spawnspeed;
+
+        public static int ScreenWith;
+        public static int screenHeight;
+
+
 
         private int ammount = 0;
         private int WaveTimeOutPut;
@@ -118,7 +131,6 @@ namespace Game2
             // _content = Content;
         }
 
-
         public static void AddGameObject(GameObject go)
         {
             toBeAdded.Add(go);
@@ -127,8 +139,11 @@ namespace Game2
         {
             toBeAddedEffect.Add(go);
         }
-
-
+        // /        
+        public static void AddSolid(GameObject go)
+        {
+            toBeAddeSolid.Add(go);
+        }
         public static void RemoveGameObject(GameObject go)
         {
             toBeRemoved.Add(go);
@@ -143,7 +158,9 @@ namespace Game2
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-           // this.IsMouseVisible = true;
+            // this.IsMouseVisible = true;
+            screenHeight = graphics.PreferredBackBufferHeight;
+          
             base.Initialize();
         }
 
@@ -153,22 +170,24 @@ namespace Game2
         /// </summary>
         protected override void LoadContent()
         {
-            backgroundMusic = Content.Load<Song>("zombiesound");
-            MediaPlayer.Play(backgroundMusic);
-            MediaPlayer.IsRepeating = true;
+            //backgroundMusic = Content.Load<Song>("zombiesound");
+            //MediaPlayer.Play(backgroundMusic);
+            //MediaPlayer.IsRepeating = true;
 
-            bossSound = Content.Load<Song>("bosssound");
-            
+            //bossSound = Content.Load<Song>("bosssound");
 
-
+            camera = new Camera(graphics.GraphicsDevice.Viewport);
             //Background Img
             backgroundImg = Content.Load<Texture2D>("bg-grass");
             backgroundImgEnd = Content.Load<Texture2D>("gameover");
             backgroundImgWin = Content.Load<Texture2D>("winscreen");
             Sighte = Content.Load<Texture2D>("sighte");
             player = new Player(Content);
+            solid = new Solid(Content);
             healthHold = player.Health;
             gameObjects.Add(player);
+            gameObjects.Add(solid);
+
             // Create a timer with a two second interval.
          
             // Hook up the Elapsed event for the timer. 
@@ -187,20 +206,9 @@ namespace Game2
            
 
 
-            //Adds randomized asteroids to game
-           
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    gameObjects.Add(new Enemy(Content));
-            //    Thread.Sleep(100);
-            //}
-
-          
-
-
         }
 
-        //go = new AnimatedGameObject(4,20,Content,"HeroStrip");
+   
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -232,7 +240,7 @@ namespace Game2
                     ammount++;
 
                     MediaPlayer.Play(bossSound);
-
+                    
                     gameObjects.Add(new Boss(rand.Next(0, 400), rand.Next(0, 400), Content));
                 }
             }
@@ -263,44 +271,48 @@ namespace Game2
        
             
 
-            if (level == 1)
-            {
-                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.7, 0.01);
-                SpawnAnymens(spawtimeBetwenneEnemys);
-                SpawnBoss(spawtimeBetwenneEnemys, 1);
-            }
-            if (level == 2)
-            {
-
-                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.6, 0.01);
-
-                SpawnAnymens(spawtimeBetwenneEnemys);
-            }
-            if (level == 3)
-            {
-
-                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.5, 0.01);
-
-                SpawnAnymens(spawtimeBetwenneEnemys);
-            }
-
-            if (level == 4)
-            {
-
-                spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.4, 0.01);
-                SpawnAnymens(spawtimeBetwenneEnemys);
+            //if (level == 1)
+            //{
+            //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.7, 0.01);
+            //    SpawnAnymens(spawtimeBetwenneEnemys);
               
-            }
-            if (level == 5)
-            {
+            //}
+            //if (level == 2)
+            //{
 
-               
-            }
+            //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.6, 0.01);
 
+            //    SpawnAnymens(spawtimeBetwenneEnemys);
+            //}
+            //if (level == 3)
+            //{
+
+            //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.5, 0.01);
+
+            //    SpawnAnymens(spawtimeBetwenneEnemys);
+            //}
+
+            //if (level == 4)
+            //{
+
+            //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.4, 0.01);
+            //    SpawnAnymens(spawtimeBetwenneEnemys);
+              
+            //}
+            //if (level == 5)
+            //{
+            //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.3, 0.01);
+            //    SpawnBoss(spawtimeBetwenneEnemys, 1);
+            //}
+
+
+
+            
 
             WaveTimeOutPut = gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
             Setlevel(WaveTimeOutPut);
-            
+           
+                camera.update(player.playerPosition);
                
             foreach (GameObject go in gameObjects)
             {
@@ -309,10 +321,8 @@ namespace Game2
                 go.Update(gameTime);
                
                 go.GetPlayerPosition(player.playerPosition);
-                go.GetPlayerRot(player.playerRot);                      
-                go.GetPlayerHealth(player.Health);
+
                 
-               
                 foreach (GameObject other in gameObjects)
                 {
                     if (go != other && go.IsColliding(other))
@@ -321,15 +331,31 @@ namespace Game2
                     }
                 }
                 
+            }// update gameobejts
+
+
+            foreach (GameObject go in solidObejts)
+            {
+
+                foreach (GameObject other in solidObejts)
+                {
+                    if (go != other && go.IsColliding(other))
+                    {
+                        go.DoCollision(other);
+                    }
+                }
+
             }
+
+
 
             foreach (GameObject go in toBeRemoved)
             {
                 gameObjects.Remove(go);
-            }
+            }/// remove gameobejts
             toBeRemoved.Clear();
-
-
+           
+        
             Effects.AddRange(toBeAddedEffect);
             toBeAddedEffect.Clear();
             gameObjects.AddRange(toBeAdded);
@@ -349,7 +375,10 @@ namespace Game2
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin();
+         
+            spriteBatch.Begin(SpriteSortMode.Deferred,
+                BlendState.AlphaBlend,null,null,null,null,camera.Transform);
+
             spriteBatch.Draw(backgroundImg, new Rectangle(0, 0, 1280, 720), Color.White);
             MouseState mouse = Mouse.GetState();
             NumberOfgameObejts = Effects.Count;
@@ -361,8 +390,7 @@ namespace Game2
 #endif
             }
 
-            spriteBatch.End();
-            spriteBatch.Begin();
+    
 
             foreach (GameObject go in gameObjects)
             {

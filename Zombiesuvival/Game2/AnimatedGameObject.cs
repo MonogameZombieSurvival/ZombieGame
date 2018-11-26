@@ -9,8 +9,6 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game2
 {
-
-
     /// <summary>
     /// Class that enables animated sprites through the use of a sprite strip
     /// </summary>
@@ -43,7 +41,6 @@ namespace Game2
             for (int i = 0; i < frameCount; i++)
             {
                 animationRectangles[i] = new Rectangle(i * (sprite.Width / frameCount), 0, (sprite.Width / frameCount), sprite.Height);
-                
             }
             currentAnimationIndex = 0;
         }
@@ -55,7 +52,6 @@ namespace Game2
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-
             timeElapsed += gameTime.ElapsedGameTime.TotalSeconds;
             currentAnimationIndex = (int)(timeElapsed * animationFPS);
 
@@ -64,16 +60,10 @@ namespace Game2
                 currentAnimationIndex = 0;
                 timeElapsed = 0;
             }
-
         }
-
-
-
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(sprite, position, animationRectangles[currentAnimationIndex], Color.White, rotation, new Vector2(animationRectangles[currentAnimationIndex].Width * 0.5f, animationRectangles[currentAnimationIndex].Height * 0.5f), 1f,new SpriteEffects(),0f);
         }
-
-
     }
 }

@@ -894,3 +894,12 @@ C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\bin\Windows
 C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\winscreen.xnb
 C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\bosssound.wma
 C:\Users\stein\Desktop\Monogame\Game2\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\bosssound.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\sighte.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\bosssound.wma
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\bosssound.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\bosszombie.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\gameover.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\winscreen.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\zombiesound.wma
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\zombiesound.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\Tileset.xnb

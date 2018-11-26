@@ -1,0 +1,109 @@
+\hypertarget{class_game2_1_1_boss}{}\section{Game2.\+Boss Class Reference}
+\label{class_game2_1_1_boss}\index{Game2.\+Boss@{Game2.\+Boss}}
+
+
+Class that represents a boss  
+
+
+Inheritance diagram for Game2.\+Boss\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_game2_1_1_boss}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game2_1_1_boss_ae7aa8e138bbf3cc4ced004d6ef1f82df}{Boss}} (int Hold\+Number, int Spawn\+Distansfrom\+Each\+Other, Content\+Manager \mbox{\hyperlink{class_game2_1_1_game_object_ae8a9e4574e531d2fbb2168a155f2ac53}{content}})
+\begin{DoxyCompactList}\small\item\em Spawns boss at random side of the map \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game2_1_1_boss_aec980cbbd476cb1b9dde1dd901f5d349}{Boss}} (Content\+Manager \mbox{\hyperlink{class_game2_1_1_game_object_ae8a9e4574e531d2fbb2168a155f2ac53}{content}})
+\begin{DoxyCompactList}\small\item\em Spawns boss at random side of the map \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_game2_1_1_boss_ab120124b7af0edebcb1664e2feaa6590}{Update}} (Game\+Time game\+Time)
+\begin{DoxyCompactList}\small\item\em Update method that moves the boss in direction of the player. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_game2_1_1_boss_a8331b445604b8737664d58bf02f82ce1}{Do\+Collision}} (\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}} other\+Object)
+\begin{DoxyCompactList}\small\item\em Collide actions if bullet zombies die and boss loses health. If bullet it gets removed and if player it gets damage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class that represents a boss 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_game2_1_1_boss_ae7aa8e138bbf3cc4ced004d6ef1f82df}\label{class_game2_1_1_boss_ae7aa8e138bbf3cc4ced004d6ef1f82df}} 
+\index{Game2\+::\+Boss@{Game2\+::\+Boss}!Boss@{Boss}}
+\index{Boss@{Boss}!Game2\+::\+Boss@{Game2\+::\+Boss}}
+\subsubsection{\texorpdfstring{Boss()}{Boss()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Game2.\+Boss.\+Boss (\begin{DoxyParamCaption}\item[{int}]{Hold\+Number,  }\item[{int}]{Spawn\+Distansfrom\+Each\+Other,  }\item[{Content\+Manager}]{content }\end{DoxyParamCaption})}
+
+
+
+Spawns boss at random side of the map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & Content Manager for loading resources\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_game2_1_1_boss_aec980cbbd476cb1b9dde1dd901f5d349}\label{class_game2_1_1_boss_aec980cbbd476cb1b9dde1dd901f5d349}} 
+\index{Game2\+::\+Boss@{Game2\+::\+Boss}!Boss@{Boss}}
+\index{Boss@{Boss}!Game2\+::\+Boss@{Game2\+::\+Boss}}
+\subsubsection{\texorpdfstring{Boss()}{Boss()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Game2.\+Boss.\+Boss (\begin{DoxyParamCaption}\item[{Content\+Manager}]{content }\end{DoxyParamCaption})}
+
+
+
+Spawns boss at random side of the map 
+
+
+\begin{DoxyParams}{Parameters}
+{\em content} & Content Manager for loading resources\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game2_1_1_boss_a8331b445604b8737664d58bf02f82ce1}\label{class_game2_1_1_boss_a8331b445604b8737664d58bf02f82ce1}} 
+\index{Game2\+::\+Boss@{Game2\+::\+Boss}!Do\+Collision@{Do\+Collision}}
+\index{Do\+Collision@{Do\+Collision}!Game2\+::\+Boss@{Game2\+::\+Boss}}
+\subsubsection{\texorpdfstring{Do\+Collision()}{DoCollision()}}
+{\footnotesize\ttfamily override void Game2.\+Boss.\+Do\+Collision (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_game2_1_1_game_object}{Game\+Object}}}]{other\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Collide actions if bullet zombies die and boss loses health. If bullet it gets removed and if player it gets damage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other\+Object} & The object it collided with\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_game2_1_1_game_object_aa811d23c405b9aa28ab922901d0a3002}{Game2.\+Game\+Object}}.
+
+\mbox{\Hypertarget{class_game2_1_1_boss_ab120124b7af0edebcb1664e2feaa6590}\label{class_game2_1_1_boss_ab120124b7af0edebcb1664e2feaa6590}} 
+\index{Game2\+::\+Boss@{Game2\+::\+Boss}!Update@{Update}}
+\index{Update@{Update}!Game2\+::\+Boss@{Game2\+::\+Boss}}
+\subsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily override void Game2.\+Boss.\+Update (\begin{DoxyParamCaption}\item[{Game\+Time}]{game\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Update method that moves the boss in direction of the player. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em game\+Time} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_game2_1_1_game_object_a360a294d8a55dcc747c44f8cc1aefe28}{Game2.\+Game\+Object}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Game2/\mbox{\hyperlink{_boss_8cs}{Boss.\+cs}}\end{DoxyCompactItemize}

@@ -70,12 +70,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Boss.cs" />
+    <Compile Include="Camara.cs" />
     <Compile Include="Enemy.cs" />
-    <Compile Include="BloodeEffect.cs" />
-    <Compile Include="Bloood.cs" />
+    <Compile Include="BloodEffect.cs" />
+    <Compile Include="Blood.cs" />
     <Compile Include="Bullet.cs" />
-    <Compile Include="Camera.cs" />
-    <Compile Include="Explosion.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="GameTimer.cs" />
     <Compile Include="GameWorld.cs" />
@@ -84,6 +83,7 @@
     <Compile Include="PlayerBlood.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Solid.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

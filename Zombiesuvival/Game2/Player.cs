@@ -10,16 +10,17 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Game2
 {
-
+    /// <summary>
+    /// 
+    /// </summary>
     class Player : AnimatedGameObject
     {
-        private const float moveSpeed = 100;
+        private const float moveSpeed = 200;
         private const float rotationSpeed = MathHelper.Pi;
         public Vector2 direction = new Vector2();
         GameTimer gameTimer = new GameTimer();
-        private double lastShoot = 0;
-        private SoundEffectInstance explosionSound;
-        private int killCount;
+        private double lastShoot = 0;   
+        private Vector2 bulletposition;     
         public int KillCount
         {
             get
@@ -27,20 +28,13 @@ namespace Game2
                 return KillCount;
             }
         }
-
-
-       
-        private int CheckforSecPast = 1;
-        private int KillSpeedy;
+    
         public Vector2 playerPosition {
             get
             {
                 return position;
             }
-                }
-       
-
-
+                }  
         private int health;
 
         public int Health
@@ -61,7 +55,10 @@ namespace Game2
             
             
         }
-
+        public Vector2 RotateAboutOrigin(Vector2 point, Vector2 origin, float rotation)
+        {
+            return Vector2.Transform(point - origin, Matrix.CreateRotationZ(rotation)) +origin;
+        }
         public override void Update(GameTime gameTime)
         {
 
@@ -99,16 +96,6 @@ namespace Game2
             }
 
 
-            
-            //if (Keyboard.GetState().IsKeyDown(Keys.Right))
-            //{
-            //    rotation += (float)(rotationSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-            //}
-            //if (Keyboard.GetState().IsKeyDown(Keys.Left))
-            //{
-            //    rotation -= (float)(rotationSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-            //}
-
 
 
 
@@ -118,34 +105,61 @@ namespace Game2
 
 
             lastShoot += gameTime.ElapsedGameTime.TotalSeconds;
+            bulletposition = position;
+
+
+            bulletposition.X += 35;
+            bulletposition.Y += 10;
+
+            bulletposition = RotateAboutOrigin(bulletposition, position, rotation);
+
+
             if (mouse.LeftButton == ButtonState.Pressed && lastShoot > 0.3f)
             {
-                GameWorld.AddGameObject(new Bullet(direction, position, content));
+                GameWorld.AddGameObject(new Bullet(direction, bulletposition, content));
                 lastShoot = 0;
-                explosionSound = content.Load<SoundEffect>("8bit_bomb_explosion").CreateInstance();
-                explosionSound.Play();
+                //explosionSound = content.Load<SoundEffect>("8bit_bomb_explosion").CreateInstance();
+                //explosionSound.Play();
             }
 
            
 
             base.Update(gameTime);
         }
-    
-     
+
+
         /// <summary>
         /// enemys obejt kan attack hvert second hvor play vil misye healt og der komme en bloods animation og sætter til 0 
         /// </summary>
         /// <param name="otherObject"></param>
-        public override void DoCollision(GameObject otherObject)
+        public override void DoCollision( GameObject otherObject)
         {
-
-
-            if (otherObject is Enemy  )
+            if (otherObject is Solid  )
             {
 
-               
+                if (Keyboard.GetState().IsKeyDown(Keys.D))
+                {
+                    position.X -= 4;
+                }else if( Keyboard.GetState().IsKeyDown(Keys.W))
+                {
+                   
+                    position.Y -= -4;
+                }
 
+                if (Keyboard.GetState().IsKeyDown(Keys.A))
+                {
+                    position.X += 4;
+                }
 
+                if (Keyboard.GetState().IsKeyDown(Keys.W))
+                {
+                    position.Y += 4;
+                }
+
+                if (Keyboard.GetState().IsKeyDown(Keys.S))
+                {
+                    position.Y -= 4;
+                }
 
             }
 

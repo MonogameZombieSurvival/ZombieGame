@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/zombiesound.mp3</SourceFile>
-  <SourceTime>2018-11-13T10:09:30.4158757+01:00</SourceTime>
-  <DestFile>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/bin/Windows/Content/zombiesound.xnb</DestFile>
-  <DestTime>2018-11-13T12:36:04.7226452+01:00</DestTime>
+  <SourceFile>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombiesound.mp3</SourceFile>
+  <SourceTime>2018-11-13T23:19:15.9121863+01:00</SourceTime>
+  <DestFile>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bin/Windows/Content/zombiesound.xnb</DestFile>
+  <DestTime>2018-11-20T15:28:40.8052534+01:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2018-09-23T23:55:52+02:00</ImporterTime>
   <Processor>SongProcessor</Processor>
@@ -15,6 +15,6 @@
   <Dependencies />
   <BuildAsset />
   <BuildOutput>
-    <string>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/bin/Windows/Content/zombiesound.wma</string>
+    <string>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bin/Windows/Content/zombiesound.wma</string>
   </BuildOutput>
 </PipelineBuildEvent>

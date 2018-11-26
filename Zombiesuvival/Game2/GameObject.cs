@@ -11,16 +11,15 @@ namespace Game2
 {
    public class GameObject
     {
-
         protected Texture2D sprite;
         protected float rotation;
         protected Vector2 Direction;
         protected Vector2 position;
         public Vector2 Position { get => position; }
         protected Vector2 realTimeplayerPosition;
-        protected float realTimeplayerRot;
+
         protected int Playerhealth;
-        protected int la= 700;
+     
         protected ContentManager content;
         public float playerRot
         {
@@ -39,8 +38,10 @@ namespace Game2
                 return new Rectangle((int)(position.X - sprite.Width*0.5), (int)(position.Y-sprite.Height*0.5), sprite.Width, sprite.Height);
             }
         }
-
-
+        public Rectangle Rectangle
+        {
+            get { return new Rectangle((int)Position.X, (int)Position.Y, sprite.Width, sprite.Height); }
+        }
 
         /// <summary>
         /// Checks if the current object collides with another object
@@ -72,25 +73,20 @@ namespace Game2
             this.content = content;
         }
 
-
+        /// <summary>
+        /// Gets the position and rotaion of player
+        /// </summary>
+        /// <param name="PlayerPosition"></param>
         public void GetPlayerPosition(Vector2 PlayerPosition)
         {
               realTimeplayerPosition = PlayerPosition;
         }
-        public void GetPlayerRot(float PlayerRot)
-        {
-            realTimeplayerRot = PlayerRot;
-        }
+     
         public void GetPlayerHealth(int playerHeath)
         {
             Playerhealth = playerHeath;
         }
-        
-        public int returnPlayerHealth()
-        {
-           
-            return la;
-        }
+     
         /// <summary>
         /// Constructor the sets the staring position of the GameObject
         /// </summary>
@@ -119,10 +115,7 @@ namespace Game2
         /// <param name="spriteBatch">The spritebatch to use for drawing</param>
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-       
             spriteBatch.Draw(sprite, position, null,Color.White, rotation,new Vector2(sprite.Width*0.5f, sprite.Height * 0.5f), 1f, new SpriteEffects(),0f );
-
- 
         }
     }
 }

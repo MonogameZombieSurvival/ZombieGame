@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/gameover.png</SourceFile>
-  <SourceTime>2018-11-12T20:32:36.048756+01:00</SourceTime>
-  <DestFile>C:/Users/stein/Desktop/Monogame/Game2/ZombieGame/Zombiesuvival/Game2/Content/bin/Windows/Content/gameover.xnb</DestFile>
-  <DestTime>2018-11-13T12:36:03.5063811+01:00</DestTime>
+  <SourceFile>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/gameover.png</SourceFile>
+  <SourceTime>2018-11-13T23:19:15.8602389+01:00</SourceTime>
+  <DestFile>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bin/Windows/Content/gameover.xnb</DestFile>
+  <DestTime>2018-11-20T15:28:39.5055827+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-09-23T23:55:52+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

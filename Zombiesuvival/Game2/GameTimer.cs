@@ -14,7 +14,7 @@ namespace Game2
         private double GameTimerSec;
         private int WaveTimerSec;
         private int WaveTime = 0;
-        private int WaveTimeOutPut;
+  
 
         private float WaveTimermilisec;
         private double WaveTimeDouble ;

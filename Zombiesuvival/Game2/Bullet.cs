@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Content;
 namespace Game2
 {
     /// <summary>
-    /// Class that represents a Bullet fired from the spaceship
+    /// Class that represents a Bullet fired from the player
     /// </summary>
     class Bullet : GameObject
     {
@@ -26,7 +26,7 @@ namespace Game2
         {
             this.direction = direction;
             this.direction.Normalize();
-            startPosition.X = 100;
+          
         }
 
         /// <summary>
@@ -40,8 +40,15 @@ namespace Game2
             {
                 GameWorld.RemoveGameObject(this);
             }
-        }
 
-        
+            
+        }
+        public override void DoCollision(GameObject otherObject)
+        {
+            if (otherObject is Solid)
+            {
+                GameWorld.RemoveGameObject(this);
+            }
+        }
     }
 }
