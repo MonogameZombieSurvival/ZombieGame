@@ -31,14 +31,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="169896">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="171944">
       <assemblyIdentity name="Game2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>DuShRUEchTdXG/YpyPf5yikMxXPaxUuvXFynty3sULE=</dsig:DigestValue>
+        <dsig:DigestValue>0vy7qOSnXiR0THQRzQUTnt/8XNclgunY66yixBgUMYk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -703,6 +703,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>vtOFC2ggdd7yZp9S5Sb5ttil2MALhOTKQiDehCM+wTo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\water.xnb" size="640085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>fQU5cI3kqSfBfPZgVF+oRTYED1WQKYMAMcdepJM4fw4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\WaveTimer.xnb" size="21524">

@@ -15,9 +15,15 @@ namespace Game2
         protected float rotation;
         protected Vector2 Direction;
         protected Vector2 position;
-        public Vector2 Position { get => position; }
+        public Vector2 Position {
+            get => position;
+            set
+            {
+                position = value;
+            }
+        }
         protected Vector2 realTimeplayerPosition;
-
+        protected Vector2 sightposition;
         protected int Playerhealth;
      
         protected ContentManager content;
@@ -87,6 +93,13 @@ namespace Game2
             Playerhealth = playerHeath;
         }
      
+        public void GetSightePosition(Vector2 sigte)
+        {
+            sightposition = sigte;
+            
+        }
+
+
         /// <summary>
         /// Constructor the sets the staring position of the GameObject
         /// </summary>

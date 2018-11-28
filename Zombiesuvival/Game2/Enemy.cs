@@ -24,7 +24,7 @@ namespace Game2
         private int holdNumber;
         private int damnge = 10;
         private double LastAttck=0;
-
+        private string Enemyname;
         /// <summary>
         /// Spawns zombies at random sides of the map
         /// </summary>
@@ -48,7 +48,7 @@ namespace Game2
                 position = new Vector2(GameWorld.ScreenSize.Width + rand.Next(0, 200), rand.Next(GameWorld.ScreenSize.Height));//from right side
             }
         }
-
+      
         /// <summary>
         /// Spawns zombies at random sides of the map
         /// </summary>
@@ -58,6 +58,31 @@ namespace Game2
             holdNumber = rand.Next(0, 400);
             Thread.Sleep(100);
           
+            if (holdNumber <= 100)
+            {
+                position = new Vector2(rand.Next(-200, 0), rand.Next(GameWorld.ScreenSize.Height));// from left side
+            }
+            else if (holdNumber >= 100 && holdNumber <= 200)
+            {
+                position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), rand.Next(-200, 0));//randowmtop
+            }
+            else if (holdNumber >= 200 && holdNumber <= 300)
+            {
+                position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), GameWorld.ScreenSize.Height + rand.Next(0, 200));//form
+            }
+            else if (holdNumber >= 300 && holdNumber <= 400)
+            {
+                position = new Vector2(GameWorld.ScreenSize.Width + rand.Next(0, 200), rand.Next(GameWorld.ScreenSize.Height));//from right side
+            }
+        }
+
+
+
+        public Enemy(ContentManager content, string name) : base(content, name)
+        {
+            holdNumber = rand.Next(0, 400);
+            Thread.Sleep(100);
+
             if (holdNumber <= 100)
             {
                 position = new Vector2(rand.Next(-200, 0), rand.Next(GameWorld.ScreenSize.Height));// from left side

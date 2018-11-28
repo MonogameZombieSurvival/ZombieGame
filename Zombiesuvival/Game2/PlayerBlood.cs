@@ -17,6 +17,9 @@ namespace Game2
         /// <param name="size"></param>
         /// <param name="startPosition"></param>
         /// <param name="content"></param>
+        /// 
+
+
         public PlayerBlood(int size, Vector2 startPosition, ContentManager content) : base(20, 60, startPosition, content, "PlayerBlood")
         {
         

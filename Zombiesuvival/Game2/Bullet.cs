@@ -15,7 +15,8 @@ namespace Game2
     {
         private Vector2 direction;
         private const float movementSpeed = 300;
-
+        GameTimer GameTimer = new GameTimer();
+        private int bulletFlyTime;
         /// <summary>
         /// Constructor for a Bullet
         /// </summary>
@@ -36,17 +37,23 @@ namespace Game2
         public override void Update(GameTime gameTime)
         {
             position += direction * (float)(movementSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-            if (!GameWorld.ScreenSize.Intersects(CollisionBox))
+       
+           bulletFlyTime= GameTimer.gameTimerSec(gameTime,2 );
+            if (bulletFlyTime < 1)
             {
                 GameWorld.RemoveGameObject(this);
             }
-
             
         }
         public override void DoCollision(GameObject otherObject)
         {
+
+           
+            
+
             if (otherObject is Solid)
             {
+                
                 GameWorld.RemoveGameObject(this);
             }
         }

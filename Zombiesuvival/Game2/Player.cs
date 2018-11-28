@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 namespace Game2
@@ -15,10 +16,15 @@ namespace Game2
     /// </summary>
     class Player : AnimatedGameObject
     {
+
+        Viewport Viewport;
         private const float moveSpeed = 200;
-        private const float rotationSpeed = MathHelper.Pi;
+    
         public Vector2 direction = new Vector2();
-        GameTimer gameTimer = new GameTimer();
+        /// <summary>
+        /// Classer
+        /// </summary>
+        GameTimer gameTimer = new GameTimer();           
         private double lastShoot = 0;   
         private Vector2 bulletposition;     
         public int KillCount
@@ -28,7 +34,16 @@ namespace Game2
                 return KillCount;
             }
         }
-    
+        private Vector2 sightpostotion;
+        public Vector2 Sightpostotion {
+            get
+            {
+                return sightpostotion;
+            }
+        }
+
+
+
         public Vector2 playerPosition {
             get
             {
@@ -52,6 +67,7 @@ namespace Game2
         {
             this.content = content;
             health = 1000;
+           
             
             
         }
@@ -59,59 +75,60 @@ namespace Game2
         {
             return Vector2.Transform(point - origin, Matrix.CreateRotationZ(rotation)) +origin;
         }
+
+        
         public override void Update(GameTime gameTime)
         {
 
-
-
-
+      
             MouseState mouse = Mouse.GetState();
-                
-                direction.X = mouse.X - position.X;
-            direction.Y = mouse.Y - position.Y;
-
+            direction.X = mouse.X - 1280/2 ;
+            direction.Y = mouse.Y - 720 / 2; 
             rotation = (float)Math.Atan2(direction.Y, direction.X);
+            direction = new Vector2((float)Math.Cos(rotation - MathHelper.Pi * 0.0f), (float)Math.Sin(rotation - MathHelper.Pi * 0.0f));
 
-            
-           
-           
+            position += direction * (float)(gameTime.ElapsedGameTime.TotalSeconds);
 
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
                 position.X -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+                direction.X -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
             }
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 position.X += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+                direction.X += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
                 position.Y -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+                direction.X -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
                 position.Y += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+              direction.X += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
             }
-
-
-
-
-
-            direction = new Vector2((float)Math.Cos(rotation-MathHelper.Pi*0.0f), (float)Math.Sin(rotation - MathHelper.Pi * 0.0f));
-
-            position += direction * (float)(gameTime.ElapsedGameTime.TotalSeconds);
 
 
             lastShoot += gameTime.ElapsedGameTime.TotalSeconds;
             bulletposition = position;
-
+            sightposition = position;
 
             bulletposition.X += 35;
             bulletposition.Y += 10;
 
             bulletposition = RotateAboutOrigin(bulletposition, position, rotation);
+
+            sightposition.X += 100;
+            sightposition.Y  += 10;
+
+            sightpostotion = RotateAboutOrigin(sightposition, position, rotation);
+
+           
+
 
 
             if (mouse.LeftButton == ButtonState.Pressed && lastShoot > 0.3f)

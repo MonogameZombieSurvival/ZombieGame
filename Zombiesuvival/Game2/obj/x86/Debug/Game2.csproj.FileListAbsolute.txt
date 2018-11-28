@@ -903,3 +903,4 @@ C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x8
 C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\zombiesound.wma
 C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\zombiesound.xnb
 C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\Tileset.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\water.xnb

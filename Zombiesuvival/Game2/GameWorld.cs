@@ -17,10 +17,11 @@ namespace Game2
     {
         
         private SpriteBatch spriteBatch;
-
+        /// <summary>
+        ///     lists a obejts
+        /// </summary>
         public List<GameObject> gameObjects = new List<GameObject>();
         private static List<GameObject> toBeAdded = new List<GameObject>();
-
 
         public List<GameObject> solidObejts = new List<GameObject>();
         private static List<GameObject> toBeAddeSolid = new List<GameObject>();
@@ -28,14 +29,24 @@ namespace Game2
         public List<GameObject> Effects = new List<GameObject>();
         private static List<GameObject> toBeAddedEffect = new List<GameObject>();
         private static List<GameObject> toBeRemoved = new List<GameObject>();
-
-        Solid solid;
-       private BloodEffect blood;
-      
-
-        private Player player;
-        private SpriteFont font;
+       
         
+
+        /// <summary>
+        ///     Classes
+        /// </summary>
+        private Solid solid;
+        private BloodEffect blood;
+        private Player player;
+        private GameTimer gametimer;
+        private GameTimer Spawnspeed;
+        private Levels level;
+        private sighte sighte;
+
+        /// <summary>
+        /// Texttures,song, and text
+        /// </sTummary>
+        private SpriteFont font;      
         private SpriteFont WaveTimer;
         private SpriteFont KillCount;
         private Texture2D collisionTexture;
@@ -48,17 +59,19 @@ namespace Game2
         Camera camera;
         Random rand = new Random();
 
-        GameTimer gametimer;
-        GameTimer Spawnspeed;
-
+        
+        
+        
+        /// <summary>
+        /// fileds / varibler
+        /// </summary>
         public static int ScreenWith;
         public static int screenHeight;
 
-
-
+       
         private int ammount = 0;
         private int WaveTimeOutPut;
-        private int level =1;
+        
         private int NumberOfgameObejts;
         static private int healthHold;
         public int HealhHold
@@ -135,15 +148,26 @@ namespace Game2
         {
             toBeAdded.Add(go);
         }
+        /// <summary>
+        /// ass and grathic effect wich the player can on top on ;
+        /// </summary>
+        /// <param name="go"></param>
         public static void AddEFfect(GameObject go)
         {
             toBeAddedEffect.Add(go);
         }
-        // /        
+        /// <summary>
+        ///    adds solid obejt a obejt the player go thoruth
+        /// </summary>
+        /// <param name="go"></param>
         public static void AddSolid(GameObject go)
         {
             toBeAddeSolid.Add(go);
         }
+        /// <summary>
+        ///        adds to obejts there well be removed
+        /// </summary>
+        /// <param name="go"></param>
         public static void RemoveGameObject(GameObject go)
         {
             toBeRemoved.Add(go);
@@ -158,7 +182,7 @@ namespace Game2
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            // this.IsMouseVisible = true;
+             this.IsMouseVisible = true;
             screenHeight = graphics.PreferredBackBufferHeight;
           
             base.Initialize();
@@ -182,33 +206,70 @@ namespace Game2
             backgroundImgEnd = Content.Load<Texture2D>("gameover");
             backgroundImgWin = Content.Load<Texture2D>("winscreen");
             Sighte = Content.Load<Texture2D>("sighte");
+
+
             player = new Player(Content);
-            solid = new Solid(Content);
+            sighte = new sighte(Content);
+
+
             healthHold = player.Health;
             gameObjects.Add(player);
-            gameObjects.Add(solid);
+            gameObjects.Add(sighte);
+
+            level = new Levels();
+
+            switch (level.Level)
+            {
+
+                case 1:
+                    Loadlvl1();
+                    break;
+                case 2:
+                   
+                    break;
+
+
+                default:
+
+                    break;
+            }
+            if (level.Level == 1)
+            
+
+
 
             // Create a timer with a two second interval.
-         
+
             // Hook up the Elapsed event for the timer. 
-                     
+
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             font = Content.Load<SpriteFont>("ExampleFont");
             WaveTimer = Content.Load<SpriteFont>("WaveTimer");
             KillCount = Content.Load<SpriteFont>("KillCount");
-
             collisionTexture = Content.Load<Texture2D>("CollisionTexture");
-
 
             Spawnspeed = new GameTimer();
             gametimer = new GameTimer();
            
-
-
         }
 
+
+        public void Loadlvl1()
+        {
+
+            int X;
+            int Y;
+            solid = new Solid(Content);
+            backgroundImg = Content.Load<Texture2D>("bg-grass");
+
+            gameObjects.Add(new Solid(Content, "Tileset", 250, 250));
+            gameObjects.Add(new Solid(Content, "Tileset", 400, 250));
+         
+                gameObjects.Add(new Solid(Content, "water",1100,600));
    
+        }
+
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -231,7 +292,10 @@ namespace Game2
               gameObjects.Add(new Enemy(rand.Next(0, 400), rand.Next(0, 400), Content));                                       
             }          
         }
-
+        /// <summary>
+        /// summons boss
+        /// </summary>
+ 
         public void SpawnBoss(double spawnCircle, int ammountBoss)
         {
             if (spawnCircle <= 0.0001)
@@ -245,15 +309,11 @@ namespace Game2
                 }
             }
         }
-
-        public void Setlevel(int WavetimeOutput)
-        {
-            if(WaveTimeOutPut == 0)
-            {
-                level += 1;
-            }
-
-        }
+        /// <summary>
+        /// sets level
+        /// </summary>
+        /// <param name="WavetimeOutput"></param>
+     
 
 
 
@@ -268,23 +328,23 @@ namespace Game2
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-       
-            
 
-            //if (level == 1)
+            //// gameObjects = level1.GameObejts(gameTime, level,gameObjects);
+           
+            //if (level.Level == 1)
             //{
             //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.7, 0.01);
             //    SpawnAnymens(spawtimeBetwenneEnemys);
-              
+
             //}
-            //if (level == 2)
+            //if (level.Level == 2)
             //{
 
             //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.6, 0.01);
 
             //    SpawnAnymens(spawtimeBetwenneEnemys);
             //}
-            //if (level == 3)
+            //if (level.Level == 3)
             //{
 
             //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.5, 0.01);
@@ -292,14 +352,14 @@ namespace Game2
             //    SpawnAnymens(spawtimeBetwenneEnemys);
             //}
 
-            //if (level == 4)
+            //if (level.Level == 4)
             //{
 
             //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.4, 0.01);
             //    SpawnAnymens(spawtimeBetwenneEnemys);
-              
+
             //}
-            //if (level == 5)
+            //if (level.Level == 5)
             //{
             //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.3, 0.01);
             //    SpawnBoss(spawtimeBetwenneEnemys, 1);
@@ -307,13 +367,15 @@ namespace Game2
 
 
 
-            
 
-            WaveTimeOutPut = gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
-            Setlevel(WaveTimeOutPut);
+
+            WaveTimeOutPut = gametimer.gameTimerSec(gameTime, 29999);// level clock// spawn clock
+               level.Setlevel(WaveTimeOutPut);
            
                 camera.update(player.playerPosition);
                
+
+
             foreach (GameObject go in gameObjects)
             {
 
@@ -322,7 +384,9 @@ namespace Game2
                
                 go.GetPlayerPosition(player.playerPosition);
 
-                
+                go.GetSightePosition(player.Sightpostotion);
+
+                // check for colisions
                 foreach (GameObject other in gameObjects)
                 {
                     if (go != other && go.IsColliding(other))
@@ -332,6 +396,8 @@ namespace Game2
                 }
                 
             }// update gameobejts
+
+
 
 
             foreach (GameObject go in solidObejts)
@@ -375,12 +441,26 @@ namespace Game2
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-         
+
+
+           
+
             spriteBatch.Begin(SpriteSortMode.Deferred,
                 BlendState.AlphaBlend,null,null,null,null,camera.Transform);
 
-            spriteBatch.Draw(backgroundImg, new Rectangle(0, 0, 1280, 720), Color.White);
-            MouseState mouse = Mouse.GetState();
+
+             if (level.Level == 1)
+            {
+
+                DrawLvl1();
+            }
+             
+
+
+            player.Draw(spriteBatch);
+
+
+
             NumberOfgameObejts = Effects.Count;
             foreach(GameObject GO in Effects)
             {
@@ -390,7 +470,13 @@ namespace Game2
 #endif
             }
 
-    
+               foreach (GameObject GO in solidObejts)
+            {
+                GO.Draw(spriteBatch);
+#if DEBUG
+                DrawCollisionBox(GO);
+#endif
+            }
 
             foreach (GameObject go in gameObjects)
             {
@@ -400,17 +486,20 @@ namespace Game2
 #endif
             }
 
-
             if (healthHold <= 0)
             {
-                spriteBatch.Draw(backgroundImgEnd, new Rectangle(0, 0, 1280, 720), Color.White);
+
+                        spriteBatch.Draw(backgroundImgEnd, new Rectangle(0, 0, 1280, 720), Color.White);
+                
+                
+              
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                 {
                     gameObjects.Clear();
                     Effects.Clear();
                     gameObjects.Add(player = new Player(Content));
                     gametimer = new GameTimer();
-                    level = 1;
+                    level.Level = 1;
                     kills = 0;
                     healthHold = 1000;
                     gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
@@ -418,7 +507,10 @@ namespace Game2
               
 
                 }
-            if (level == 5)
+
+
+
+            if (level.Level == 5)
             {
                 spriteBatch.Draw(backgroundImgWin, new Rectangle(0, 0, 1280, 720), Color.White);
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
@@ -427,7 +519,7 @@ namespace Game2
                     Effects.Clear();
                     gameObjects.Add(player = new Player(Content));
                     gametimer = new GameTimer();
-                    level = 1;
+                    
                     kills = 0;
                     healthHold = 1000;
                     gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
@@ -435,15 +527,70 @@ namespace Game2
 
                 //Exit();
             }
-            if (healthHold > 0 || level == 5) {
+
+
+            if (healthHold > 0 || level.Level == 5) {
                 spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(580, 5), Color.White);
                 spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5, 5), Color.White);
                 spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
             }
-            spriteBatch.Draw(Sighte, new Vector2(mouse.X, mouse.Y), null, Color.White);
+
+            
             spriteBatch.End();
             base.Draw(gameTime);
+            
         }
+
+
+        public void DrawLvl1()
+        {
+            int x=0;
+            int y=0;
+
+            for (int i = 0; i < 10; i++)
+            {
+
+               
+                for (int l = 0; l <10; l++)
+                {
+
+                    spriteBatch.Draw(backgroundImg, new Rectangle(x, y, 1000, 1000), Color.White);
+
+
+                 
+                    y = + 1000;
+                }
+                x += 1000;
+                y = 0;
+            }
+
+     
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void DrawCollisionBox(GameObject go)
         {

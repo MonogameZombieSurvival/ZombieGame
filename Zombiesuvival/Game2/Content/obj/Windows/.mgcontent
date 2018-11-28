@@ -25,12 +25,14 @@
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/smallbullet.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/survivor-idle_handgun_0.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/Tileset.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/water.jpg</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/WaveTimer.spritefont</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/winscreen.jpg</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombiesmall.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombiesound.mp3</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
