@@ -18,7 +18,7 @@ namespace Game2
     {
 
         Viewport Viewport;
-        private const float moveSpeed = 200;
+        private const float moveSpeed = 500;
     
         public Vector2 direction = new Vector2();
         /// <summary>
@@ -83,7 +83,7 @@ namespace Game2
       
             MouseState mouse = Mouse.GetState();
             direction.X = mouse.X - 1280/2 ;
-            direction.Y = mouse.Y - 720 / 2; 
+            direction.Y = mouse.Y - 720/2; 
             rotation = (float)Math.Atan2(direction.Y, direction.X);
             direction = new Vector2((float)Math.Cos(rotation - MathHelper.Pi * 0.0f), (float)Math.Sin(rotation - MathHelper.Pi * 0.0f));
 
@@ -92,42 +92,43 @@ namespace Game2
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
                 position.X -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-                direction.X -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+               
             }
             if (Keyboard.GetState().IsKeyDown(Keys.D))
             {
                 position.X += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-                direction.X += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+               
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.W))
             {
                 position.Y -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-                direction.X -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+                
             }
 
             if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
                 position.Y += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-              direction.X += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+              
             }
 
 
             lastShoot += gameTime.ElapsedGameTime.TotalSeconds;
             bulletposition = position;
-            sightposition = position;
+            //sightposition = position;
 
             bulletposition.X += 35;
             bulletposition.Y += 10;
 
             bulletposition = RotateAboutOrigin(bulletposition, position, rotation);
 
-            sightposition.X += 100;
-            sightposition.Y  += 10;
+            //sightposition.X += 100;
+          //  sightposition.Y  += 10;
 
-            sightpostotion = RotateAboutOrigin(sightposition, position, rotation);
+            //sightpostotion = RotateAboutOrigin(sightposition, position, rotation);
 
-           
+            sightposition.X = mouse.X;
+            sightposition.Y = mouse.Y;
 
 
 
@@ -151,7 +152,7 @@ namespace Game2
         /// <param name="otherObject"></param>
         public override void DoCollision( GameObject otherObject)
         {
-            if (otherObject is Solid  )
+            if (otherObject is Solid ||otherObject is NoTwalkerbelObejt  )
             {
 
                 if (Keyboard.GetState().IsKeyDown(Keys.D))

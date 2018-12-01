@@ -904,3 +904,7 @@ C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x8
 C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\zombiesound.xnb
 C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\Tileset.xnb
 C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\water.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\bg-grass2000'2.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\1366x768-bridge-wood-square_0.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\bridge-wood-square_0.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\pirate_ship_00000.xnb

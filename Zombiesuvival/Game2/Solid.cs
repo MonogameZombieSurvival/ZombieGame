@@ -11,14 +11,7 @@ namespace Game2
 {
     class Solid: AnimatedGameObject
     {
-        /// <summary>
-        /// Adds blood effect when zombies die
-        /// </summary>
-        /// <param name="size"></param>
-        /// <param name="startPosition"></param>
-        /// <param name="content"></param>
-        /// 
-
+    
 
         public Solid(ContentManager content) : base(1, 5, content, "Tileset")
         {

@@ -14,74 +14,11 @@ namespace Game2
 {
     class Levels
     {
-        protected ContentManager content;
-        private SpriteBatch spriteBatch;
-        private Texture2D backgroundImg;
-    
-
-        //        public List<GameObject> gameObjects = new List<GameObject>();
-        //        private static List<GameObject> toBeAdded = new List<GameObject>();
-
-        //        public List<GameObject> solidObejts = new List<GameObject>();
-        //        private static List<GameObject> toBeAddeSolid = new List<GameObject>();
-
-        //        public List<GameObject> Effects = new List<GameObject>();
-        //        private static List<GameObject> toBeAddedEffect = new List<GameObject>();
-        //        private static List<GameObject> toBeRemoved = new List<GameObject>();
-
-        //        private Player player;
-
-
-
-        //        Random rand = new Random();
-
-        //        GameTimer gametimer;
-        //        GameTimer Spawnspeed;
-
-        //        public static int ScreenWith;
-        //        public static int screenHeight;
-
-
-
-        //        private int ammount = 0;
-        //        private int WaveTimeOutPut;
-
-        //        private int NumberOfgameObejts;
-        //        static private int healthHold;
-        //        public int HealhHold
-        //        {
-
-        //            get
-        //            {
-        //                return healthHold;
-        //            }
-        //        }
-
-        //        static private int kills;
-        //        public int Kills
-        //        {
-        //            get
-        //            {
-        //                return kills;
-
-        //            }
-        //        }
-        //        private double spawtimeBetwenneEnemys;
-
-        //        private static GraphicsDeviceManager graphics;
-
-        //        public static Rectangle ScreenSize
-        //        {
-        //            get
-        //            {
-        //                return graphics.GraphicsDevice.Viewport.Bounds;
-        //            }
-        //        }
-
+     
 
         private int level = 1;
         private GraphicsDevice graphicsDevice;
-
+        private ContentManager contents;
         public int Level
         {
             get{
@@ -92,9 +29,102 @@ namespace Game2
                 level = value;
             }
         }
+        public Levels(ContentManager content, int level)
+        {
+
+            contents = content;
+            int X;
+            int Y;
+
+            if(level == 1)
+            {
+                addGround();
+                addwater();
+                addobejt();
+                addEnemy();
+
+            }
+            
 
 
-      
+
+        }
+
+
+
+
+
+        public void addGround()
+        {
+
+            string ground = "bg-grass2000'2";
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 0, 0));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 0, 2000));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 2000, 0));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 2000, 2000));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 0, -2000));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, -2000, 0));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 2000, -2000));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, -2000, 2000));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, -2000, -2000));
+
+        }
+
+
+        public void addwater() {
+
+            string water = "water";
+
+            if (level == 1)
+            {
+                int Y = 600;
+              
+                GameWorld.AddGameObject(new NoTwalkerbelObejt(contents, water, 0, Y));
+                GameWorld.AddGameObject(new NoTwalkerbelObejt(contents, water, 400, Y));
+                GameWorld.AddGameObject(new NoTwalkerbelObejt(contents, water, 800, Y));
+                GameWorld.AddGameObject(new NoTwalkerbelObejt(contents, water, 1200, Y));
+                GameWorld.AddGameObject(new NoTwalkerbelObejt(contents, water, 1600, Y));
+                GameWorld.AddGameObject(new NoTwalkerbelObejt(contents, water, 2000, Y));
+                GameWorld.AddGameObject(new NoTwalkerbelObejt(contents, water, -400, Y));
+                GameWorld.AddGameObject(new NoTwalkerbelObejt(contents, water, -800, Y));
+                GameWorld.AddGameObject(new NoTwalkerbelObejt(contents, water, -1200, Y));
+                GameWorld.AddGameObject(new NoTwalkerbelObejt(contents, water, -1600, Y));
+                GameWorld.AddGameObject(new NoTwalkerbelObejt(contents, water, -2000, Y));
+            }
+
+
+
+        }
+
+        public void addobejt()
+        {
+            if (level == 1)
+            {
+                NoneSolidObejts Bridge = new NoneSolidObejts(contents, "bridge-wood-square_0", 670, 520);
+                NoneSolidObejts ship = new NoneSolidObejts(contents, "pirate_ship_00000", 520, 560);
+                GameWorld.AddGameObject(Bridge);
+                GameWorld.AddGameObject(ship);
+            }
+        } 
+
+        public void addEnemy()
+        {
+
+            int y = 400;
+            for (int i = 0; i < 10; i++)
+            {
+
+               
+                GameWorld.AddGameObject(new Enemy(contents, "zombiesmall", 400, y));
+                y -= 100;
+                Thread.Sleep(100);
+                
+            }
+            
+        }
+
+
+
         public void Setlevel(int WavetimeOutput)
         {
             if (WavetimeOutput == 0)
@@ -103,10 +133,9 @@ namespace Game2
             }           
         }
 
-        protected virtual void LoadContent()
+        public virtual void LoadContent()
         {
-            spriteBatch = new SpriteBatch(graphicsDevice);
-            backgroundImg = content.Load<Texture2D>("bg-grass");
+           
         }
         protected virtual void Update(GameTime gameTime)
         {

@@ -80,6 +80,8 @@
     <Compile Include="GameWorld.cs" />
     <Compile Include="AnimatedGameObject.cs" />
     <Compile Include="Levels.cs" />
+    <Compile Include="NoneSolidObejts.cs" />
+    <Compile Include="NoTwalkerbelObejt.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerBlood.cs" />
     <Compile Include="Program.cs" />

@@ -31,14 +31,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="171944">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="172968">
       <assemblyIdentity name="Game2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>0vy7qOSnXiR0THQRzQUTnt/8XNclgunY66yixBgUMYk=</dsig:DigestValue>
+        <dsig:DigestValue>9SKKAe0aDMC447yWMrM4X3vXfbxC1qsQGoDvEzs5OgA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -138,6 +138,15 @@
       </hash>
     </dependentAssembly>
   </dependency>
+  <file name="Content\1366x768-bridge-wood-square_0.xnb" size="4196437">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Y4B+/vhiUMZSKnUt0QLuutEyHLvvFEHSKR8zMS/7r2k=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\8bit_bomb_explosion.xnb" size="51619">
     <hash>
       <dsig:Transforms>
@@ -453,6 +462,15 @@
       <dsig:DigestValue>Tdk9vvmioS5Qx1TWpeoPPDpophOdrROHjRa7Rrw/+MM=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\bg-grass2000'2.xnb" size="16000085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+CXuLR+ETSCMU8RPdWRPYcqoj9zRuPk5JQCmwEY24rw=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\BlindShift.wma" size="10464544">
     <hash>
       <dsig:Transforms>
@@ -514,6 +532,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>clufUtEFLJPRioI+kHY7ztLOJvMluFMnJ0K/5ztnZwM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\bridge-wood-square_0.xnb" size="458301">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Zqfa5JQvn19YWKXfYoYMswD5KhONYsNQogoHcpkGOO0=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\bullet.xnb" size="1109">
@@ -613,6 +640,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>oYzIRS2FexXS89JefiRYex7yBVSKNG0gvRmDN2i7VGk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\pirate_ship_00000.xnb" size="187565">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>esgfi5411OueMu2egVM/yCVD5QN60EyQzNGEWs74/VM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Player.xnb" size="83029">

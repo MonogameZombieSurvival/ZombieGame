@@ -56,6 +56,7 @@ namespace Game2
         private Texture2D backgroundImgEnd;
         private Texture2D backgroundImgWin;
         private Song bossSound;
+
         Camera camera;
         Random rand = new Random();
 
@@ -68,7 +69,7 @@ namespace Game2
         public static int ScreenWith;
         public static int screenHeight;
 
-       
+        private int levels = 1;
         private int ammount = 0;
         private int WaveTimeOutPut;
         
@@ -182,7 +183,7 @@ namespace Game2
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-             this.IsMouseVisible = true;
+            this.IsMouseVisible = true;
             screenHeight = graphics.PreferredBackBufferHeight;
           
             base.Initialize();
@@ -211,18 +212,19 @@ namespace Game2
             player = new Player(Content);
             sighte = new sighte(Content);
 
-
+            
             healthHold = player.Health;
             gameObjects.Add(player);
             gameObjects.Add(sighte);
 
-            level = new Levels();
+           
 
-            switch (level.Level)
+      
+            switch (levels)
             {
 
                 case 1:
-                    Loadlvl1();
+                   level = new Levels(Content,1);
                     break;
                 case 2:
                    
@@ -253,23 +255,6 @@ namespace Game2
             gametimer = new GameTimer();
            
         }
-
-
-        public void Loadlvl1()
-        {
-
-            int X;
-            int Y;
-            solid = new Solid(Content);
-            backgroundImg = Content.Load<Texture2D>("bg-grass");
-
-            gameObjects.Add(new Solid(Content, "Tileset", 250, 250));
-            gameObjects.Add(new Solid(Content, "Tileset", 400, 250));
-         
-                gameObjects.Add(new Solid(Content, "water",1100,600));
-   
-        }
-
 
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
@@ -449,11 +434,11 @@ namespace Game2
                 BlendState.AlphaBlend,null,null,null,null,camera.Transform);
 
 
-             if (level.Level == 1)
-            {
+            // if (level.Level == 1)
+            //{
 
-                DrawLvl1();
-            }
+            //    DrawLvl1();
+            //}
              
 
 
@@ -530,9 +515,9 @@ namespace Game2
 
 
             if (healthHold > 0 || level.Level == 5) {
-                spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(580, 5), Color.White);
-                spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5, 5), Color.White);
-                spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
+                //spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(ScreenWith/2, screenHeight/700), Color.White);
+                //spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5, 5), Color.White);
+                //spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
             }
 
             
@@ -546,7 +531,7 @@ namespace Game2
         {
             int x=0;
             int y=0;
-
+            
             for (int i = 0; i < 10; i++)
             {
 

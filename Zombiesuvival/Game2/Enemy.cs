@@ -21,10 +21,16 @@ namespace Game2
         float moveSpeed = 100;
         Random rand = new Random();
         Vector2 distance;
+        private Vector2 RandomVector;
         private int holdNumber;
         private int damnge = 10;
         private double LastAttck=0;
-        private string Enemyname;
+        private double lastmovemet = 0;
+        
+        private double DistancetoPlayer=1000;
+      
+
+        bool hasDirection = false;
         /// <summary>
         /// Spawns zombies at random sides of the map
         /// </summary>
@@ -48,35 +54,24 @@ namespace Game2
                 position = new Vector2(GameWorld.ScreenSize.Width + rand.Next(0, 200), rand.Next(GameWorld.ScreenSize.Height));//from right side
             }
         }
-      
+
         /// <summary>
         /// Spawns zombies at random sides of the map
         /// </summary>
         /// <param name="content">Content Manager for loading resources</param>
-        public Enemy(ContentManager content) : base(content, "zombiesmall")
-        {                   
-            holdNumber = rand.Next(0, 400);
-            Thread.Sleep(100);
-          
-            if (holdNumber <= 100)
-            {
-                position = new Vector2(rand.Next(-200, 0), rand.Next(GameWorld.ScreenSize.Height));// from left side
-            }
-            else if (holdNumber >= 100 && holdNumber <= 200)
-            {
-                position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), rand.Next(-200, 0));//randowmtop
-            }
-            else if (holdNumber >= 200 && holdNumber <= 300)
-            {
-                position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), GameWorld.ScreenSize.Height + rand.Next(0, 200));//form
-            }
-            else if (holdNumber >= 300 && holdNumber <= 400)
-            {
-                position = new Vector2(GameWorld.ScreenSize.Width + rand.Next(0, 200), rand.Next(GameWorld.ScreenSize.Height));//from right side
-            }
+        public Enemy(ContentManager content, string Enamy,int x,int y ) : base(content, "zombiesmall")
+        {
+            position.X = x;
+            position.Y = y;
+
+            SetRandomDirection();
+         
         }
 
-
+        public Enemy(ContentManager content) : base(content, "zombiesmall")
+        {
+            
+        }
 
         public Enemy(ContentManager content, string name) : base(content, name)
         {
@@ -109,12 +104,31 @@ namespace Game2
             Random rnd = new Random();
             Direction = new Vector2((rnd.Next(0, 2) * 2 - 1), (rnd.Next(0, 2) * 2 - 1)); //Set direction vector components to -1 or 1
             Direction.Normalize(); //Normalizes vector so that it is only a unit vector
+
         }
         private void SetDiraction()
         {
             Direction = realTimeplayerPosition - position;
+
+            
             Direction.Normalize();
+
         }
+        private void SetRotation()
+        {
+           
+            rotation = (float)Math.Atan2(Direction.Y, Direction.X);
+
+        }
+        private void SetRotationTowasPlayer()
+        {
+            distance.X = realTimeplayerPosition.X - position.X;
+            distance.Y = realTimeplayerPosition.Y - position.Y;
+
+            rotation = (float)Math.Atan2(distance.Y, distance.X);
+
+        }
+        
 
         /// <summary>
         /// Update method that moves the zombies in direction of the player.
@@ -122,19 +136,42 @@ namespace Game2
         /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
-            distance.X = realTimeplayerPosition.X - position.X;
-            distance.Y = realTimeplayerPosition.Y - position.Y;
 
-            rotation = (float)Math.Atan2(distance.Y, distance.X);
 
-            SetDiraction();
 
-            position += Direction * (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds); //Added direction vector to current position
+            distance = realTimeplayerPosition - position;
+            DistancetoPlayer = Math.Sqrt((distance.X*distance.X) + (distance.Y * distance.Y));
 
-            Direction = new Vector2((float)Math.Cos(rotation - MathHelper.Pi * 0.0f), (float)Math.Sin(rotation - MathHelper.Pi * 0.0f));
+            if (DistancetoPlayer < 400)
+            {
+                SetDiraction();
+                SetRotationTowasPlayer();
+                position += Direction * (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+               // Direction = new Vector2((float)Math.Cos(rotation - MathHelper.Pi * 0.0f), (float)Math.Sin(rotation - MathHelper.Pi * 0.0f));
 
-            position += Direction * (float)(gameTime.ElapsedGameTime.TotalSeconds);
+            }
 
+            if(lastmovemet > rand.Next(2,6))
+            {
+                SetRandomDirection();
+                lastmovemet = 0;
+            }
+
+            if (DistancetoPlayer > 400)
+            {
+                SetRotation();
+                position += Direction * (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds); 
+
+
+            }
+
+
+
+            //Added direction vector to current position
+
+
+
+            lastmovemet += gameTime.ElapsedGameTime.TotalSeconds;
             LastAttck += gameTime.ElapsedGameTime.TotalSeconds;
         }
 
@@ -144,6 +181,10 @@ namespace Game2
         /// <param name="otherObject">The object it collided with</param>
         public override void DoCollision(GameObject otherObject)
         {
+
+
+
+
             if (otherObject is Bullet)
             {
                 Blood blood = new Blood(1, Position, content);

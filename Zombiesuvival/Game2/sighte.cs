@@ -14,10 +14,10 @@ namespace Game2
     {
 
 
-        private float moveSpeed = 200;
+        private float moveSpeed = 500;
 
-       
-
+        private Vector2 sightepos;
+        private Vector2 sighteofset = new Vector2(0,0);
         public sighte( ContentManager content) : base(content, "sighte")
         {
             
@@ -40,51 +40,75 @@ namespace Game2
 
         public override void Update(GameTime gameTime)
         {
+            MouseState mouse = Mouse.GetState();
 
-            position = sightposition;
+            sightepos.Y = mouse.Y;
+            sightepos.X = mouse.X;
 
-
-
-
-      
            
+            
+
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+            {
+                sighteofset.X -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+            {
+                sighteofset.X += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            {
+                sighteofset.Y -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
+            {
+               sighteofset.Y += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+
+            }
+            sightepos += sighteofset;
+             position = sightepos;
         }
 
 
 
-        //public override void DoCollision(GameObject otherObject)
-        //{
-        //    if (otherObject is Solid)
-        //    {
+        public override void DoCollision(GameObject otherObject)
+        {
+            //if (otherObject is Solid)
+            //{
 
-        //        if (Keyboard.GetState().IsKeyDown(Keys.D))
-        //        {
-        //            position.X -= 4;
-        //        }
-        //        else if (Keyboard.GetState().IsKeyDown(Keys.W))
-        //        {
+            //    if (Keyboard.GetState().IsKeyDown(Keys.D))
+            //    {
+            //        position.X -= 4;
+            //    }
+            //    else if (Keyboard.GetState().IsKeyDown(Keys.W))
+            //    {
 
-        //            position.Y -= -4;
-        //        }
+            //        position.Y -= -4;
+            //    }
 
-        //        if (Keyboard.GetState().IsKeyDown(Keys.A))
-        //        {
-        //            position.X += 4;
-        //        }
+            //    if (Keyboard.GetState().IsKeyDown(Keys.A))
+            //    {
+            //        position.X += 4;
+            //    }
 
-        //        if (Keyboard.GetState().IsKeyDown(Keys.W))
-        //        {
-        //            position.Y += 4;
-        //        }
+            //    if (Keyboard.GetState().IsKeyDown(Keys.W))
+            //    {
+            //        position.Y += 4;
+            //    }
 
-        //        if (Keyboard.GetState().IsKeyDown(Keys.S))
-        //        {
-        //            position.Y -= 4;
-        //        }
+            //    if (Keyboard.GetState().IsKeyDown(Keys.S))
+            //    {
+            //        position.Y -= 4;
+            //    }
 
-        //    }
+            //}
 
-        //}
+        }
 
     }
 
