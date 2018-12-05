@@ -87,12 +87,12 @@ namespace Game2
         {
               realTimeplayerPosition = PlayerPosition;
         }
-     
+
         public void GetPlayerHealth(int playerHeath)
         {
             Playerhealth = playerHeath;
         }
-     
+
         public void GetSightePosition(Vector2 sigte)
         {
             sightposition = sigte;

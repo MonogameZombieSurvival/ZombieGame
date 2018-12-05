@@ -14,7 +14,7 @@ namespace Game2
     class Bullet : GameObject
     {
         private Vector2 direction;
-        private const float movementSpeed = 300;
+        private const float movementSpeed = 500;
         GameTimer GameTimer = new GameTimer();
         private int bulletFlyTime;
         /// <summary>

@@ -122,7 +122,7 @@ namespace Game2
         {
             if (otherObject is Bullet)
             {
-                Blood blood = new Blood(1, Position, content);
+                Blood blood = new Blood( Position, content);
                 BloodEffect bloodEffect = new BloodEffect(1, position, content);
                 GameWorld.AddEFfect(blood);
                 GameWorld.AddGameObject(bloodEffect);
@@ -135,7 +135,7 @@ namespace Game2
 
             if (otherObject is Player && LastAttck > 0.5f)
             {
-                PlayerBlood playerBlood = new PlayerBlood(1, realTimeplayerPosition, content);
+                PlayerBlood playerBlood = new PlayerBlood(realTimeplayerPosition, content);
                 GameWorld.DealDamngeToPlayer(damnge);
                 GameWorld.AddGameObject(playerBlood);
                 LastAttck = 0;

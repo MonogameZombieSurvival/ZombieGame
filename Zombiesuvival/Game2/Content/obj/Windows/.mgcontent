@@ -17,10 +17,18 @@
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bullet.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/CollisionTexture.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/ExampleFont.spritefont</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/firearms/blood_c_0001.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/firearms/item_shotgun.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/gameover.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/Haber.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/House.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/KillCount.spritefont</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/kisspngbloode.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/krydsvendt.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/Mini_truck.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/parkeringsplas.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/pirate_ship_00000.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/plant1.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/PlayerBlood.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/playerImg.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/Sheet_Splatter.png</File>
@@ -29,13 +37,33 @@
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/smallbullet.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/survivor-idle_handgun_0.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/Tileset.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/TN_2.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/vej.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/vejop.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/water.jpg</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/WaveTimer.spritefont</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/winscreen.jpg</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie1.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie2.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie3.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombiesmall.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombiesound.mp3</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

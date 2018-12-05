@@ -33,5 +33,15 @@ namespace Game2
         {
 
         }
+
+        public override void DoCollision(GameObject otherObject)
+        {
+
+
+
+
+
+
+        }
     }
 }

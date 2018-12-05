@@ -29,14 +29,12 @@ namespace Game2
         public List<GameObject> Effects = new List<GameObject>();
         private static List<GameObject> toBeAddedEffect = new List<GameObject>();
         private static List<GameObject> toBeRemoved = new List<GameObject>();
-       
-        
+
+        bool IsPlayer = false;
 
         /// <summary>
         ///     Classes
         /// </summary>
-        private Solid solid;
-        private BloodEffect blood;
         private Player player;
         private GameTimer gametimer;
         private GameTimer Spawnspeed;
@@ -51,8 +49,7 @@ namespace Game2
         private SpriteFont KillCount;
         private Texture2D collisionTexture;
         private Song backgroundMusic;
-        private Texture2D Sighte;
-        private Texture2D backgroundImg;
+        private Texture2D Sighte;     
         private Texture2D backgroundImgEnd;
         private Texture2D backgroundImgWin;
         private Song bossSound;
@@ -69,7 +66,7 @@ namespace Game2
         public static int ScreenWith;
         public static int screenHeight;
 
-        private int levels = 1;
+        private int levels =0;
         private int ammount = 0;
         private int WaveTimeOutPut;
         
@@ -203,43 +200,15 @@ namespace Game2
 
             camera = new Camera(graphics.GraphicsDevice.Viewport);
             //Background Img
-            backgroundImg = Content.Load<Texture2D>("bg-grass");
+            
             backgroundImgEnd = Content.Load<Texture2D>("gameover");
             backgroundImgWin = Content.Load<Texture2D>("winscreen");
             Sighte = Content.Load<Texture2D>("sighte");
 
 
-            player = new Player(Content);
-            sighte = new sighte(Content);
-
-            
-            healthHold = player.Health;
-            gameObjects.Add(player);
-            gameObjects.Add(sighte);
-
+            level = new Levels(Content, 0);
            
-
-      
-            switch (levels)
-            {
-
-                case 1:
-                   level = new Levels(Content,1);
-                    break;
-                case 2:
-                   
-                    break;
-
-
-                default:
-
-                    break;
-            }
-            if (level.Level == 1)
-            
-
-
-
+              
             // Create a timer with a two second interval.
 
             // Hook up the Elapsed event for the timer. 
@@ -264,45 +233,7 @@ namespace Game2
         {
             // TODO: Unload any non ContentManager content here
         }
-
-
-
-        /// <summary>
-        /// SpawnAynemeas
-        /// </summary>
-        public void SpawnAnymens(double spawnCircle)
-        {          
-            if(spawnCircle <=0.0001)
-            {
-              gameObjects.Add(new Enemy(rand.Next(0, 400), rand.Next(0, 400), Content));                                       
-            }          
-        }
-        /// <summary>
-        /// summons boss
-        /// </summary>
- 
-        public void SpawnBoss(double spawnCircle, int ammountBoss)
-        {
-            if (spawnCircle <= 0.0001)
-            {
-                if (ammount < ammountBoss) {
-                    ammount++;
-
-                    MediaPlayer.Play(bossSound);
-                    
-                    gameObjects.Add(new Boss(rand.Next(0, 400), rand.Next(0, 400), Content));
-                }
-            }
-        }
-        /// <summary>
-        /// sets level
-        /// </summary>
-        /// <param name="WavetimeOutput"></param>
      
-
-
-
-        
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -313,53 +244,10 @@ namespace Game2
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-
-            //// gameObjects = level1.GameObejts(gameTime, level,gameObjects);
-           
-            //if (level.Level == 1)
-            //{
-            //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.7, 0.01);
-            //    SpawnAnymens(spawtimeBetwenneEnemys);
-
-            //}
-            //if (level.Level == 2)
-            //{
-
-            //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.6, 0.01);
-
-            //    SpawnAnymens(spawtimeBetwenneEnemys);
-            //}
-            //if (level.Level == 3)
-            //{
-
-            //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.5, 0.01);
-
-            //    SpawnAnymens(spawtimeBetwenneEnemys);
-            //}
-
-            //if (level.Level == 4)
-            //{
-
-            //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.4, 0.01);
-            //    SpawnAnymens(spawtimeBetwenneEnemys);
-
-            //}
-            //if (level.Level == 5)
-            //{
-            //    spawtimeBetwenneEnemys = Spawnspeed.gameTimerMIlilesecs(gameTime, 0.3, 0.01);
-            //    SpawnBoss(spawtimeBetwenneEnemys, 1);
-            //}
-
-
-
-
-
-            WaveTimeOutPut = gametimer.gameTimerSec(gameTime, 29999);// level clock// spawn clock
-               level.Setlevel(WaveTimeOutPut);
-           
+            if (IsPlayer == true)
+            {
                 camera.update(player.playerPosition);
-               
-
+            }
 
             foreach (GameObject go in gameObjects)
             {
@@ -434,15 +322,8 @@ namespace Game2
                 BlendState.AlphaBlend,null,null,null,null,camera.Transform);
 
 
-            // if (level.Level == 1)
-            //{
-
-            //    DrawLvl1();
-            //}
-             
-
-
-            player.Draw(spriteBatch);
+                       
+            
 
 
 
@@ -470,50 +351,63 @@ namespace Game2
                 DrawCollisionBox(go);
 #endif
             }
-
-            if (healthHold <= 0)
-            {
-
-                        spriteBatch.Draw(backgroundImgEnd, new Rectangle(0, 0, 1280, 720), Color.White);
-                
-                
-              
-                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-                {
-                    gameObjects.Clear();
-                    Effects.Clear();
-                    gameObjects.Add(player = new Player(Content));
-                    gametimer = new GameTimer();
-                    level.Level = 1;
-                    kills = 0;
-                    healthHold = 1000;
-                    gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
-                }
-              
-
-                }
-
-
-
-            if (level.Level == 5)
-            {
+            spriteBatch.End();
+            spriteBatch.Begin();
+            if (levels<= 0){
                 spriteBatch.Draw(backgroundImgWin, new Rectangle(0, 0, 1280, 720), Color.White);
-                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-                {
+             //  if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+              //{
                     gameObjects.Clear();
                     Effects.Clear();
-                    gameObjects.Add(player = new Player(Content));
-                    gametimer = new GameTimer();
-                    
-                    kills = 0;
-                    healthHold = 1000;
-                    gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
-                }
+                    solidObejts.Clear();
 
-                //Exit();
+                    levels = 1;
+                    level = new Levels(Content, 1);
+                    player = new Player(Content);
+                    sighte = new sighte(Content);
+                    gameObjects.Add(player);
+                    gameObjects.Add(sighte);
+                    healthHold = player.Health;
+                    IsPlayer = true;
+
+               //}
+
+
+
             }
 
 
+
+  
+
+
+            //if (healthHold <= 0)
+            //{
+
+            //            spriteBatch.Draw(backgroundImgEnd, new Rectangle(0, 0, 1280, 720), Color.White);
+                
+                
+              
+            //    if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+            //    {
+            //        gameObjects.Clear();
+            //        Effects.Clear();
+            //        gameObjects.Add(player = new Player(Content));
+            //        gametimer = new GameTimer();
+            //        level.Level = 1;
+            //        kills = 0;
+            //        healthHold = 1000;
+            //        gametimer.gameTimerSec(gameTime, 30);// level clock// spawn clock
+            //    }
+              
+
+            //    }
+
+
+
+      
+
+            
             if (healthHold > 0 || level.Level == 5) {
                 //spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(ScreenWith/2, screenHeight/700), Color.White);
                 //spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5, 5), Color.White);
@@ -525,56 +419,6 @@ namespace Game2
             base.Draw(gameTime);
             
         }
-
-
-        public void DrawLvl1()
-        {
-            int x=0;
-            int y=0;
-            
-            for (int i = 0; i < 10; i++)
-            {
-
-               
-                for (int l = 0; l <10; l++)
-                {
-
-                    spriteBatch.Draw(backgroundImg, new Rectangle(x, y, 1000, 1000), Color.White);
-
-
-                 
-                    y = + 1000;
-                }
-                x += 1000;
-                y = 0;
-            }
-
-     
-
-
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         private void DrawCollisionBox(GameObject go)

@@ -17,8 +17,8 @@ namespace Game2
     class Player : AnimatedGameObject
     {
 
-        Viewport Viewport;
-        private const float moveSpeed = 500;
+       
+        private const float moveSpeed = 700;
     
         public Vector2 direction = new Vector2();
         /// <summary>
@@ -27,13 +27,7 @@ namespace Game2
         GameTimer gameTimer = new GameTimer();           
         private double lastShoot = 0;   
         private Vector2 bulletposition;     
-        public int KillCount
-        {
-            get
-            {
-                return KillCount;
-            }
-        }
+     
         private Vector2 sightpostotion;
         public Vector2 Sightpostotion {
             get
@@ -41,17 +35,16 @@ namespace Game2
                 return sightpostotion;
             }
         }
-
-
-
         public Vector2 playerPosition {
             get
             {
                 return position;
             }
-                }  
-        private int health;
+                }
 
+        Vector2 shotegun;
+
+        private int health;
         public int Health
         {
             get { return health; }
@@ -60,13 +53,25 @@ namespace Game2
                 health = value;
             }
         }
+        public int KillCount
+        {
+            get
+            {
+                return KillCount;
+            }
+        }
 
-   
+        bool MachingunOn = false;
+        bool shotgunOn = false;
 
-        public Player(ContentManager content) : base(1,5, new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2), content, "playerImg")
+        bool Havepistiol = true;
+        bool HaveMachinGun = false;
+        bool Haveshotgun = false;
+
+        public Player(ContentManager content) : base(1,10, new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2), content, "playerImg")
         {
             this.content = content;
-            health = 1000;
+            health = 10;
            
             
             
@@ -75,13 +80,75 @@ namespace Game2
         {
             return Vector2.Transform(point - origin, Matrix.CreateRotationZ(rotation)) +origin;
         }
+        /// <summary>
+        /// bevæger playeren med WDAD keysne 
+        /// </summary>
+        /// <param name="gameTime"></param>
+        private void WSADMovement(GameTime gameTime)
+        {
+            if (Keyboard.GetState().IsKeyDown(Keys.A))
+            {
+                position.X -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
 
-        
+            }
+            if (Keyboard.GetState().IsKeyDown(Keys.D))
+            {
+                position.X += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.W))
+            {
+                position.Y -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.S))
+            {
+                position.Y += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+
+            }
+
+        }
+
+        /// <summary>
+        /// change players weapon
+        /// </summary>
+        /// <param name="gameTime"></param>
+        public void ChangeWeapon(GameTime gameTime) {
+
+            if (Keyboard.GetState().IsKeyDown(Keys.D1))
+            {
+                Havepistiol = true;
+                MachingunOn = false;
+                shotgunOn = false;
+            }
+
+           if (HaveMachinGun == true)
+            {
+                if (Keyboard.GetState().IsKeyDown(Keys.D2))
+                {
+                    Havepistiol = false;
+                    shotgunOn = false;
+                    MachingunOn = true;
+                }
+               }
+              if (Haveshotgun == true)
+               {
+                if (Keyboard.GetState().IsKeyDown(Keys.D3))
+                {
+                    Havepistiol = false;
+                    MachingunOn = false;
+                    shotgunOn = true;
+                }
+            }
+        }
         public override void Update(GameTime gameTime)
         {
 
       
             MouseState mouse = Mouse.GetState();
+
             direction.X = mouse.X - 1280/2 ;
             direction.Y = mouse.Y - 720/2; 
             rotation = (float)Math.Atan2(direction.Y, direction.X);
@@ -89,50 +156,37 @@ namespace Game2
 
             position += direction * (float)(gameTime.ElapsedGameTime.TotalSeconds);
 
-            if (Keyboard.GetState().IsKeyDown(Keys.A))
-            {
-                position.X -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-               
-            }
-            if (Keyboard.GetState().IsKeyDown(Keys.D))
-            {
-                position.X += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-               
-            }
-
-            if (Keyboard.GetState().IsKeyDown(Keys.W))
-            {
-                position.Y -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-                
-            }
-
-            if (Keyboard.GetState().IsKeyDown(Keys.S))
-            {
-                position.Y += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-              
-            }
-
+            WSADMovement(gameTime);
 
             lastShoot += gameTime.ElapsedGameTime.TotalSeconds;
-            bulletposition = position;
-            //sightposition = position;
-
+            bulletposition = position;  
+            
             bulletposition.X += 35;
             bulletposition.Y += 10;
 
             bulletposition = RotateAboutOrigin(bulletposition, position, rotation);
 
-            //sightposition.X += 100;
-          //  sightposition.Y  += 10;
-
-            //sightpostotion = RotateAboutOrigin(sightposition, position, rotation);
-
+        
             sightposition.X = mouse.X;
             sightposition.Y = mouse.Y;
 
 
+            // change wåpen på spilelren
+            ChangeWeapon(gameTime);
 
-            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > 0.3f)
+
+            // shute with machingun
+            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > 0.1f && HaveMachinGun == true && MachingunOn == true)
+            {
+                GameWorld.AddGameObject(new Bullet(direction, bulletposition, content));
+                lastShoot = 0;
+                //explosionSound = content.Load<SoundEffect>("8bit_bomb_explosion").CreateInstance();
+                //explosionSound.Play();
+            }
+            
+
+            // shute with gun
+            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > 0.3f && Havepistiol == true )
             {
                 GameWorld.AddGameObject(new Bullet(direction, bulletposition, content));
                 lastShoot = 0;
@@ -140,7 +194,29 @@ namespace Game2
                 //explosionSound.Play();
             }
 
-           
+            shotegun = direction;
+
+            shotegun.X +=10;
+
+            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > 0.5f && Haveshotgun == true && shotgunOn == true)
+            {
+                GameWorld.AddGameObject(new Bullet(direction, bulletposition, content));           
+               // GameWorld.AddGameObject(new Bullet(shotegun, bulletposition , content));                                  
+               GameWorld.AddGameObject(new Bullet(new Vector2(direction.X  , direction.Y ), new Vector2( bulletposition.X , bulletposition.Y ), content));
+                //GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.4f, direction.Y -0.1f), new Vector2(bulletposition.X, bulletposition.Y), content));
+                //GameWorld.AddGameObject(new Bullet(new Vector2(direction.X - 0.1f, direction.Y -0.2f), new Vector2(bulletposition.X, bulletposition.Y), content));
+                GameWorld.AddGameObject(new Bullet(new Vector2(direction.X - 0.2f, direction.Y -0.3f), new Vector2(bulletposition.X, bulletposition.Y), content));
+                GameWorld.AddGameObject(new Bullet(new Vector2(direction.X - 0.3f, direction.Y -0.4f), new Vector2(bulletposition.X, bulletposition.Y), content));
+                GameWorld.AddGameObject(new Bullet(new Vector2(direction.X - 0.4f, direction.Y +0.1f), new Vector2(bulletposition.X, bulletposition.Y), content));
+                GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.1f, direction.Y +0.2f), new Vector2(bulletposition.X, bulletposition.Y), content));
+                //GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.2f, direction.Y +0.3f), new Vector2(bulletposition.X, bulletposition.Y), content));
+                //GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.3f, direction.Y +0.4f), new Vector2(bulletposition.X, bulletposition.Y), content));
+          
+                lastShoot = 0;
+                //explosionSound = content.Load<SoundEffect>("8bit_bomb_explosion").CreateInstance();
+                //explosionSound.Play();
+            }
+
 
             base.Update(gameTime);
         }
@@ -152,6 +228,20 @@ namespace Game2
         /// <param name="otherObject"></param>
         public override void DoCollision( GameObject otherObject)
         {
+
+            if (otherObject is Bullet)
+            {
+                GameWorld.RemoveGameObject(otherObject);
+            }
+           if(otherObject is Shotgun)
+            {
+                Haveshotgun = true;
+            }
+            if(otherObject is Machingun)
+            {
+               HaveMachinGun = true;
+            }
+            
             if (otherObject is Solid ||otherObject is NoTwalkerbelObejt  )
             {
 

@@ -908,3 +908,17 @@ C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x8
 C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\1366x768-bridge-wood-square_0.xnb
 C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\bridge-wood-square_0.xnb
 C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\pirate_ship_00000.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\Mini_truck.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\Haber.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\vej.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\House.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\parkeringsplas.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\plant1.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\zombie1.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\zombie2.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\zombie3.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\TN_2.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\vejop.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\krydsvendt.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\firearms\blood_c_0001.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\firearms\item_shotgun.xnb

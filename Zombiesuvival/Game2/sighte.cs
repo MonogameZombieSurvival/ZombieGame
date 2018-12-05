@@ -14,7 +14,7 @@ namespace Game2
     {
 
 
-        private float moveSpeed = 500;
+        private float moveSpeed = 200;
 
         private Vector2 sightepos;
         private Vector2 sighteofset = new Vector2(0,0);
@@ -44,10 +44,7 @@ namespace Game2
 
             sightepos.Y = mouse.Y;
             sightepos.X = mouse.X;
-
-           
-            
-
+                 
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
                 sighteofset.X -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);

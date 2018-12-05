@@ -20,7 +20,7 @@ namespace Game2
         /// 
 
 
-        public PlayerBlood(int size, Vector2 startPosition, ContentManager content) : base(20, 60, startPosition, content, "PlayerBlood")
+        public PlayerBlood( Vector2 startPosition, ContentManager content) : base(20, 60, startPosition, content, "PlayerBlood")
         {
         
         }

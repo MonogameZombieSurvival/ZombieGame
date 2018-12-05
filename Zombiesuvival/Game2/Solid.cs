@@ -11,7 +11,7 @@ namespace Game2
 {
     class Solid: AnimatedGameObject
     {
-    
+       
 
         public Solid(ContentManager content) : base(1, 5, content, "Tileset")
         {
@@ -33,8 +33,8 @@ namespace Game2
         {
         
         }
+    
 
-      
 
     }
 }

@@ -13,87 +13,44 @@ namespace Game2
     /// <summary>
     /// Class that represents a zombie
     /// </summary>
-    class Enemy : GameObject
+    class Enemy : AnimatedGameObject
     {
         /// <summary>
         /// Sets the zombie stats
         /// </summary>
-        float moveSpeed = 100;
+        float moveSpeed = 50;
         Random rand = new Random();
         Vector2 distance;
-        private Vector2 RandomVector;
-        private int holdNumber;
+        private int distanceToAttack = 400;            
         private int damnge = 10;
         private double LastAttck=0;
         private double lastmovemet = 0;
-        
-        private double DistancetoPlayer=1000;
+        private double DistancetoPlayer=0;
       
 
-        bool hasDirection = false;
+      
+   
         /// <summary>
         /// Spawns zombies at random sides of the map
         /// </summary>
         /// <param name="content">Content Manager for loading resources</param>
-        public Enemy(int HoldNumber, int SpawnDistansfromEachOther,  ContentManager content) : base(content, "zombiesmall")
+        /// 
+      
+        public Enemy(ContentManager content) : base(11,2, content, "zombie1")
         {
-            if (HoldNumber <= 100)
-            {
-                position = new Vector2(rand.Next(-200, 0), rand.Next(GameWorld.ScreenSize.Height));// from left side
-            }
-            else if (HoldNumber >= 100 && HoldNumber <= 200)
-            {
-                position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), rand.Next(-200, 0));//from top
-            }
-            else if (HoldNumber >= 200 && HoldNumber <= 300)
-            {
-                position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), GameWorld.ScreenSize.Height + rand.Next(0, 200));//form button
-            }
-            else if (HoldNumber >= 300 && HoldNumber <= 400)
-            {
-                position = new Vector2(GameWorld.ScreenSize.Width + rand.Next(0, 200), rand.Next(GameWorld.ScreenSize.Height));//from right side
-            }
+            position.X = 200;
+            position.Y = 200;
+            this.content = content;
         }
 
-        /// <summary>
-        /// Spawns zombies at random sides of the map
-        /// </summary>
-        /// <param name="content">Content Manager for loading resources</param>
-        public Enemy(ContentManager content, string Enamy,int x,int y ) : base(content, "zombiesmall")
+        public Enemy(ContentManager content, string Enamy,int x,int y,int freamcount, float animationfps ) : base(freamcount,animationfps,content, Enamy)
         {
             position.X = x;
             position.Y = y;
 
             SetRandomDirection();
+            this.content = content;
          
-        }
-
-        public Enemy(ContentManager content) : base(content, "zombiesmall")
-        {
-            
-        }
-
-        public Enemy(ContentManager content, string name) : base(content, name)
-        {
-            holdNumber = rand.Next(0, 400);
-            Thread.Sleep(100);
-
-            if (holdNumber <= 100)
-            {
-                position = new Vector2(rand.Next(-200, 0), rand.Next(GameWorld.ScreenSize.Height));// from left side
-            }
-            else if (holdNumber >= 100 && holdNumber <= 200)
-            {
-                position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), rand.Next(-200, 0));//randowmtop
-            }
-            else if (holdNumber >= 200 && holdNumber <= 300)
-            {
-                position = new Vector2(rand.Next(GameWorld.ScreenSize.Width), GameWorld.ScreenSize.Height + rand.Next(0, 200));//form
-            }
-            else if (holdNumber >= 300 && holdNumber <= 400)
-            {
-                position = new Vector2(GameWorld.ScreenSize.Width + rand.Next(0, 200), rand.Next(GameWorld.ScreenSize.Height));//from right side
-            }
         }
 
         /// <summary>
@@ -106,6 +63,9 @@ namespace Game2
             Direction.Normalize(); //Normalizes vector so that it is only a unit vector
 
         }
+        /// <summary>
+        /// regner vectoren mellem enemyen ud
+        /// </summary>
         private void SetDiraction()
         {
             Direction = realTimeplayerPosition - position;
@@ -114,12 +74,19 @@ namespace Game2
             Direction.Normalize();
 
         }
+        /// <summary>
+        /// sætter rotation så enemien vender den vej den bevæger sig
+        /// </summary>
         private void SetRotation()
         {
            
             rotation = (float)Math.Atan2(Direction.Y, Direction.X);
 
         }
+
+        /// <summary>
+        /// sætter rotation mod playeren
+        /// </summary>
         private void SetRotationTowasPlayer()
         {
             distance.X = realTimeplayerPosition.X - position.X;
@@ -128,39 +95,61 @@ namespace Game2
             rotation = (float)Math.Atan2(distance.Y, distance.X);
 
         }
-        
-
         /// <summary>
-        /// Update method that moves the zombies in direction of the player.
+        /// enemy attack playern hvis den kommer inden for distanceforAttack.
+        /// og movement speed af enemien blicer sat til 0 nå enemien kommer enden for 30 px
         /// </summary>
         /// <param name="gameTime"></param>
-        public override void Update(GameTime gameTime)
+
+        public void AttckPlayer(GameTime gameTime)
         {
 
-
-
             distance = realTimeplayerPosition - position;
-            DistancetoPlayer = Math.Sqrt((distance.X*distance.X) + (distance.Y * distance.Y));
-
-            if (DistancetoPlayer < 400)
+            DistancetoPlayer = Math.Sqrt((distance.X * distance.X) + (distance.Y * distance.Y));
+            if (DistancetoPlayer < distanceToAttack)
             {
                 SetDiraction();
                 SetRotationTowasPlayer();
                 position += Direction * (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-               // Direction = new Vector2((float)Math.Cos(rotation - MathHelper.Pi * 0.0f), (float)Math.Sin(rotation - MathHelper.Pi * 0.0f));
+                // Direction = new Vector2((float)Math.Cos(rotation - MathHelper.Pi * 0.0f), (float)Math.Sin(rotation - MathHelper.Pi * 0.0f));
 
             }
 
-            if(lastmovemet > rand.Next(2,6))
+            if(DistancetoPlayer < 30)
+            {
+                moveSpeed = 0;
+            }
+            else
+            {
+                moveSpeed = 50;
+            }
+        }
+
+        /// <summary>
+        /// Update method that moves the zombies in direction of the player.
+        /// </summary>
+     
+        public override void Update(GameTime gameTime)
+        {
+
+
+            
+            
+
+
+            AttckPlayer(gameTime);
+
+
+            if (lastmovemet > rand.Next(2, 6))
             {
                 SetRandomDirection();
                 lastmovemet = 0;
             }
 
-            if (DistancetoPlayer > 400)
+            if (DistancetoPlayer > distanceToAttack)
             {
                 SetRotation();
-                position += Direction * (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds); 
+                position += Direction * (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
 
 
             }
@@ -173,6 +162,8 @@ namespace Game2
 
             lastmovemet += gameTime.ElapsedGameTime.TotalSeconds;
             LastAttck += gameTime.ElapsedGameTime.TotalSeconds;
+
+            base.Update(gameTime);
         }
 
         /// <summary>
@@ -183,11 +174,18 @@ namespace Game2
         {
 
 
-
+            
+            
+            
+            if(otherObject is Solid || otherObject is NoTwalkerbelObejt&& lastmovemet <2)
+            {
+                SetRandomDirection();
+                lastmovemet = 0;
+            }
 
             if (otherObject is Bullet)
             {
-                Blood blood = new Blood(1, Position, content);
+                Blood blood = new Blood(Position, content);
                 BloodEffect bloodEffect = new BloodEffect(1, position, content);
                 GameWorld.AddEFfect(blood);
                 GameWorld.AddGameObject(bloodEffect);
@@ -196,7 +194,7 @@ namespace Game2
             }
             if (otherObject is Player  && LastAttck > 0.5f)
             {
-                PlayerBlood playerBlood = new PlayerBlood(1, realTimeplayerPosition, content);
+                PlayerBlood playerBlood = new PlayerBlood( realTimeplayerPosition, content);
                 GameWorld.DealDamngeToPlayer(damnge);
                 GameWorld.AddGameObject(playerBlood);
                 LastAttck = 0;
