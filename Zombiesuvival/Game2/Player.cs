@@ -18,7 +18,7 @@ namespace Game2
     {
 
        
-        private const float moveSpeed = 700;
+        private const float moveSpeed = 200;
     
         public Vector2 direction = new Vector2();
         /// <summary>
@@ -61,11 +61,29 @@ namespace Game2
             }
         }
 
+        
+        /// Pistol values
+        private float pistilshootspeed= 0.3f;
+        private int PistiolMag = 15;
+        private int Pistiobulletshot=0;
+        bool Havepistiol = true;
+
+
+        private float Machigunspeed = 0.1f;
+        private int MachingunBulletshot;
+        private int MachingunMag = 40;
+        bool HaveMachinGun = false;
         bool MachingunOn = false;
+
+
+
+        private float shotgunSpeed = 1f;
+        private int shotgunshotsfired = 0;
+        private int shotfunMag = 5;
         bool shotgunOn = false;
 
-        bool Havepistiol = true;
-        bool HaveMachinGun = false;
+      
+     
         bool Haveshotgun = false;
 
         public Player(ContentManager content) : base(1,10, new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2), content, "playerImg")
@@ -143,6 +161,29 @@ namespace Game2
                 }
             }
         }
+
+        /// <summary>
+        /// reloard
+        /// </summary>
+        public void reloard()
+        {
+            if (PistiolMag==Pistiobulletshot)
+            {
+                Pistiobulletshot = 0;
+                pistilshootspeed = 10000000;
+
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.R))
+            {
+                pistilshootspeed = 0.3f;
+            }
+            
+        }
+        /// <summary>
+        /// upaate player
+        /// </summary>
+        /// <param name="gameTime"></param>
         public override void Update(GameTime gameTime)
         {
 
@@ -175,42 +216,45 @@ namespace Game2
             ChangeWeapon(gameTime);
 
 
+
+            //reload
+            reloard();
+
             // shute with machingun
-            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > 0.1f && HaveMachinGun == true && MachingunOn == true)
+            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > Machigunspeed && HaveMachinGun == true && MachingunOn == true)
             {
                 GameWorld.AddGameObject(new Bullet(direction, bulletposition, content));
                 lastShoot = 0;
                 //explosionSound = content.Load<SoundEffect>("8bit_bomb_explosion").CreateInstance();
                 //explosionSound.Play();
+                
             }
             
 
             // shute with gun
-            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > 0.3f && Havepistiol == true )
+            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > pistilshootspeed && Havepistiol == true )
             {
                 GameWorld.AddGameObject(new Bullet(direction, bulletposition, content));
                 lastShoot = 0;
                 //explosionSound = content.Load<SoundEffect>("8bit_bomb_explosion").CreateInstance();
                 //explosionSound.Play();
+                Pistiobulletshot += 1;
             }
 
-            shotegun = direction;
+          
 
-            shotegun.X +=10;
-
-            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > 0.5f && Haveshotgun == true && shotgunOn == true)
+            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > shotgunSpeed && Haveshotgun == true && shotgunOn == true)
             {
                 GameWorld.AddGameObject(new Bullet(direction, bulletposition, content));           
-               // GameWorld.AddGameObject(new Bullet(shotegun, bulletposition , content));                                  
-               GameWorld.AddGameObject(new Bullet(new Vector2(direction.X  , direction.Y ), new Vector2( bulletposition.X , bulletposition.Y ), content));
-                //GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.4f, direction.Y -0.1f), new Vector2(bulletposition.X, bulletposition.Y), content));
-                //GameWorld.AddGameObject(new Bullet(new Vector2(direction.X - 0.1f, direction.Y -0.2f), new Vector2(bulletposition.X, bulletposition.Y), content));
+          
+                GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.4f, direction.Y -0.1f), new Vector2(bulletposition.X, bulletposition.Y), content));
+                GameWorld.AddGameObject(new Bullet(new Vector2(direction.X - 0.1f, direction.Y -0.2f), new Vector2(bulletposition.X, bulletposition.Y), content));
                 GameWorld.AddGameObject(new Bullet(new Vector2(direction.X - 0.2f, direction.Y -0.3f), new Vector2(bulletposition.X, bulletposition.Y), content));
                 GameWorld.AddGameObject(new Bullet(new Vector2(direction.X - 0.3f, direction.Y -0.4f), new Vector2(bulletposition.X, bulletposition.Y), content));
                 GameWorld.AddGameObject(new Bullet(new Vector2(direction.X - 0.4f, direction.Y +0.1f), new Vector2(bulletposition.X, bulletposition.Y), content));
                 GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.1f, direction.Y +0.2f), new Vector2(bulletposition.X, bulletposition.Y), content));
-                //GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.2f, direction.Y +0.3f), new Vector2(bulletposition.X, bulletposition.Y), content));
-                //GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.3f, direction.Y +0.4f), new Vector2(bulletposition.X, bulletposition.Y), content));
+               GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.2f, direction.Y +0.3f), new Vector2(bulletposition.X, bulletposition.Y), content));
+               GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.3f, direction.Y +0.4f), new Vector2(bulletposition.X, bulletposition.Y), content));
           
                 lastShoot = 0;
                 //explosionSound = content.Load<SoundEffect>("8bit_bomb_explosion").CreateInstance();
@@ -248,24 +292,24 @@ namespace Game2
                 if (Keyboard.GetState().IsKeyDown(Keys.D))
                 {
                     position.X -= 4;
+                    
+                    sightposition.X -= 4;
                 }else if( Keyboard.GetState().IsKeyDown(Keys.W))
                 {
-                   
+                    sightposition.Y -= 4;
                     position.Y -= -4;
                 }
 
                 if (Keyboard.GetState().IsKeyDown(Keys.A))
                 {
+                    sightposition.X += 4;
                     position.X += 4;
                 }
 
-                if (Keyboard.GetState().IsKeyDown(Keys.W))
-                {
-                    position.Y += 4;
-                }
-
+              
                 if (Keyboard.GetState().IsKeyDown(Keys.S))
                 {
+                    sightposition.Y -= 4;
                     position.Y -= 4;
                 }
 

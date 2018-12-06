@@ -12,6 +12,7 @@ namespace Game2
    public class GameObject
     {
         protected Texture2D sprite;
+        protected string spiteName;
         protected float rotation;
         protected Vector2 Direction;
         protected Vector2 position;
@@ -107,10 +108,12 @@ namespace Game2
         /// <param name="content">Reference to a ContentManager for loading resources</param>
         /// <param name="spriteName">The name of the texture resource the should be used for the sprite</param>
         /// <exception cref="Microsoft.Xna.Framework.Content.ContentLoadException">Thrown if a matching texture cant be found for spriteName</exception>
-        public GameObject(Vector2 startPosition,ContentManager content, string spriteName)
+        public GameObject(Vector2 startPosition,ContentManager content, string SpriteName)
         {
             position = startPosition;
-            sprite = content.Load<Texture2D>(spriteName);
+            spiteName = SpriteName;
+           
+            sprite = content.Load<Texture2D>(spiteName);
         }
 
         /// <summary>
@@ -128,6 +131,7 @@ namespace Game2
         /// <param name="spriteBatch">The spritebatch to use for drawing</param>
         public virtual void Draw(SpriteBatch spriteBatch)
         {
+            
             spriteBatch.Draw(sprite, position, null,Color.White, rotation,new Vector2(sprite.Width*0.5f, sprite.Height * 0.5f), 1, new SpriteEffects(),0f );
         }
     }

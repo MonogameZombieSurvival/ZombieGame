@@ -378,9 +378,7 @@ namespace Game2
 
 
 
-  
-
-
+ 
             //if (healthHold <= 0)
             //{
 
@@ -409,8 +407,8 @@ namespace Game2
 
             
             if (healthHold > 0 || level.Level == 5) {
-                //spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(ScreenWith/2, screenHeight/700), Color.White);
-                //spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5, 5), Color.White);
+                spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(ScreenWith / 2, screenHeight / 700), Color.White);
+                spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5, 5), Color.White);
                 //spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
             }
 

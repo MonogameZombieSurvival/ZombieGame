@@ -17,6 +17,8 @@
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bullet.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/CollisionTexture.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/ExampleFont.spritefont</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/fencelodrat.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/fenceVandrat.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/firearms/blood_c_0001.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/firearms/item_shotgun.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/gameover.png</File>
@@ -43,6 +45,33 @@
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/water.jpg</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/WaveTimer.spritefont</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/winscreen.jpg</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_0.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_1.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_2.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_3.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_4.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_5.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_6.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_7.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_8.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_0.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_1.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_10.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_11.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_12.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_13.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_14.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_15.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_16.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_2.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_3.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_4.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_5.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_6.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_7.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_8.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Move/skeleton-move_9.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie1.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie2.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie3.png</File>
@@ -50,6 +79,35 @@
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombiesound.mp3</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

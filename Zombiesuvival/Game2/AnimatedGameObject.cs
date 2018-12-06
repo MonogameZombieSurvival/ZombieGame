@@ -20,7 +20,7 @@ namespace Game2
        protected int currentAnimationIndex = 0;
        protected double timeElapsed = 0;
         protected int FrameCount=0;
-        
+        protected int freams;
         public override Rectangle CollisionBox
         {
             get
@@ -33,6 +33,16 @@ namespace Game2
         {
 
         }
+
+
+        public AnimatedGameObject(ContentManager content,int Freams, string spriteName): base(content,spriteName)
+        {
+            freams = Freams;
+        }
+       
+
+
+
 
         public AnimatedGameObject(int frameCount, float animationFPS, Vector2 startPostion,ContentManager content, string spriteName) : base(startPostion, content, spriteName)
         {
@@ -60,10 +70,16 @@ namespace Game2
                 currentAnimationIndex = 0;
                 timeElapsed = 0;
             }
+
+
+
+
         }
         public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(sprite, position, animationRectangles[currentAnimationIndex], Color.White, rotation, new Vector2(animationRectangles[currentAnimationIndex].Width * 0.5f, animationRectangles[currentAnimationIndex].Height * 0.5f), 1f,new SpriteEffects(),0f);
         }
+        
+
     }
 }

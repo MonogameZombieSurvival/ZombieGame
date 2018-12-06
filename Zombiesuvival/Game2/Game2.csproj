@@ -75,6 +75,7 @@
     <Compile Include="BloodEffect.cs" />
     <Compile Include="Blood.cs" />
     <Compile Include="Bullet.cs" />
+    <Compile Include="Eneny2.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="GameTimer.cs" />
     <Compile Include="GameWorld.cs" />

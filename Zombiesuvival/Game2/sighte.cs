@@ -17,6 +17,13 @@ namespace Game2
         private float moveSpeed = 200;
 
         private Vector2 sightepos;
+        public Vector2 Sightepos
+        {
+            set
+            {
+                sightepos = value;
+            }
+        }
         private Vector2 sighteofset = new Vector2(0,0);
         public sighte( ContentManager content) : base(content, "sighte")
         {
@@ -75,35 +82,8 @@ namespace Game2
 
         public override void DoCollision(GameObject otherObject)
         {
-            //if (otherObject is Solid)
-            //{
 
-            //    if (Keyboard.GetState().IsKeyDown(Keys.D))
-            //    {
-            //        position.X -= 4;
-            //    }
-            //    else if (Keyboard.GetState().IsKeyDown(Keys.W))
-            //    {
-
-            //        position.Y -= -4;
-            //    }
-
-            //    if (Keyboard.GetState().IsKeyDown(Keys.A))
-            //    {
-            //        position.X += 4;
-            //    }
-
-            //    if (Keyboard.GetState().IsKeyDown(Keys.W))
-            //    {
-            //        position.Y += 4;
-            //    }
-
-            //    if (Keyboard.GetState().IsKeyDown(Keys.S))
-            //    {
-            //        position.Y -= 4;
-            //    }
-
-            //}
+        
 
         }
 

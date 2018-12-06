@@ -26,18 +26,21 @@ namespace Game2
         private double LastAttck=0;
         private double lastmovemet = 0;
         private double DistancetoPlayer=0;
-      
+        private double lastfram = 0;
+       
+       
 
-      
-   
+
+
         /// <summary>
         /// Spawns zombies at random sides of the map
         /// </summary>
         /// <param name="content">Content Manager for loading resources</param>
         /// 
-      
-        public Enemy(ContentManager content) : base(11,2, content, "zombie1")
+
+        public Enemy(ContentManager content) : base(1,1, content, $"zombie/move/skeleton-move_1")
         {
+          
             position.X = 200;
             position.Y = 200;
             this.content = content;
@@ -133,9 +136,7 @@ namespace Game2
         {
 
 
-            
-            
-
+          
 
             AttckPlayer(gameTime);
 
@@ -162,7 +163,7 @@ namespace Game2
 
             lastmovemet += gameTime.ElapsedGameTime.TotalSeconds;
             LastAttck += gameTime.ElapsedGameTime.TotalSeconds;
-
+            lastfram += gameTime.ElapsedGameTime.TotalSeconds;
             base.Update(gameTime);
         }
 
@@ -204,5 +205,8 @@ namespace Game2
                 GameWorld.RemoveGameObject(otherObject);
             }
         }
+
+     
+
     }
 }
