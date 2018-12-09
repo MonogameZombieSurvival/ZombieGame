@@ -43,10 +43,11 @@ namespace Game2
             }
            
         }
+
+        
         /// <summary>
         /// loader jorden playeren skal gå på;
         /// </summary>
-
         public void addGround()
         {
 
@@ -56,22 +57,27 @@ namespace Game2
             string vejop = "vejop";
             string kryds = "TN_2";
             string krydsvent = "krydsvendt";
+            int Y = 371;
+            int X = -2000;
             // add grass
-            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 0, 0));
-            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 4000, 0));
-            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 4000, -2000));
-            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 0, -4000));
-            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, -4000, 0));
-            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 2000, 0));
-            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 0, -2000));
             GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, -2000, 0));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 0, 0));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 2000, 0));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 4000, 0));
+
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, -2000, -2000));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 0, -2000));          
             GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 2000, -2000));
-            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 2000, -4000));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 4000, -2000));
+
             GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, -2000, -4000));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 0, -4000));
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, ground, 2000, -4000));
+            
 
             // adds haven
-            int Y = 371;
-            int X = -2000;          
+            Y = 371;
+             X = -2000;          
             for (int i = 0; i <19; i++)
             {
              GameWorld.AddEFfect(new NoneSolidObejts(contents, HaberStone,X ,Y ));         
@@ -89,33 +95,25 @@ namespace Game2
 
             Y = -763;
             X = -2000;
+            X -= 4 * 283;
             /// fotov til næste række af huse
-            for (int i = 0; i < 19; i++)
-            {
-                GameWorld.AddEFfect(new NoneSolidObejts(contents, HaberStone, X, Y));
-                X += 283;
-            }
-            Y = -1090;
-            X = -2000;
-
-            for (int i = 0; i < 19; i++)
+            for (int i = 0; i < 23; i++)
             {
                 GameWorld.AddEFfect(new NoneSolidObejts(contents, HaberStone, X, Y));
                 X += 283;
             }
 
-
-
+       
             Y = 202;
             X = -2000;
             /// 
             /// vej
             for (int i = 0; i < 19; i++)
             {
-                 GameWorld.AddEFfect(new NoneSolidObejts(contents, vej, X,Y  ));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, vej, X,Y  ));
                 X += 283;
             }
-
+            ///haven færdig here
             Y = 202;
             X = 2293;// kryds ven havnen
             GameWorld.AddEFfect(new NoneSolidObejts(contents, kryds, X, Y));
@@ -130,13 +128,42 @@ namespace Game2
             }
 
             GameWorld.AddEFfect(new NoneSolidObejts(contents, krydsvent, X, Y));
+
             // vej vandret
             X -= 283;
-            for (int i = 0; i <14; i++)
+            for (int i = 0; i <15; i++)
             {
                 GameWorld.AddEFfect(new NoneSolidObejts(contents, vej, X, Y));
                 X -= 283;
             }
+            // kryds venste op
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, kryds, X, Y));
+            X -= 283;
+            for (int i = 0; i < 4; i++)
+            {
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, vej, X, Y));
+                X -= 283;
+            }
+            X += 5 * 283;
+            // vej op efter krus oppe venste
+            Y -= 283;
+            for (int i = 0; i < 7; i++)
+            {
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, vejop, X, Y));
+
+                Y -= 283;
+            }
+
+            // fortov øverst
+            Y = -1090;
+            X = -2000;
+         
+            for (int i = 0; i < 19; i++)
+            {
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, HaberStone, X, Y));
+                X += 283;
+            }
+            /// mere vej efter kryd til højre opppe
             X = 2293;
             X += 283;
             for (int i = 0; i < 3; i++)
@@ -144,6 +171,9 @@ namespace Game2
                 GameWorld.AddEFfect(new NoneSolidObejts(contents, vej, X, Y));
                 X += 283;
             }
+            X += 283;
+          
+
         }
 
         /// <summary>
@@ -181,28 +211,46 @@ namespace Game2
             string shotgun = "firearms/item_shotgun";
             string fenceVandrat = "fenceVandrat";
             string fencelodrat = "fencelodrat";
+            string tree = "Trees/";
+            string[] trees = new string[] { "(1)", "(2)", "(3)", "(4)", "(5)", "(6)",
+                "(7)", "(8)", "(9)", "(10)", "(11)", "(12)", "(13)", "(14)", "(15)", "(16)", "(17)", "(18)", "(19)", "(20)", "(21)", "(22)", "(23)", "(24)", "(25)", "(26)", "(27)", "(28)" };
 
             if (level == 1)
             {
 
                 int Y = -200;
                 int X = -1400;
+                //addingbrige
                 GameWorld.AddGameObject(new NoneSolidObejts(contents, "bridge-wood-square_0", 670, 520));
                 // adds skib
                 GameWorld.AddGameObject(new NoneSolidObejts(contents, "pirate_ship_00000", 520, 560));
                 // adds cars
-
-
                 for (int i = 0; i < 4; i++)
                 {
                     GameWorld.AddGameObject(new Solid(contents, miniTruck, X, Y));
                     Y += 175;
-                }                  
+                }
+                //cars
+                 Y = 120;
+                for (int i = 0; i < 2; i++)
+                {
+                    GameWorld.AddGameObject(new Solid(contents, miniTruck, X+4000, Y));
+                    Y += 175;
+                }
+
+                /// cars
+                Y = -1320;
+                for (int i = 0; i < 4; i++)
+                {
+                    GameWorld.AddGameObject(new Solid(contents, miniTruck, X + 4000, Y));
+                    Y += 175;
+                }
+
                 Y = -410;
-                X = -2000;
+                X = -3200;
 
                 // adding huse og buske rund om dem
-                for (int i = 0; i < 11; i++)
+                for (int i = 0; i < 14; i++)
                 {
                     Y = -410;
                     GameWorld.AddGameObject(new Solid(contents, House, X, Y));
@@ -213,21 +261,30 @@ namespace Game2
 
                 // adder plater melle, husene
                 Y = -300;
-                X = -1800;
-                for (int i = 0; i < 10; i++)
+                X = -3400;
+                for (int i = 0; i < 14; i++)
                 {
                     GameWorld.AddGameObject(new Solid(contents, Bush,X, Y));
                     X += 400;
                 }
                 
                 X = -2000;
+                X += 400;
                 // adding huse og buske rund om dem
-                for (int i = 0; i < 13; i++)
+                for (int i = 0; i < 14; i++)
                 {
                     Y = -1540;
                     GameWorld.AddGameObject(new Solid(contents, House, X, Y));
                     Y += 260;
                     GameWorld.AddEFfect(new NoneSolidObejts(contents, parkeringplads, X, Y));
+                    X += 400;
+                }
+                // adder plater melle, husene
+                Y = -1500;
+                X = -1800;
+                for (int i = 0; i < 13; i++)
+                {
+                    GameWorld.AddGameObject(new Solid(contents, Bush, X, Y));
                     X += 400;
                 }
 
@@ -262,7 +319,6 @@ namespace Game2
 
                      X -= 90;
                 }
-
                 X = 3000;
                 Y = -720;
                 for (int i = 0; i < 6; i++)
@@ -272,6 +328,15 @@ namespace Game2
 
                     X -= 90;
                 }
+                // adding tres in the in fence
+
+
+                X = 3000;
+                Y = -500;
+                GameWorld.AddGameObject(new Solid(contents, "trees/(19)", X - 100, Y+400));
+                GameWorld.AddGameObject(new Solid(contents, tree+trees[9], X, Y));
+                GameWorld.AddGameObject(new Solid(contents, tree+trees[3], X - 300, Y));
+                GameWorld.AddGameObject(new Solid(contents, tree+trees[5], X -300, Y +400));
 
 
                 //test addding weapons 

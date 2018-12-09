@@ -18,7 +18,7 @@ namespace Game2
     {
 
        
-        private const float moveSpeed = 200;
+        private const float moveSpeed = 1000;
     
         public Vector2 direction = new Vector2();
         /// <summary>
@@ -42,7 +42,7 @@ namespace Game2
             }
                 }
 
-        Vector2 shotegun;
+     
 
         private int health;
         public int Health
@@ -68,15 +68,17 @@ namespace Game2
         private int Pistiobulletshot=0;
         bool Havepistiol = true;
 
-
+        ///
+        ///machingun values
         private float Machigunspeed = 0.1f;
+        private double Machingunrange;
         private int MachingunBulletshot;
         private int MachingunMag = 40;
         bool HaveMachinGun = false;
         bool MachingunOn = false;
 
-
-
+        /// shot gun values
+        private double shotgunrange;
         private float shotgunSpeed = 1f;
         private int shotgunshotsfired = 0;
         private int shotfunMag = 5;
@@ -85,7 +87,10 @@ namespace Game2
       
      
         bool Haveshotgun = false;
-
+        /// <summary>
+        /// default constucter
+        /// </summary>
+        /// <param name="content"></param>
         public Player(ContentManager content) : base(1,10, new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2), content, "playerImg")
         {
             this.content = content;
@@ -94,6 +99,15 @@ namespace Game2
             
             
         }
+
+
+  /// <summary>
+  /// return the vector pistion for hvor bullet ud fra player bliver loaded 
+  /// </summary>
+  /// <param name="point"></param>
+  /// <param name="origin"></param>
+  /// <param name="rotation"></param>
+  /// <returns></returns>
         public Vector2 RotateAboutOrigin(Vector2 point, Vector2 origin, float rotation)
         {
             return Vector2.Transform(point - origin, Matrix.CreateRotationZ(rotation)) +origin;
@@ -174,11 +188,33 @@ namespace Game2
 
             }
 
-            if (Keyboard.GetState().IsKeyDown(Keys.R))
+            if (Keyboard.GetState().IsKeyDown(Keys.R) && Havepistiol == true)
             {
                 pistilshootspeed = 0.3f;
             }
-            
+
+            if(MachingunMag== MachingunBulletshot)
+            {
+                Machigunspeed = 10000000;
+                MachingunBulletshot =0;
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.R) && MachingunOn == true)
+            {
+                Machigunspeed = 0.1f;
+            }
+
+            if (shotfunMag== shotgunshotsfired)
+            {
+                shotgunSpeed = 10000000;
+                shotgunshotsfired = 0;
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.R) && shotgunOn== true)
+            {
+                shotgunSpeed = 0.5f;
+            }
+
         }
         /// <summary>
         /// upaate player
@@ -225,6 +261,8 @@ namespace Game2
             {
                 GameWorld.AddGameObject(new Bullet(direction, bulletposition, content));
                 lastShoot = 0;
+
+                MachingunBulletshot += 1;
                 //explosionSound = content.Load<SoundEffect>("8bit_bomb_explosion").CreateInstance();
                 //explosionSound.Play();
                 
@@ -232,7 +270,7 @@ namespace Game2
             
 
             // shute with gun
-            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > pistilshootspeed && Havepistiol == true )
+            if (mouse.LeftButton == ButtonState.Pressed && lastShoot > pistilshootspeed && Havepistiol == true  )
             {
                 GameWorld.AddGameObject(new Bullet(direction, bulletposition, content));
                 lastShoot = 0;
@@ -253,9 +291,11 @@ namespace Game2
                 GameWorld.AddGameObject(new Bullet(new Vector2(direction.X - 0.3f, direction.Y -0.4f), new Vector2(bulletposition.X, bulletposition.Y), content));
                 GameWorld.AddGameObject(new Bullet(new Vector2(direction.X - 0.4f, direction.Y +0.1f), new Vector2(bulletposition.X, bulletposition.Y), content));
                 GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.1f, direction.Y +0.2f), new Vector2(bulletposition.X, bulletposition.Y), content));
-               GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.2f, direction.Y +0.3f), new Vector2(bulletposition.X, bulletposition.Y), content));
-               GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.3f, direction.Y +0.4f), new Vector2(bulletposition.X, bulletposition.Y), content));
-          
+                GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.2f, direction.Y +0.3f), new Vector2(bulletposition.X, bulletposition.Y), content));
+                GameWorld.AddGameObject(new Bullet(new Vector2(direction.X + 0.3f, direction.Y +0.4f), new Vector2(bulletposition.X, bulletposition.Y), content));
+
+
+                shotgunshotsfired += 1;
                 lastShoot = 0;
                 //explosionSound = content.Load<SoundEffect>("8bit_bomb_explosion").CreateInstance();
                 //explosionSound.Play();
