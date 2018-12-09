@@ -357,12 +357,15 @@ namespace Game2
                 spriteBatch.Draw(backgroundImgWin, new Rectangle(0, 0, 1280, 720), Color.White);
              //  if (Keyboard.GetState().IsKeyDown(Keys.Enter))
               //{
+
                     gameObjects.Clear();
                     Effects.Clear();
                     solidObejts.Clear();
 
                     levels = 1;
-                    level = new Levels(Content, 1);
+
+    
+                level = new Levels(Content, 1);
                     player = new Player(Content);
                     sighte = new sighte(Content);
                     gameObjects.Add(player);
@@ -403,13 +406,13 @@ namespace Game2
 
 
 
-      
+               //   spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(ScreenWith / 2, screenHeight / 700), Color.White);
+                spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5, 5), Color.Blue);
+                spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
 
             
             if (healthHold > 0 || level.Level == 5) {
-                spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(ScreenWith / 2, screenHeight / 700), Color.White);
-                spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5, 5), Color.White);
-                //spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
+              
             }
 
             
