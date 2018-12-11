@@ -26,11 +26,7 @@ namespace Game2
         private double LastAttck=0;
         private double lastmovemet = 0;
         private double DistancetoPlayer=0;
-        private double lastfram = 0;
-       
-       
-
-
+        private double lastfram = 0;    
 
         /// <summary>
         /// Spawns zombies at random sides of the map
@@ -45,7 +41,15 @@ namespace Game2
             position.Y = 200;
             this.content = content;
         }
-
+        /// <summary>
+        /// sætter enenmyen op med hvilke enemy der(navn), Healt, positon, og animation
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="Enamy"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="freamcount"></param>
+        /// <param name="animationfps"></param>
         public Enemy(ContentManager content, string Enamy,int x,int y,int freamcount, float animationfps ) : base(freamcount,animationfps,content, Enamy)
         {
             position.X = x;
@@ -55,7 +59,6 @@ namespace Game2
             this.content = content;
          
         }
-
         /// <summary>
         /// Sets the direction of the zombies in direction of the player
         /// </summary>
@@ -86,7 +89,6 @@ namespace Game2
             rotation = (float)Math.Atan2(Direction.Y, Direction.X);
 
         }
-
         /// <summary>
         /// sætter rotation mod playeren
         /// </summary>
@@ -103,7 +105,6 @@ namespace Game2
         /// og movement speed af enemien blicer sat til 0 nå enemien kommer enden for 30 px
         /// </summary>
         /// <param name="gameTime"></param>
-
         public void AttckPlayer(GameTime gameTime)
         {
 
@@ -130,37 +131,21 @@ namespace Game2
 
         /// <summary>
         /// Update method that moves the zombies in direction of the player.
-        /// </summary>
-     
+        /// </summary>    
         public override void Update(GameTime gameTime)
         {
-
-
-          
-
             AttckPlayer(gameTime);
-
-
             if (lastmovemet > rand.Next(2, 6))
             {
                 SetRandomDirection();
                 lastmovemet = 0;
             }
-
             if (DistancetoPlayer > distanceToAttack)
             {
                 SetRotation();
                 position += Direction * (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
-
-
             }
-
-
-
             //Added direction vector to current position
-
-
-
             lastmovemet += gameTime.ElapsedGameTime.TotalSeconds;
             LastAttck += gameTime.ElapsedGameTime.TotalSeconds;
             lastfram += gameTime.ElapsedGameTime.TotalSeconds;
@@ -172,18 +157,14 @@ namespace Game2
         /// </summary>
         /// <param name="otherObject">The object it collided with</param>
         public override void DoCollision(GameObject otherObject)
-        {
-
-
-            
-            
-            
+        {   
+            // cheker om enemyen går in i et solid obejt
             if(otherObject is Solid || otherObject is NoTwalkerbelObejt&& lastmovemet <2)
             {
                 SetRandomDirection();
                 lastmovemet = 0;
             }
-
+            /// checker om Enemyen bliver ramt
             if (otherObject is Bullet)
             {
                 Blood blood = new Blood(Position, content);
@@ -193,6 +174,7 @@ namespace Game2
                 GameWorld.RemoveGameObject(this);
                 GameWorld.addKill();
             }
+            // Attacks og checker for sistet attack så der ikke bliver angrabet hvert fram
             if (otherObject is Player  && LastAttck > 0.5f)
             {
                 PlayerBlood playerBlood = new PlayerBlood( realTimeplayerPosition, content);
@@ -200,13 +182,6 @@ namespace Game2
                 GameWorld.AddGameObject(playerBlood);
                 LastAttck = 0;
             }
-            if (otherObject is Bullet)
-            {
-                GameWorld.RemoveGameObject(otherObject);
-            }
-        }
-
-     
-
+        }  
     }
 }

@@ -44,29 +44,33 @@ namespace Game2
         /// <summary>
         /// Texttures,song, and text
         /// </sTummary>
-        private SpriteFont font;      
         private SpriteFont WaveTimer;
         private SpriteFont KillCount;
+        private SpriteFont mag;
         private Texture2D collisionTexture;
         private Song backgroundMusic;
         private Texture2D Sighte;     
         private Texture2D backgroundImgEnd;
         private Texture2D backgroundImgWin;
         private Song bossSound;
+        private Vector2 Playerposition;
+
 
         Camera camera;
         Random rand = new Random();
 
-        
-        
-        
+
+
+
+
         /// <summary>
         /// fileds / varibler
         /// </summary>
+        private bool level1 = false;
         public static int ScreenWith;
         public static int screenHeight;
 
-        private int levels =0;
+        public static int levels =0;
         private int ammount = 0;
         private int WaveTimeOutPut;
         
@@ -207,18 +211,21 @@ namespace Game2
 
 
             level = new Levels(Content, 0);
-           
-              
+
+            Playerposition.X = 0;
+
+            Playerposition.Y = 0;
             // Create a timer with a two second interval.
 
             // Hook up the Elapsed event for the timer. 
 
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            font = Content.Load<SpriteFont>("ExampleFont");
+         
             WaveTimer = Content.Load<SpriteFont>("WaveTimer");
             KillCount = Content.Load<SpriteFont>("KillCount");
             collisionTexture = Content.Load<Texture2D>("CollisionTexture");
+            mag = Content.Load<SpriteFont>("mag");
 
             Spawnspeed = new GameTimer();
             gametimer = new GameTimer();
@@ -249,6 +256,9 @@ namespace Game2
                 camera.update(player.playerPosition);
             }
 
+
+        
+
             foreach (GameObject go in gameObjects)
             {
 
@@ -256,8 +266,14 @@ namespace Game2
                 go.Update(gameTime);
                
                 go.GetPlayerPosition(player.playerPosition);
-
+              
                 go.GetSightePosition(player.Sightpostotion);
+
+                if (player.playerPosition.Y < -2400 && level1 == true)
+                {
+                    level1 = false;
+                    levels = 2;
+                }
 
                 // check for colisions
                 foreach (GameObject other in gameObjects)
@@ -319,13 +335,7 @@ namespace Game2
            
 
             spriteBatch.Begin(SpriteSortMode.Deferred,
-                BlendState.AlphaBlend,null,null,null,null,camera.Transform);
-
-
-                       
-            
-
-
+            BlendState.AlphaBlend,null,null,null,null,camera.Transform);
 
             NumberOfgameObejts = Effects.Count;
             foreach(GameObject GO in Effects)
@@ -355,32 +365,65 @@ namespace Game2
             spriteBatch.Begin();
             if (levels<= 0){
                 spriteBatch.Draw(backgroundImgWin, new Rectangle(0, 0, 1280, 720), Color.White);
-             //  if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-              //{
+                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
+                {
 
                     gameObjects.Clear();
                     Effects.Clear();
                     solidObejts.Clear();
 
                     levels = 1;
+                    level1 = true;
 
-    
-                level = new Levels(Content, 1);
+                    level = new Levels(Content, 1);
                     player = new Player(Content);
                     sighte = new sighte(Content);
                     gameObjects.Add(player);
                     gameObjects.Add(sighte);
                     healthHold = player.Health;
-                    IsPlayer = true;
-
-               //}
-
-
-
+                    IsPlayer = true;                  
+                }
+                
             }
 
 
 
+
+            if (levels == 2)
+            {
+                gameObjects.Clear();
+                Effects.Clear();
+                solidObejts.Clear();
+
+                level = new Levels(Content, 2);
+                player = new Player(Content);
+                sighte = new sighte(Content);
+                gameObjects.Add(player);
+                gameObjects.Add(sighte);
+                healthHold = player.Health;
+                IsPlayer = true;
+               
+            }
+
+            if (levels == 3)
+            {
+                gameObjects.Clear();
+                Effects.Clear();
+                solidObejts.Clear();
+
+                level = new Levels(Content, levels);
+                player = new Player(Content);
+                sighte = new sighte(Content);
+                gameObjects.Add(player);
+                gameObjects.Add(sighte);
+            }
+
+            if (levels>= 1)
+            {
+                spriteBatch.DrawString(mag, $"Magasin:{player.Mag}", new Vector2(80, 5), Color.Blue);
+                spriteBatch.DrawString(WaveTimer, $"Health:{player.Health}", new Vector2(5, 5), Color.Blue);
+                spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
+            }
  
             //if (healthHold <= 0)
             //{
@@ -407,8 +450,7 @@ namespace Game2
 
 
                //   spriteBatch.DrawString(WaveTimer, $"Next wave in:{WaveTimeOutPut} level:{level}", new Vector2(ScreenWith / 2, screenHeight / 700), Color.White);
-                spriteBatch.DrawString(font, $"Health:{player.Health}", new Vector2(5, 5), Color.Blue);
-                spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
+              
 
             
             if (healthHold > 0 || level.Level == 5) {

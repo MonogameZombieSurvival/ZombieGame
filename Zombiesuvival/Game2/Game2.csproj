@@ -80,8 +80,10 @@
     <Compile Include="GameTimer.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="AnimatedGameObject.cs" />
+    <Compile Include="Gas.cs" />
     <Compile Include="Levels.cs" />
     <Compile Include="Machingun.cs" />
+    <Compile Include="Motorcykel.cs" />
     <Compile Include="NoneSolidObejts.cs" />
     <Compile Include="NoTwalkerbelObejt.cs" />
     <Compile Include="Player.cs" />

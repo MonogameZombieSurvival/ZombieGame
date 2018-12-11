@@ -40,12 +40,11 @@ namespace Game2
 
         bool walk = true;
         bool Attack = false;
+        
         /// <summary>
-        /// Spawns zombies at random sides of the map
+        /// Default Enemy
         /// </summary>
         /// <param name="content">Content Manager for loading resources</param>
-        /// 
-
         public Enemy2(ContentManager content) : base(content, $"zombie/move/skeleton-move_1")
         {
            
@@ -54,7 +53,15 @@ namespace Game2
             position.Y = 200;
             this.content = content;
         }
-
+        /// <summary>
+        /// sætter enemyin me posistion navn(Hvilken enemy det er), Health, og animation ,
+        /// </summary>
+        /// <param name="content"></param>
+        /// <param name="Enamy"></param>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="framcount"></param>
+        /// <param name="freamcountAttack"></param>
         public Enemy2(ContentManager content, string Enamy, int x, int y, int framcount,int freamcountAttack) : base(content, Enamy)
         {
             position.X = x;
@@ -78,6 +85,7 @@ namespace Game2
             Direction.Normalize(); //Normalizes vector so that it is only a unit vector
 
         }
+
         /// <summary>
         /// regner vectoren mellem enemyen ud
         /// </summary>
@@ -89,6 +97,7 @@ namespace Game2
             Direction.Normalize();
 
         }
+
         /// <summary>
         /// sætter rotation så enemien vender den vej den bevæger sig
         /// </summary>
@@ -110,12 +119,12 @@ namespace Game2
             rotation = (float)Math.Atan2(distance.Y, distance.X);
 
         }
+
         /// <summary>
         /// enemy attack playern hvis den kommer inden for distanceforAttack.
         /// og movement speed af enemien blicer sat til 0 nå enemien kommer enden for 30 px
         /// </summary>
         /// <param name="gameTime"></param>
-
         public void AttckPlayer(GameTime gameTime)
         {
 
@@ -148,7 +157,6 @@ namespace Game2
                 
             }
         }
-
 
         /// <summary>
         ///  sets the animationfram
@@ -185,18 +193,11 @@ namespace Game2
             }
         }
 
-
-
         /// <summary>
         /// Update method that moves the zombies in direction of the player.
         /// </summary>
-
         public override void Update(GameTime gameTime)
         {
-
-
-
-
             AttckPlayer(gameTime);
             AnimtionFrams();
 
@@ -215,10 +216,7 @@ namespace Game2
             }
 
 
-
-            //Added direction vector to current position
-
-
+           //Added direction vector to current position
 
             lastmovemet += gameTime.ElapsedGameTime.TotalSeconds;
             LastAttck += gameTime.ElapsedGameTime.TotalSeconds;
@@ -232,12 +230,7 @@ namespace Game2
         /// <param name="otherObject">The object it collided with</param>
         public override void DoCollision(GameObject otherObject)
         {
-
-
-
-
-
-            if (otherObject is Solid || otherObject is NoTwalkerbelObejt && lastmovemet < 2)
+           if (otherObject is Solid || otherObject is NoTwalkerbelObejt && lastmovemet < 2)
             {
                 SetRandomDirection();
                 lastmovemet = 0;
@@ -264,15 +257,14 @@ namespace Game2
                 GameWorld.RemoveGameObject(otherObject);
             }
         }
+
         /// <summary>
         /// removes latter fra name stringen så der kan blive smit et nyt in så der kan køre en animation a billere fra en mappe
         /// </summary>
         /// <param name="input"></param>
         /// <returns></returns>
         public string Removelastletter(string input)
-        {
-             
-
+        {           
             string output;
             if (oldfram >=16) { 
 
@@ -282,13 +274,11 @@ namespace Game2
             } else
             {
                 output = input.Remove(input.Length - 1);
-            }
-          
-            
-
+            }                      
             return output;
 
         }
+
         /// <summary>
         /// Draw nyt aniamtion fram
         /// </summary>

@@ -979,3 +979,13 @@ C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x8
 C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\Trees\(7).xnb
 C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\Trees\(8).xnb
 C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\Trees\(9).xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\XN_1.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\mag.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\Dirt 2 .xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\boxs\barrel_side.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\boxs\barrel_top.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\boxs\box.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\boxs\box_2x1.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\boxs\box_2x2.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\boxs\box_small.xnb
+C:\Users\Kuikai\Desktop\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\mortorcykel.xnb

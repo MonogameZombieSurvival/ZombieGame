@@ -13,9 +13,16 @@
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/blood.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bosssound.mp3</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bosszombie.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/boxs/barrel_side.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/boxs/barrel_top.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/boxs/box.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/boxs/box_2x1.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/boxs/box_2x2.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/boxs/box_small.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bridge-wood-square_0.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bullet.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/CollisionTexture.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/Dirt 2 .png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/ExampleFont.spritefont</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/fencelodrat.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/fenceVandrat.png</File>
@@ -27,7 +34,9 @@
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/KillCount.spritefont</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/kisspngbloode.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/krydsvendt.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/mag.spritefont</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/Mini_truck.png</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/mortorcykel.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/parkeringsplas.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/pirate_ship_00000.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/plant1.png</File>
@@ -73,6 +82,7 @@
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/water.jpg</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/WaveTimer.spritefont</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/winscreen.jpg</File>
+    <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/XN_1.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_0.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_1.png</File>
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_2.png</File>
@@ -107,6 +117,16 @@
     <File>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombiesound.mp3</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

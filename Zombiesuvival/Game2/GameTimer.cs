@@ -18,8 +18,12 @@ namespace Game2
 
         private float WaveTimermilisec;
         private double WaveTimeDouble ;
-        /// <summary>
-        /// </summary>
+    /// <summary>
+    /// A loop timmer der teller ned i skunde der smeder et interval in og tæller ned der fra
+    /// </summary>
+    /// <param name="gameTime"></param>
+    /// <param name="WaveIntervale"></param>
+    /// <returns></returns>
         public int gameTimerSec(GameTime gameTime, int WaveIntervale)
         {
             /// Timer for the Wave goes for 30 sec and dow to 0 int a loob
@@ -48,7 +52,9 @@ namespace Game2
 
         }
 
-        // loob timer for miliseconder
+        /// <summary>
+        /// loob timer for miliseconder. bruges hvis man skal have en ned telling der vare under en et sekund
+        /// </summary>   
         public double gameTimerMIlilesecs(GameTime gameTime, double WaveIntervale, double CountDponSpeed)
         {
             /// Timer for the Wave goes for 30 sec and dow to 0 int a loob

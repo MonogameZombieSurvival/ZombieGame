@@ -31,14 +31,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="180136">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="183720">
       <assemblyIdentity name="Game2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ElPhFDnibbaHOwVfgHia9SfN3AJNjYblht5F3tToAuQ=</dsig:DigestValue>
+        <dsig:DigestValue>VE2KsVMxgWQQ6UCc9Kq7YWf6ASAyZwog3VQ+diQZT8g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -534,6 +534,60 @@
       <dsig:DigestValue>clufUtEFLJPRioI+kHY7ztLOJvMluFMnJ0K/5ztnZwM=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\boxs\barrel_side.xnb" size="4405">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+d/X5Fx4KvED5C7UpP6PLcW+l9Ud0Y3A13cXaoeO4mQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\boxs\barrel_top.xnb" size="3925">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MUoocMrDkwXiisdAoP/rpAuLhQAwBn29/sx1N023Sk4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\boxs\box.xnb" size="10085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lxZakSS0rg5aJFFp/oiVj3O+elDotZhDhD2vUvUjzig=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\boxs\box_2x1.xnb" size="17045">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>FcI07k2tgo7oi/JUOgWC0MZE+Mb7v2T4UAMnoWACRz0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\boxs\box_2x2.xnb" size="26325">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>w8Yh2wHKpj5MYVuCHB3KCdGnZCd0YmQ7UC70oXRYnp8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\boxs\box_small.xnb" size="6165">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>IMIEEfEx+uv+R80fn2z6rp8sCLWQYSrov81B3TtxEU8=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\bridge-wood-square_0.xnb" size="458301">
     <hash>
       <dsig:Transforms>
@@ -559,6 +613,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>7M84YQYrZgT9Ya21gpYruqzrfSinzM+ZzC8LxDooo0s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Dirt 2 .xnb" size="16777301">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>uVRbDq/n3+2a+uvSdd0LacXdzncoEC4XxAJWYanGdV8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\ExampleFont.xnb" size="21524">
@@ -705,6 +768,15 @@
       <dsig:DigestValue>Yfbw07vSJUCe0xl5pWPMx9DXo5CUKL8haOebHwip1Ks=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\mag.xnb" size="21524">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>28Wj1X6hDYSKhPNpV9F7VgSpLZ/TQWN4srOSDh9mPCE=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Mini_truck.xnb" size="44785">
     <hash>
       <dsig:Transforms>
@@ -712,6 +784,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>CB3vi1gNW5/Ig/YSWcbzBEfPz7JrdqPLImyrQVLyLrg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\mortorcykel.xnb" size="27217">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Qs2TXJLOaYvL7fzVqDNXSqr+fy5tL3wX0kijMimmC/E=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\parkeringsplas.xnb" size="351509">
@@ -1135,6 +1216,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>YefRJPqj3bnaXnDqbiSvGsaSfm3Hyd5sPtDoRcJ9uGE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\XN_1.xnb" size="320441">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gKcZGY/YR2fwR+wGkcuAnaE9Y8i50h+PxKoo6olaqgE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\zombie\Attack\skeleton-attack_0.xnb" size="18285">
