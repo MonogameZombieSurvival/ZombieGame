@@ -77,11 +77,11 @@
     <Compile Include="Bullet.cs" />
     <Compile Include="Eneny2.cs" />
     <Compile Include="GameObject.cs" />
-    <Compile Include="GameTimer.cs" />
+    <Compile Include="LoobTimer.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="AnimatedGameObject.cs" />
     <Compile Include="Gas.cs" />
-    <Compile Include="Levels.cs" />
+    <Compile Include="LevelManager.cs" />
     <Compile Include="Machingun.cs" />
     <Compile Include="Motorcykel.cs" />
     <Compile Include="NoneSolidObejts.cs" />
@@ -92,7 +92,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Shotgun.cs" />
     <Compile Include="sighte.cs" />
-    <Compile Include="Solid.cs" />
+    <Compile Include="SolidObejts.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

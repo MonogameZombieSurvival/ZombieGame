@@ -31,14 +31,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="183720">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="185768">
       <assemblyIdentity name="Game2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>VE2KsVMxgWQQ6UCc9Kq7YWf6ASAyZwog3VQ+diQZT8g=</dsig:DigestValue>
+        <dsig:DigestValue>hVbRmuf6dFq17EmjDolzqXgtyhAhESAmkxBg9FR9KFs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -613,6 +613,114 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>7M84YQYrZgT9Ya21gpYruqzrfSinzM+ZzC8LxDooo0s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4ND2B1YJxYuvpmG9QCFE5NHmUBiKik9t4ExFPYDGuc8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_0.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4ND2B1YJxYuvpmG9QCFE5NHmUBiKik9t4ExFPYDGuc8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_1.xnb" size="868709">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>tkrFrJhwuEX3rAiZRrvgrjshR0nw8q23zTRvYIhqU/s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_10.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HfaA1nWvb7icz3iOxrM5Tckna214jgPWzl70O9TekCs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_13.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>aYW4vhX9qWExlq2uoad+1Cy+CtwND4fKeHGnakbc6fw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_14.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>W967wETiQnAkyMj5lN8QG2vzhQF0ltC9BpeKC3R8Sl8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_2.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>PXikyU3CzNdaW+iMKiEeRRs/KLzmNEGG3UgzEY65/eY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_3.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0EjJb6bhBUd2h9pas7NawVB8sl6Z1y+Vk6PacYOxOso=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_4.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HfaA1nWvb7icz3iOxrM5Tckna214jgPWzl70O9TekCs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_5.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>aYW4vhX9qWExlq2uoad+1Cy+CtwND4fKeHGnakbc6fw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_6.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>W967wETiQnAkyMj5lN8QG2vzhQF0ltC9BpeKC3R8Sl8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_7.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0EjJb6bhBUd2h9pas7NawVB8sl6Z1y+Vk6PacYOxOso=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Dirt 2 .xnb" size="16777301">

@@ -20,7 +20,7 @@ namespace Game2
        /// <summary>
         /// Classer
         /// </summary>
-        GameTimer gameTimer = new GameTimer();   
+        LoobTimer gameTimer = new LoobTimer();   
         
         public Vector2 direction = new Vector2();                     
         private Vector2 bulletposition;      
@@ -40,7 +40,7 @@ namespace Game2
 
 
         ///fileds
-        private const float moveSpeed = 1000;
+        private float moveSpeed = 1000;
         public static bool KilledBoss = false;
 
         private int mag;
@@ -97,10 +97,12 @@ namespace Game2
         private int shotgunshotsfired = 0;
         private int shotfunMag = 5;
         bool shotgunOn = false;
+        bool Haveshotgun = false;
 
+        static public bool IsAlive = true;
       
      
-        bool Haveshotgun = false;
+        
         /// <summary>
         /// default constucter
         /// </summary>
@@ -108,20 +110,31 @@ namespace Game2
         public Player(ContentManager content) : base(1,10, new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2), content, "playerImg")
         {
             this.content = content;
-            health = 10;
+            health =100;
            
             
             
         }
+        public Player(ContentManager content,bool haveMachinGun, bool haveShotgun) : base(1, 10, new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2), content, "playerImg")
+        {
+            this.content = content;
+            health = 100;
+
+            HaveMachinGun = haveMachinGun;
+            Haveshotgun = haveShotgun;
 
 
-  /// <summary>
-  /// return the vector pistion for hvor bullet ud fra player bliver loaded 
-  /// </summary>
-  /// <param name="point"></param>
-  /// <param name="origin"></param>
-  /// <param name="rotation"></param>
-  /// <returns></returns>
+
+        }
+
+
+        /// <summary>
+        /// return the vector pistion for hvor bullet ud fra player bliver loaded 
+        /// </summary>
+        /// <param name="point"></param>
+        /// <param name="origin"></param>
+        /// <param name="rotation"></param>
+        /// <returns></returns>
         public Vector2 RotateAboutOrigin(Vector2 point, Vector2 origin, float rotation)
         {
             return Vector2.Transform(point - origin, Matrix.CreateRotationZ(rotation)) +origin;
@@ -364,9 +377,30 @@ namespace Game2
             //reload
             reloard();
             /// shots weapon cheal metode for mere info
-            Shoot();  
-            
-           lastShoot += gameTime.ElapsedGameTime.TotalSeconds;
+            Shoot();
+
+            if (health <= 0)
+            {
+                IsAlive = false;
+            }
+            else { 
+                IsAlive = true;
+            }
+
+
+            if(HaveMachinGun == true)
+            {
+                GameWorld.HavsMachinGun = true;
+               
+            }
+
+            if (Haveshotgun == true)
+            {
+                GameWorld.HaveShotGun = true;
+
+            }
+
+            lastShoot += gameTime.ElapsedGameTime.TotalSeconds;
             base.Update(gameTime);
         }
 
@@ -382,19 +416,19 @@ namespace Game2
             {
                 GameWorld.RemoveGameObject(otherObject);
             }
-           if(otherObject is Shotgun)
+           if(otherObject is Shotgun && Keyboard.GetState().IsKeyDown(Keys.Space))
             {
                 Haveshotgun = true;
             }
-            if(otherObject is Machingun)
+            if(otherObject is Machingun && Keyboard.GetState().IsKeyDown(Keys.Space))
             {
                HaveMachinGun = true;
             }
-            if (otherObject is Gas)
+            if (otherObject is Gas&& Keyboard.GetState().IsKeyDown(Keys.Space))
             {
                 HaveGas = true;
             } 
-            if (otherObject is Solid ||otherObject is NoTwalkerbelObejt  )
+            if (otherObject is SolidObejts ||otherObject is NoTwalkerbelObejt  )
             {
 
                 if (Keyboard.GetState().IsKeyDown(Keys.D))

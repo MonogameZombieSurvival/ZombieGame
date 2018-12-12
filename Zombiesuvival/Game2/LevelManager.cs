@@ -12,7 +12,7 @@ using System.Timers;
 
 namespace Game2
 {
-    class Levels
+    class LevelManager
     {
         private int level;
         private GraphicsDevice graphicsDevice;
@@ -28,7 +28,7 @@ namespace Game2
                 level = value;
             }
         }
-        public Levels(ContentManager content, int Level)
+        public LevelManager(ContentManager content, int Level)
         {
             level = Level;
             contents = content;
@@ -43,7 +43,7 @@ namespace Game2
                     addGround();
                     addwater();
                     addobejt();
-                    addEnemy();
+                   // addEnemy();
                     break;
                 case 2:
                     addGround();
@@ -52,7 +52,7 @@ namespace Game2
                     addEnemy();                
                     vej();
                    addObejtLvl2();
-                    Zombieslvl2();
+                   Zombieslvl2();
                     break;
 
                 case 3:
@@ -293,14 +293,14 @@ namespace Game2
                 // adds cars
                 for (int i = 0; i < 4; i++)
                 {
-                    GameWorld.AddGameObject(new Solid(contents, miniTruck, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, miniTruck, X, Y));
                     Y += 175;
                 }
                 //cars
                 Y = 120;
                 for (int i = 0; i < 2; i++)
                 {
-                    GameWorld.AddGameObject(new Solid(contents, miniTruck, X + 4000, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, miniTruck, X + 4000, Y));
                     Y += 175;
                 }
 
@@ -308,7 +308,7 @@ namespace Game2
                 Y = -1320;
                 for (int i = 0; i < 4; i++)
                 {
-                    GameWorld.AddGameObject(new Solid(contents, miniTruck, X + 4000, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, miniTruck, X + 4000, Y));
                     Y += 175;
                 }
 
@@ -317,7 +317,7 @@ namespace Game2
                 X = -2600;
                 for (int i = 0; i < 3; i++)
                 {
-                    GameWorld.AddGameObject(new Solid(contents, miniTruck, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, miniTruck, X, Y));
                     Y += 175;
                 }
 
@@ -328,7 +328,7 @@ namespace Game2
                 for (int i = 0; i < 14; i++)
                 {
                     Y = -410;
-                    GameWorld.AddGameObject(new Solid(contents, House, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, House, X, Y));
                     Y += 260;
                     GameWorld.AddEFfect(new NoneSolidObejts(contents, parkeringplads, X, Y));
                     X += 400;
@@ -339,7 +339,7 @@ namespace Game2
                 X = -3400;
                 for (int i = 0; i < 14; i++)
                 {
-                    GameWorld.AddGameObject(new Solid(contents, Bush, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, Bush, X, Y));
                     X += 400;
                 }
 
@@ -349,7 +349,7 @@ namespace Game2
                 for (int i = 0; i < 14; i++)
                 {
                     Y = -1540;
-                    GameWorld.AddGameObject(new Solid(contents, House, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, House, X, Y));
                     Y += 260;
                     GameWorld.AddEFfect(new NoneSolidObejts(contents, parkeringplads, X, Y));
                     X += 400;
@@ -359,11 +359,11 @@ namespace Game2
                 X = -1800;
                 for (int i = 0; i < 13; i++)
                 {
-                    GameWorld.AddGameObject(new Solid(contents, Bush, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, Bush, X, Y));
                     X += 400;
                 }
                 X = -1800;
-                GameWorld.AddGameObject(new Solid(contents, Bush, X-130, Y));
+                GameWorld.AddGameObject(new SolidObejts(contents, Bush, X-130, Y));
 
                 X = 2500;
                 Y = 50;
@@ -371,7 +371,7 @@ namespace Game2
                 for (int i = 0; i < 8; i++)
                 {
                     Y -= 90;
-                    GameWorld.AddGameObject(new Solid(contents, fencelodrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
 
 
                 }
@@ -381,7 +381,7 @@ namespace Game2
                 for (int i = 0; i < 8; i++)
                 {
                     Y -= 90;
-                    GameWorld.AddGameObject(new Solid(contents, fencelodrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
 
 
                 }
@@ -391,7 +391,7 @@ namespace Game2
                 for (int i = 0; i < 6; i++)
                 {
 
-                    GameWorld.AddGameObject(new Solid(contents, fenceVandrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
 
                     X -= 90;
                 }
@@ -400,17 +400,17 @@ namespace Game2
                 for (int i = 0; i < 6; i++)
                 {
 
-                    GameWorld.AddGameObject(new Solid(contents, fenceVandrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
 
                     X -= 90;
                 }
                 // adding tres in the in fence
                 X = 3000;
                 Y = -500;
-                GameWorld.AddGameObject(new Solid(contents, "trees/(19)", X - 100, Y + 400));
-                GameWorld.AddGameObject(new Solid(contents, tree + trees[9], X, Y));
-                GameWorld.AddGameObject(new Solid(contents, tree + trees[3], X - 300, Y));
-                GameWorld.AddGameObject(new Solid(contents, tree + trees[5], X - 300, Y + 400));
+                GameWorld.AddGameObject(new SolidObejts(contents, "trees/(19)", X - 100, Y + 400));
+                GameWorld.AddGameObject(new SolidObejts(contents, tree + trees[9], X, Y));
+                GameWorld.AddGameObject(new SolidObejts(contents, tree + trees[3], X - 300, Y));
+                GameWorld.AddGameObject(new SolidObejts(contents, tree + trees[5], X - 300, Y + 400));
 
 
 
@@ -419,25 +419,25 @@ namespace Game2
                 Y = -570;
                 for (int i = 0; i < 14; i++)
                 {
-                    GameWorld.AddGameObject(new Solid(contents, fencelodrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
                     Y -= 90;
-                    GameWorld.AddGameObject(new Solid(contents, fencelodrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
                     Y -= 45;
                     X -= 45;
-                    GameWorld.AddGameObject(new Solid(contents, fenceVandrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
                     X -= 90;
-                    GameWorld.AddGameObject(new Solid(contents, fenceVandrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
                     X -= 90;
-                    GameWorld.AddGameObject(new Solid(contents, fenceVandrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
                     Y += 45;
                     X -= 45;
-                    GameWorld.AddGameObject(new Solid(contents, fencelodrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
                     Y += 90;
-                    GameWorld.AddGameObject(new Solid(contents, fencelodrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
                     /// adds tress to garen
-                    GameWorld.AddGameObject(new Solid(contents, tree + trees[3], X + 70, Y - 30));
-                    GameWorld.AddGameObject(new Solid(contents, tree + trees[8], X + 50, Y - 100));
-                    GameWorld.AddGameObject(new Solid(contents, tree + trees[14], X + 190, Y - 40));
+                    GameWorld.AddGameObject(new SolidObejts(contents, tree + trees[3], X + 70, Y - 30));
+                    GameWorld.AddGameObject(new SolidObejts(contents, tree + trees[8], X + 50, Y - 100));
+                    GameWorld.AddGameObject(new SolidObejts(contents, tree + trees[14], X + 190, Y - 40));
 
                     X -= 130;
                 }
@@ -477,21 +477,21 @@ namespace Game2
                 Y = -1220;
                 for (int i = 0; i < 20; i++)
                 {
-                    GameWorld.AddGameObject(new Solid(contents, fencelodrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
                     Y -= 90;
                 }
                 X = -2500;
                 Y = -1220;
                 for (int i = 0; i < 20; i++)
                 {
-                    GameWorld.AddGameObject(new Solid(contents, fencelodrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
                     Y -= 90;
                 }
                 Y = -1175;
                 X = -2545;
                 for (int i = 0; i < 20; i++)
                 {
-                    GameWorld.AddGameObject(new Solid(contents, fenceVandrat, X, Y));
+                    GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
                     X -= 90;
                 }
 

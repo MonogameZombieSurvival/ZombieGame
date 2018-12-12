@@ -230,7 +230,7 @@ namespace Game2
         /// <param name="otherObject">The object it collided with</param>
         public override void DoCollision(GameObject otherObject)
         {
-           if (otherObject is Solid || otherObject is NoTwalkerbelObejt && lastmovemet < 2)
+           if (otherObject is SolidObejts || otherObject is NoTwalkerbelObejt && lastmovemet < 2)
             {
                 SetRandomDirection();
                 lastmovemet = 0;

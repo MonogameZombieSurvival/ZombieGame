@@ -23,7 +23,7 @@ namespace Game2
         private int holdNumber;
         private int damnge = 200;
         private double LastAttck = 0;
-        private int bosshealth = 50;
+        private int bosshealth = 4;
 
 
 

@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Game2
 {
-    class GameTimer
+    class LoobTimer
     {
         private double GameTimerSec;
         private int WaveTimerSec;
@@ -84,5 +84,9 @@ namespace Game2
 
         }
 
+    }
+
+    class GameTimer
+    {
     }
 }

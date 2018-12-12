@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Input;
 
 namespace Game2
 {
@@ -38,7 +39,7 @@ namespace Game2
 
         public override void DoCollision(GameObject otherObject)
         {
-            if(otherObject is Player)
+            if(otherObject is Player && Keyboard.GetState().IsKeyDown(Keys.Space))
             {
                 GameWorld.RemoveGameObject(this);
             }

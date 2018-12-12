@@ -15,7 +15,7 @@ namespace Game2
     {
         private Vector2 direction;
         private const float movementSpeed = 500;
-        GameTimer GameTimer = new GameTimer();
+        LoobTimer GameTimer = new LoobTimer();
         private int bulletFlyTime;
         /// <summary>
         /// Constructor for a Bullet
@@ -51,7 +51,7 @@ namespace Game2
            
             
 
-            if (otherObject is Solid)
+            if (otherObject is SolidObejts)
             {
                 
                 GameWorld.RemoveGameObject(this);

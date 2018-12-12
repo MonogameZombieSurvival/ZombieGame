@@ -159,7 +159,7 @@ namespace Game2
         public override void DoCollision(GameObject otherObject)
         {   
             // cheker om enemyen går in i et solid obejt
-            if(otherObject is Solid || otherObject is NoTwalkerbelObejt&& lastmovemet <2)
+            if(otherObject is SolidObejts || otherObject is NoTwalkerbelObejt&& lastmovemet <2)
             {
                 SetRandomDirection();
                 lastmovemet = 0;
