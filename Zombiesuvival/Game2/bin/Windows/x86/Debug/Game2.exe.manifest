@@ -31,14 +31,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="191912">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="192936">
       <assemblyIdentity name="Game2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rvVt6C3YnJCD59jTXxTcGHgaAidCP4IfMyQeMTR8veI=</dsig:DigestValue>
+        <dsig:DigestValue>tz6lKkyqNNYgSOeg4tSt3ISjK3mq4wFqDXZdRphhc70=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

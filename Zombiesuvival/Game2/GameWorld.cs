@@ -375,7 +375,7 @@ namespace Game2
 
                     levels = 1;
                     level1 = true;
-                    level = new LevelManager(Content, 1);
+                    level = new LevelManager(Content, 4);
                     player = new Player(Content);
                     sighte = new sighte(Content);
 

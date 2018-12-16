@@ -283,8 +283,8 @@ namespace Game2
                     Y = -2000;
                     X += 2000; 
                 }
-                X = 600;
-                Y = 0;
+                X = 450;
+                Y = -300;
                 for (int x = 0; x < 4; x++)
                 {
                     for (int y = 0; y < 4; y++)
@@ -293,7 +293,7 @@ namespace Game2
                         Y += 200;
                     }
                     X += 200;
-                    Y = 0;
+                    Y = -300;
                 }
                
                 
@@ -303,9 +303,13 @@ namespace Game2
         {
             string[] ground = new string[] { "bg-grass2000'2", "Dirt 2 ", "BlackBagground", "floor" };
             string[] walls = new string[] { "HouseWallOP", "HouseWall300", "HouseWall400", "door", "HouseWall" };
-
-            int X = 600;
-            int Y = -800;
+            string zombie1 = "zombiesmall";
+            string zombie2 = "zombie1";
+            string zombie3 = "zombie3";
+            string zombie4 = "zombie2";
+            string zombie5 = "zombie/move/skeleton-move_0";
+            int X = 450;
+            int Y = -1100;
 
             if (door1lvl2 == true)
             {
@@ -317,16 +321,50 @@ namespace Game2
                         Y += 200;
                     }
                     X += 200;
-                    Y =-800;
+                    Y =-1100;
                 }
-                 X = 500;
-                Y = -500;
+                 X = 350;
+                Y = -800;
                 GameWorld.AddGameObject(new SolidObejts(contents, walls[0], X, Y));
                 X += 800;
                 GameWorld.AddGameObject(new SolidObejts(contents, walls[0], X, Y));
                 X -= 400;
                 Y -= 400;
                 GameWorld.AddGameObject(new SolidObejts(contents, walls[4], X, Y));
+
+                /// add Zombies
+                /// 
+                for (int i = 0; i < 15; i++)
+                {
+                    X = rand.Next(400, 1000);
+                    GameWorld.AddGameObject(new Enemy(contents, zombie4, X, Y, 11, 15));
+
+                                    Y = rand.Next(-800, -450);
+                }
+
+
+
+                Y = 0;
+                for (int i = 0; i < 15; i++)
+                {
+                    X = rand.Next(400, 1000);
+                    GameWorld.AddGameObject(new Enemy(contents, zombie3, X, Y, 5, 10));
+
+          
+                    Y = rand.Next(-800, -450);
+                }
+
+
+
+                Y = -200;
+                for (int i = 0; i < 15; i++)
+                {
+                    X = rand.Next(400, 1000);
+                    GameWorld.AddGameObject(new Enemy2(contents, zombie5, X, Y, 16, 8));
+
+                    Y = rand.Next(-800, -450);
+                }
+
             }
             door1lvl2 = false;
         }
@@ -889,17 +927,17 @@ namespace Game2
 
             int X = 0;
             int Y = 0;
-            X += 500;
-            Y += 300;
+            X += 350;
+            Y += 0;
             GameWorld.AddGameObject(new SolidObejts(contents, walls[0], X, Y));
              X += 800;
             GameWorld.AddGameObject(new SolidObejts(contents, walls[0], X, Y));
             Y += 400;
-            X = 640;
+            X = 490;
             GameWorld.AddGameObject(new SolidObejts(contents, walls[1], X, Y));
             X += 470;
             GameWorld.AddGameObject(new SolidObejts(contents, walls[2], X, Y));
-            X = 690;
+            X = 540;
             Y -= 800;
             GameWorld.AddGameObject(new SolidObejts(contents, walls[2], X, Y));
             X += 470;
@@ -1175,6 +1213,44 @@ namespace Game2
                     x += rand.Next(0, 200);
                     Thread.Sleep(100);
                   
+                }
+
+
+            }
+            if(level == 4)
+            {
+                y = -100;
+                for (int i = 0; i <15; i++)
+                {
+                    x = rand.Next(400, 1000);
+                    GameWorld.AddGameObject(new Enemy(contents, zombie4, x, y, 11, 15));
+
+                    Thread.Sleep(100);
+                    y = rand.Next(-300, -100);
+                }
+
+
+
+                y = 0;
+                for (int i = 0; i < 15; i++)
+                {
+                    x = rand.Next(400, 1000);
+                    GameWorld.AddGameObject(new Enemy(contents, zombie3, x, y, 5, 10));
+
+                    Thread.Sleep(100);
+                    y = rand.Next(-300, -100);
+                }
+
+
+
+                y = -200;
+                for (int i = 0; i < 15; i++)
+                {
+                    x = rand.Next(400, 1000);
+                    GameWorld.AddGameObject(new Enemy2(contents, zombie5, x, y, 16, 8));
+
+                    Thread.Sleep(100);
+                    y = rand.Next(-300, -100);
                 }
 
 

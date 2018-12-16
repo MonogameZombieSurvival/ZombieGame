@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_5.png</SourceFile>
+  <SourceFile>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombie/Attack/skeleton-attack_5.png</SourceFile>
   <SourceTime>2018-12-06T18:25:56.5471025+01:00</SourceTime>
-  <DestFile>C:/Users/Kuikai/Desktop/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bin/Windows/Content/zombie/Attack/skeleton-attack_5.xnb</DestFile>
-  <DestTime>2018-12-06T18:26:31.3334779+01:00</DestTime>
+  <DestFile>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/bin/Windows/Content/zombie/Attack/skeleton-attack_5.xnb</DestFile>
+  <DestTime>2018-12-16T21:56:22.5134607+01:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-09-23T23:55:52+02:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
