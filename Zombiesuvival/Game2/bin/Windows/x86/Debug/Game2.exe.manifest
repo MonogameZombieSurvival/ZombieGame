@@ -31,14 +31,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="185768">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="191912">
       <assemblyIdentity name="Game2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>hVbRmuf6dFq17EmjDolzqXgtyhAhESAmkxBg9FR9KFs=</dsig:DigestValue>
+        <dsig:DigestValue>rvVt6C3YnJCD59jTXxTcGHgaAidCP4IfMyQeMTR8veI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -471,6 +471,15 @@
       <dsig:DigestValue>+CXuLR+ETSCMU8RPdWRPYcqoj9zRuPk5JQCmwEY24rw=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\BlackBagground.xnb" size="16000085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>W60MknDKMDP5b0jxT2FqUlNvXOOwGn31cEmVWP6s4c4=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\BlindShift.wma" size="10464544">
     <hash>
       <dsig:Transforms>
@@ -606,6 +615,411 @@
       <dsig:DigestValue>hzXk9V2x/eCLE+FZ8doS3hbk9Lu4Jby6H9mi27qCHFk=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Cars\car1_blue.xnb" size="12517">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>XiZHyA8cGore0KGRSf+brui2DjQlxn4QkSUbW6vhfdE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car1_green.xnb" size="12517">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ouFc9J4boUxr2WcbBFjMzIYj9x8Q3paFL/cukibFWAY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car1_orange.xnb" size="12517">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ZW+J7MjytOtsNTfeP0gSvR9TrERrlstvJZ4I7Q1gTtY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car1_purple.xnb" size="12517">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>z2fYka7O1S/Jp2JWThN3triP6HEhIu1z/m2kPNwCklI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car1_red.xnb" size="12813">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Ek+NJS2PF4MNSAUgCKoOzcg4bdbym1Oo9Ykl0nCrXCM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car1_yellow.xnb" size="12517">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>umY4kTBUcuNVbPJfCiqBqea6bzKwkx1GQNFFo6mGncg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car2_blue.xnb" size="13365">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0EwIcEKM08afVeqfecUhJdIBtXf/2Mt57ics/120Nq8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car2_green.xnb" size="13365">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>0alG+l6++misapMpj+r8OPbKUB25USiV1e2HNFJrfLw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car2_orange.xnb" size="13365">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>uHBJW3VtqYnsM0Z/MvwyapmD1G44drTKY8hQuILPobg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car2_purple.xnb" size="13365">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>TlDc4AwE33tZQx74CD1OuBIn1zEyz7mg4YEVfdW4JZA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car2_red.xnb" size="13365">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>OQB6/cZm2cSgFYaA2dfNXgXwyIsAth8ZeTLDRb2Pt8Y=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car2_yellow.xnb" size="13365">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>S0+oZoL6JVv82Db58rG1B+bS8c0PFtsHdIICDgpAfRk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car3_blue.xnb" size="13045">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>U8BU5PfQDWHu3b/IjTIxDElRDQIdo5j6q9XJhY8hskA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car3_green.xnb" size="13045">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>TqlKnEFSjRb6B2JScOhEmU2qcAivWeiS9GTgWgsYMg8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car3_orange.xnb" size="13045">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>EEgh6yLE/IwMam6LQGcUdM8Gc+hsUwv+8ROX86EBf/s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car3_purple.xnb" size="13045">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>DAb8EtNJeCamIqmSzlP83hf11EKMdaTkjL8A+VlKm0E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car3_red.xnb" size="13045">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>bxJ+gtXyq2Pqr+qgzJddvR9AG+MSF/tny6lSERAWUUM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car3_yellow.xnb" size="13045">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Zfde/LTuWuGyR984Qx/HWWGXng6GAMwhI78HjJtAjA0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car4_blue.xnb" size="13109">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6ujLo6JGCZRYXWAPfJaijTiTULvK/s2a5DYZwmO+69A=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car4_green.xnb" size="13109">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>9wcHVRWKeTOpuxF3EsIOWPjKMWUco1hV/62F+SpCI4c=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car4_orange.xnb" size="13109">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6Q60IhybTc1f5lcRxFHetk90QHO5qRWSJqZZQCN4q38=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car4_purple.xnb" size="12813">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>9Moz/NY/GEUzH4jMGHrqAVv1u7UcmnGSi0oBmRjpHx4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car4_red.xnb" size="12813">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HTEqFkcB47pP2f7kZzvYYEnZ/x/IEzx+li3fhnpEJ90=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car4_yellow.xnb" size="13109">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>gSfWsTgUQjezdi2n1WVXs+rMH8jh5kn30w1nbklP4HI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car5_blue.xnb" size="12085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>xpqaxGiqACOwk3l/+LBhPB1FehJaoDuhyItGKjpgWMU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car5_green.xnb" size="12085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>sOAuFdT6eWs73YWSAVvtA9C9vJjkuG+8chTtLOvhADg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car5_orange.xnb" size="12085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Bisf9Bkfr9MtGW76Zr9UnggZNE5QAiMXYL89BWVeITc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car5_purple.xnb" size="12085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>2dH+TNnpFF2IaYOPMzm4zFbaswDNSTPpJAJjv9qjri0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car5_red.xnb" size="12385">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>mnAxKPXzCWqZUETCW1P8mBkInERRoX9IablyLnuIjeo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car5_yellow.xnb" size="12085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>KQCoBbSxtwbsxDqVVR49ddF6qomxMnZy11cr09rR4y8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car6_blue.xnb" size="12517">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>g3c1nEs9TtGL4aqC91yACqLIZzyggNuTVT9H2RlVTZk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car6_green.xnb" size="12517">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>BTczX76/OssN9Eoe7sbAHbm3S7OV96UobqXSWMl5Vy4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car6_orange.xnb" size="12517">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>aRsCY7HD5H3VX7DpsGdfyPnKK2PQRM/3kpG4Do3ynZo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car6_purple.xnb" size="12517">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>P1Djk9jDphVBJnpi+tNM2dKLiPICKIIlDCWCrAALkU0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car6_red.xnb" size="12813">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>q8/S7cHC59uOqQMNyT+EFucJFyBPNPEPySMXvT82ROo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car6_yellow.xnb" size="12517">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>/QG2p/n3mJvOLT4tTmJsOig+HMhprMk/WnjbreE5+YQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car7_blue.xnb" size="12085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>usYFjcEd2ihu5wBUBzu3bxaNJgRec/GV0AsYXNlusfU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car7_green.xnb" size="12085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>KNsVLa7cn1bMB848WWu1gMqvGd7fu1pQFsTMdOSHeBI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car7_orange.xnb" size="12085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>M/J2r6u9eIrDk4LxW0oVTODt7g/0FHjYMQgc6toqZLU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car7_purple.xnb" size="12385">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>drien3JvHyPbZakSIM+iNnLeMSj5Hdw4ZIBsGnB2VXU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car7_red.xnb" size="12385">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>rMVUqlaDKM3qnpqIlXGkwdQ+tTOLK2X/JcIvnQmrciw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\car7_yellow.xnb" size="12085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Ve7B9TyC0Pn1KBoiWq+FIYJ5Jdsd18m4coxvLxg5zb4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\TireBlack.xnb" size="501">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>hUF701Tyt3IVTJYsfG5s8RqKs8W7+eM5I5xbBS0EX7E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\TireWhite.xnb" size="449">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>oQLg+CGXPk38ufk9fU9RqHznXX0xQlf03i6GLy5DtSA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Cars\truck.xnb" size="76981">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>u1Tfw+CZ6mmuRNEZsiHwk5sVLAYDbggkuLM3XGUdP4w=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\CollisionTexture.xnb" size="89">
     <hash>
       <dsig:Transforms>
@@ -732,6 +1146,15 @@
       <dsig:DigestValue>uVRbDq/n3+2a+uvSdd0LacXdzncoEC4XxAJWYanGdV8=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\door.xnb" size="8245">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>FmBrss/EaFaw9/KbFgtTaRDFKyHaKzGBhbC3GXB9Y3E=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\ExampleFont.xnb" size="21524">
     <hash>
       <dsig:Transforms>
@@ -813,6 +1236,15 @@
       <dsig:DigestValue>BOcGDi/ewxyv+QkAUyB0Shmh7OaRi1ell0zoPu+NrzY=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\floor.xnb" size="160085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Qe89JoDKXjCl3NsFFQ+2YxWIRC8u9Ix+g+O1nmvWYJs=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\gameover.xnb" size="4326785">
     <hash>
       <dsig:Transforms>
@@ -838,6 +1270,42 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>eGZLpunPU6YhHpL7HAGWnnzbU9zgyc70PyFmScGwtHs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\HouseWall.xnb" size="68965">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>9f2+UCDlYbQf01MbUTRjsLDnyFxklzPrS/R+V1JFZWM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\HouseWall300.xnb" size="24085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>017w835DpF7X02FEnrGpCcm57du5V+yX5uWAsFGgi0I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\HouseWall400.xnb" size="32085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>dPib0TT9ZlSI0kDjNbxVebBNHv3UqbY5Kg1sTrBlCp0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\HouseWallOP.xnb" size="64085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>KTOaW2xOSSTnQwISw8lnGcOEeC0A0R6pVdjx4tFsDtI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\KillCount.xnb" size="21524">
@@ -903,6 +1371,24 @@
       <dsig:DigestValue>Qs2TXJLOaYvL7fzVqDNXSqr+fy5tL3wX0kijMimmC/E=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\nethansHouse.xnb" size="898753">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>5RCTyva51pbJvJwxGDq+gpM1shgDGbqthwarv6QPXiY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\nethansHousemwshave.xnb" size="1867685">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>o9gLi/aWT0RQb8l/ACMR8fpF8fz0BUko+JepfmMWbeM=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\parkeringsplas.xnb" size="351509">
     <hash>
       <dsig:Transforms>
@@ -955,6 +1441,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>qocHp28uMzjpoZJNw6B+9/oyi3KByk6DsIDgPk1812Y=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Plaza_3.xnb" size="320441">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>JA2xJ+xCeaCGneuolXZ0HCPPu/AHgbAzMahxk1QCIOk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\servicestation.xnb" size="422085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>TJbfe3T7hmrW7kE/5WIA5uvQxBQ2+j53G49d9k2C1ZA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Sheet_Splatter.xnb" size="582485">
@@ -1011,6 +1515,15 @@
       <dsig:DigestValue>oRBPBTiCY7tlg35CiCxmEYgKGNWMV9HhyMby7NKQ04c=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Tankstation.xnb" size="42425">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nAROMRKIMErKevJEUrvfg7OPoBh7bZ/Xk2lSQXq0UtA=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Tileset.xnb" size="2061">
     <hash>
       <dsig:Transforms>
@@ -1027,6 +1540,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>HZ3fsOIsMDBvI/uSiCpSkx5EnL5T+ilFTHNIdwmkvT8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\TN_4.xnb" size="320441">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>sTDRhw84QJsLh5E/sybGz2AWxf1auAZkZuTigKO4tlM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Trees\(1).xnb" size="65621">

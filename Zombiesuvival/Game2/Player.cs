@@ -175,7 +175,6 @@ namespace Game2
         /// </summary>
         public void setmag()
         {
-
             if (Havepistiol == true)
             {
                 mag = PistiolMag;
@@ -190,14 +189,11 @@ namespace Game2
                 mag = MachingunMag;
                 mag -= MachingunBulletshot;
             }
-            
-            
         }
         /// <summary>
         /// change players weapon
         /// </summary>
-        /// <param name="gameTime"></param>
-        public void ChangeWeapon(GameTime gameTime) {
+        public void ChangeWeapon() {
 
             if (Keyboard.GetState().IsKeyDown(Keys.D1))
             {
@@ -370,7 +366,7 @@ namespace Game2
 
 
             // change wåpen på spilelren
-            ChangeWeapon(gameTime);       
+            ChangeWeapon();       
    // sætter magasinbullet så den kan sendes til gameworld så man kan se hvormange bullets man har tilbage 
             setmag();
 
@@ -379,6 +375,8 @@ namespace Game2
             /// shots weapon cheal metode for mere info
             Shoot();
 
+
+        
             if (health <= 0)
             {
                 IsAlive = false;
@@ -411,6 +409,11 @@ namespace Game2
         /// <param name="otherObject"></param>
         public override void DoCollision( GameObject otherObject)
         {
+
+            if (otherObject is NoneSolidObejts && NoneSolidObejts.Tag =="door"&& Keyboard.GetState().IsKeyDown(Keys.Space))
+            {
+                LevelManager.door1lvl2 = true;
+            }
 
             if (otherObject is Bullet)
             {

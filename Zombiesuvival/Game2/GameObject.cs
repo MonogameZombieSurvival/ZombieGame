@@ -28,13 +28,7 @@ namespace Game2
         protected int Playerhealth;
      
         protected ContentManager content;
-        public float playerRot
-        {
-            get
-            {
-                return rotation;
-            }
-        }
+      
         /// <summary>
         /// The Collision Box of the GameObject. The default box is based upon the GameObject position and sprite size
         /// </summary>

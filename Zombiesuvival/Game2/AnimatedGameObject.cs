@@ -35,11 +35,6 @@ namespace Game2
         }
 
 
-        public AnimatedGameObject(ContentManager content,int Freams, string spriteName): base(content,spriteName)
-        {
-            freams = Freams;
-        }
-       
 
 
 

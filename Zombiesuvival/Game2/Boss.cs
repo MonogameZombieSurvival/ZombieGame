@@ -17,10 +17,9 @@ namespace Game2
         /// <summary>
         /// Sets the boss stats
         /// </summary>
-        float moveSpeed = 70;
+       
         Random rand = new Random();
-        Vector2 distance;
-        private int holdNumber;
+        
         private int damnge = 200;
         private double LastAttck = 0;
         private int bosshealth = 4;
@@ -58,6 +57,11 @@ namespace Game2
                 }
             }
 
+            if (otherObject is SolidObejts || otherObject is NoTwalkerbelObejt && lastmovemet < 2)
+            {
+                SetRandomDirection();
+                lastmovemet = 0;
+            }
             if (otherObject is Player && LastAttck > 0.5f)
             {
                 PlayerBlood playerBlood = new PlayerBlood(realTimeplayerPosition, content);

@@ -11,7 +11,8 @@ namespace Game2
 {
     class SolidObejts: AnimatedGameObject
     {
-       
+
+       public string Tag;
 
         public SolidObejts(ContentManager content) : base(1, 5, content, "Tileset")
         {
@@ -23,7 +24,13 @@ namespace Game2
             
             position = new Vector2(X, Y);
         }
-        public SolidObejts(ContentManager content, string name, int X, int Y, float Rotation) : base(1, 5, content, name)
+
+        public SolidObejts(ContentManager content, string name, int X, int Y,string tag) : base(1, 5, content, name)
+        {
+            Tag = tag;
+            position = new Vector2(X, Y);
+        }
+        public SolidObejts(ContentManager content, string name, int X, int Y,string tag, float Rotation) : base(1, 5, content, name)
         {
             rotation = Rotation;
             position = new Vector2(X, Y);
@@ -31,9 +38,16 @@ namespace Game2
 
         public override void Update(GameTime gameTime)
         {
-        
+        if (Tag == "door" && LevelManager.door1lvl2 == true)
+            {
+                GameWorld.RemoveGameObject(this);
+            }
         }
-    
+        public override void DoCollision(GameObject otherObject)
+        {
+
+            
+        }
 
 
     }

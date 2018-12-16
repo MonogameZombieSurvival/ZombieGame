@@ -30,14 +30,13 @@ namespace Game2
         private static List<GameObject> toBeAddedEffect = new List<GameObject>();
         private static List<GameObject> toBeRemoved = new List<GameObject>();
 
-        bool IsPlayer = false;
+      
 
         /// <summary>
         ///     Classes
         /// </summary>
         private Player player;
         private GameTimer gametimer;
-        private GameTimer Spawnspeed;
         private LevelManager level;
         private sighte sighte;
 
@@ -48,14 +47,11 @@ namespace Game2
         private SpriteFont KillCount;
         private SpriteFont mag;
         private Texture2D collisionTexture;
-        private Song backgroundMusic;
-        private Texture2D Sighte;     
+        private Song backgroundMusic;         
         private Texture2D backgroundImgEnd;
         private Texture2D backgroundImgWin;
         private Texture2D[] CutScene = new Texture2D[7];
         private Song bossSound;
-        private Vector2 Playerposition;
-
 
         private double timer;
 
@@ -70,6 +66,7 @@ namespace Game2
         /// <summary>
         /// fileds / varibler
         /// </summary>
+        private bool IsPlayer = false;
         private bool level1 = false;
         private bool level2 = false;
         private bool level3 = false;
@@ -79,7 +76,7 @@ namespace Game2
 
         public static int levels =0;
         public static int cutScenemanager=1;
-        private int NumberOfgameObejts;
+        private int NumberOfgameObejts;// blive brugt til at sore for at der ikke kommer til at være for mange effetct obejter
         static private int healthHold;
         public int HealhHold
         {
@@ -212,8 +209,7 @@ namespace Game2
             
             backgroundImgEnd = Content.Load<Texture2D>("gameover");
             backgroundImgWin = Content.Load<Texture2D>("winscreen");
-            Sighte = Content.Load<Texture2D>("sighte");
-
+          
             for (int i = 0; i < 7; i++)
             {
                 CutScene[i] = Content.Load<Texture2D>($"cutsscene/zombiegame_{i}");
@@ -222,13 +218,8 @@ namespace Game2
 
             level = new LevelManager(Content, 0);
 
-            Playerposition.X = 0;
-
-            Playerposition.Y = 0;
-            // Create a timer with a two second interval.
-
-            // Hook up the Elapsed event for the timer. 
-
+         
+            
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
          
@@ -281,6 +272,15 @@ namespace Game2
                     cutScenemanager = 1;
                 }
 
+                if (player.playerPosition.Y <-2370 && player.playerPosition.Y>-2400
+                    && player.playerPosition.X > 1200 && player.playerPosition.X < 1300 && level3 == true)
+                {
+                    level3 = false;
+                    levels = 4;
+                    cutScenemanager = 1;
+                }
+
+
                 // check for colisions
                 foreach (GameObject other in gameObjects)
                 {
@@ -291,6 +291,10 @@ namespace Game2
                 }
                 
             }// update gameobejts
+
+          
+            level.addNextRooom();
+
             foreach (GameObject go in solidObejts)
             {
 
@@ -372,9 +376,9 @@ namespace Game2
                     levels = 1;
                     level1 = true;
                     level = new LevelManager(Content, 1);
-
                     player = new Player(Content);
                     sighte = new sighte(Content);
+
                     gameObjects.Add(player);
                     gameObjects.Add(sighte);
                     healthHold = player.Health;
@@ -484,7 +488,7 @@ namespace Game2
                 switch (cutScenemanager)
                 {
                     case 1:
-                        spriteBatch.Draw(CutScene[3], new Rectangle(0, 0, 1280, 720), Color.White);
+                        spriteBatch.Draw(CutScene[5], new Rectangle(0, 0, 1280, 720), Color.White);
                         if (Keyboard.GetState().IsKeyDown(Keys.Enter) && timer > 1)
                         {
                             cutScenemanager += 1;
@@ -492,13 +496,13 @@ namespace Game2
                         }
                         break;
                     case 2:
-                        spriteBatch.Draw(CutScene[4], new Rectangle(0, 0, 1280, 720), Color.White);
+                        spriteBatch.Draw(CutScene[6], new Rectangle(0, 0, 1280, 720), Color.White);
 
                         if (Keyboard.GetState().IsKeyDown(Keys.Enter) && timer > 1)
                         {
                             timer = 0;
                             cutScenemanager = 0;
-                            level3 = true;
+                            level4 = true;
                         }
                         break;
                     default:
@@ -523,7 +527,7 @@ namespace Game2
 
             if (levels>= 1)
             {
-                spriteBatch.DrawString(mag, $"Magasin:{player.Mag}", new Vector2(90, 5), Color.Blue);
+                spriteBatch.DrawString(mag, $"Magasin:{player.Mag} and PlayerPosition X {player.playerPosition.X} and Y {player.playerPosition.Y}    ", new Vector2(90, 5), Color.Blue);
                 spriteBatch.DrawString(WaveTimer, $"Health:{player.Health}", new Vector2(5, 5), Color.Blue);
                 spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
             }
@@ -546,11 +550,7 @@ namespace Game2
                 }
             }
 
-           
-
-           
-
-
+        
             
             spriteBatch.End();
             base.Draw(gameTime);

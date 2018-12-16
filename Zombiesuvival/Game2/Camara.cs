@@ -26,22 +26,11 @@ namespace Game2
         {
             this.viewport = viewport;
         }
-
-        public float x
-        {
-            get { return centre.X; }
-            set
-            {
-                centre.X = value;
-            }
-        }
-
     
         public void Camara(Viewport NewViewPort){
 
             NewViewPort = viewport;
         }
-
 
         /// <summary>
         ///  takes the positon wich the camara has to follow

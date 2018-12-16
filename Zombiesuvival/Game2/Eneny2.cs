@@ -27,7 +27,7 @@ namespace Game2
         private double lastmovemet = 0;
         private double DistancetoPlayer = 0;
         private double lastfram = 0;
-        int Fram = 0;     
+        
         private int framcountmov = 0;
         private int AnimationframsWalk;
         private int AnimationframsAttack;

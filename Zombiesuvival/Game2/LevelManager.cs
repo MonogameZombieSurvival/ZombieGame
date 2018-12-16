@@ -15,7 +15,7 @@ namespace Game2
     class LevelManager
     {
         private int level;
-        private GraphicsDevice graphicsDevice;
+        public static bool door1lvl2 = false;    
         private ContentManager contents;
         private Random rand = new Random();
         public int Level
@@ -43,7 +43,7 @@ namespace Game2
                     addGround();
                     addwater();
                     addobejt();
-                   // addEnemy();
+                    addEnemy();
                     break;
                 case 2:
                     addGround();
@@ -52,20 +52,26 @@ namespace Game2
                     addEnemy();                
                     vej();
                    addObejtLvl2();
-                   Zombieslvl2();
+             
                     break;
 
                 case 3:
                     addGround();
-                    addwater();
-                    addobejt();
                     addEnemy();
+                    vej();
+                    addobejtlvl3();
+
+
                     break;
                 case 4:
                     addGround();
-                    addwater();
-                    addobejt();
+                    addObejtlvl4();
                     addEnemy();
+
+               
+
+
+
                     break;
                 default:
                     break;
@@ -86,13 +92,14 @@ namespace Game2
         public void addGround()
         {
          
-            string[] ground = new string[] { "bg-grass2000'2", "Dirt 2 " } ;
+            string[] ground = new string[] { "bg-grass2000'2", "Dirt 2 ", "BlackBagground","floor" } ;
 
             string HaberStone = "Haber";
             string vej = "vej";
             string vejop = "vejop";
             string kryds = "TN_2";
             string krydsvent = "krydsvendt";
+            
             int Y = 371;
             int X = -2000;
             if (level == 1)
@@ -239,9 +246,90 @@ namespace Game2
                 GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[1], 2000, -4000));
                 GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[1], 4000, -4000));
             }
+            if (level == 3)
+            {
+                // add grass
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], -4000, 0));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], -2000, 0));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], 0, 0));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], 2000, 0));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], 4000, 0));
 
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], -4000, -2000));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], -2000, -2000));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], 0, -2000));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], 2000, -2000));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], 4000, -2000));
+
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], -4000, -4000));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], -2000, -4000));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], 0, -4000));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], 2000, -4000));
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[0], 4000, -4000));
+            }
+            if(level == 4)
+            {
+                X = -4000;
+                Y = -2000;
+                for (int x = 0; x < 4; x++)
+                {
+
+                    for (int y = 0; y < 4; y++)
+                    {
+                        GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[2], X,Y));
+                        Y += 2000;
+
+                    }
+                    Y = -2000;
+                    X += 2000; 
+                }
+                X = 600;
+                Y = 0;
+                for (int x = 0; x < 4; x++)
+                {
+                    for (int y = 0; y < 4; y++)
+                    {
+                        GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[3], X, Y));
+                        Y += 200;
+                    }
+                    X += 200;
+                    Y = 0;
+                }
+               
+                
+            }
         }
+        public void addNextRooom()
+        {
+            string[] ground = new string[] { "bg-grass2000'2", "Dirt 2 ", "BlackBagground", "floor" };
+            string[] walls = new string[] { "HouseWallOP", "HouseWall300", "HouseWall400", "door", "HouseWall" };
 
+            int X = 600;
+            int Y = -800;
+
+            if (door1lvl2 == true)
+            {
+                for (int x = 0; x < 4; x++)
+                {
+                    for (int y = 0; y < 4; y++)
+                    {
+                        GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[3], X, Y));
+                        Y += 200;
+                    }
+                    X += 200;
+                    Y =-800;
+                }
+                 X = 500;
+                Y = -500;
+                GameWorld.AddGameObject(new SolidObejts(contents, walls[0], X, Y));
+                X += 800;
+                GameWorld.AddGameObject(new SolidObejts(contents, walls[0], X, Y));
+                X -= 400;
+                Y -= 400;
+                GameWorld.AddGameObject(new SolidObejts(contents, walls[4], X, Y));
+            }
+            door1lvl2 = false;
+        }
         /// <summary>
         /// add water
         /// </summary>
@@ -504,35 +592,334 @@ namespace Game2
 
             }
         }
-
+        /// <summary>
+        /// addobejtfor lvl 2
+        /// </summary>
         public void addObejtLvl2()
         {
             string miniTruck = "Mini_truck";
-            string House = "House";
-            string parkeringplads = "parkeringsplas";
-            string Bush = "plant1";
-            string Machingun = "firearms/blood_c_0001";
-            string shotgun = "firearms/item_shotgun";
-            string fenceVandrat = "fenceVandrat";
-            string fencelodrat = "fencelodrat";
-            string tree = "Trees/";
+  
+        
+         
+            string[] Cars = new string[] { "Cars/truck" };
+
+      
             string Gas = "boxs/barrel_top";
             string motorCykel = "mortorcykel";
-
+            string serviceStaion = "servicestation";
+            string benzintank = "Tankstation";
             string[] trees = new string[] { "(1)", "(2)", "(3)", "(4)", "(5)", "(6)",
                 "(7)", "(8)", "(9)", "(10)", "(11)", "(12)", "(13)", "(14)", "(15)", "(16)", "(17)", "(18)", "(19)", "(20)", "(21)", "(22)", "(23)", "(24)", "(25)", "(26)", "(27)", "(28)" };
             int Y = 500;
             int X = 500;
             GameWorld.AddGameObject(new Gas(contents, Gas, X, Y));
           
-            X = 700;
+            X = 1700;
+            Y = -1150;
+            GameWorld.AddGameObject(new Motorcyekel(contents, motorCykel,X,Y));
+            /// add ccars
+            /// 
+            Y -= 300;
+            X += 200;
+            for (int i = 0; i < 3; i++)
+            {
+                GameWorld.AddGameObject(new SolidObejts(contents, miniTruck, X, Y));
+                Y += 175;
+            }
+            X =870;
+            Y = -2560;
+            for (int i = 0; i < 3; i++)
+            {
+                GameWorld.AddGameObject(new SolidObejts(contents, Cars[0], X, Y));
+                X -= 225;
+            }
+            X = 870;
+            Y =1000;
+            for (int i = 0; i < 3; i++)
+            {
+                GameWorld.AddGameObject(new SolidObejts(contents, Cars[0], X, Y));
+                X -= 260;
+            }
+            X = -2100;
+            Y = -1300;
+            GameWorld.AddGameObject(new SolidObejts(contents, serviceStaion, X, Y));
+            X += 300;
+            Y -= 200;
+            GameWorld.AddGameObject(new SolidObejts(contents, benzintank, X, Y));  
+                   Y += 400;
+            GameWorld.AddGameObject(new SolidObejts(contents, benzintank, X, Y));
 
-            GameWorld.AddGameObject(new Motorcyekel(contents, "mortorcykel",X,Y));
-            
+            Y += 200;
+            X -= 100;
+
+            GameWorld.AddGameObject(new Gas(contents, Gas, X, Y));
+
+            // addd fence
+            addfencelvl2();
+        }
+        /// <summary>
+        /// adddingfence for lvlv 2
+        /// </summary>
+       public void addfencelvl2()
+        {
+            string fenceVandrat = "fenceVandrat";
+            string fencelodrat = "fencelodrat";
+            int Y;
+            int X;
+
+            Y = 1200;
+            X = 1000;
+            // addd fence
+            for (int i = 0; i < 24; i++)
+            {
+                Y -= 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
+            }
+            Y = 1200;
+            X = 200;
+            // addd fence
+            for (int i = 0; i < 24; i++)
+            {
+                Y -= 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
+            }
+            Y -= 45;
+            X -= 45;
+            for (int i = 0; i < 17; i++)
+            {
+                GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
+                X -= 90;
+            }
+            Y -= 45;
+            X += 45;
+            for (int i = 0; i < 4; i++)
+            {
+                Y += 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
+            }
+            Y += 45;
+            X -= 45;
+            for (int i = 0; i < 12; i++)
+            {
+                GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
+                X -= 90;
+            }
+            Y += 45;
+            X += 45;
+            for (int i = 0; i < 13; i++)
+            {
+                Y -= 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
+            }
+            Y -= 45;
+            X += 45;
+            for (int i = 0; i < 12; i++)
+            {
+                GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
+                X += 90;
+            }
+            Y -= 45;
+            X -= 45;
+            for (int i = 0; i < 3; i++)
+            {
+                Y += 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
+            }
+            Y += 45;
+            X += 45;
+            for (int i = 0; i < 18; i++)
+            {
+                GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
+                X += 90;
+            }
+            Y += 45;
+            X -= 45;
+            for (int i = 0; i < 20; i++)
+            {
+                Y -= 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
+            }
+            X = 1000;
+            for (int i = 0; i < 20; i++)
+            {
+
+                GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
+                Y += 90;
+            }
+            Y -= 45;
+            X += 45;
+            for (int i = 0; i < 18; i++)
+            {
+                GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
+                X += 90;
+            }
+            X -= 90 * 18;
+            Y += 540;
+            for (int i = 0; i < 18; i++)
+            {
+                GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
+                X += 90;
+            }
+        }
+        /// <summary>
+        /// adds ovejter for lvl 3
+        /// </summary>
+        public void addobejtlvl3()
+        {
+            string[] trees = new string[] { "(1)", "(2)", "(3)", "(4)", "(5)", "(6)",
+                "(7)", "(8)", "(9)", "(10)", "(11)", "(12)", "(13)", "(14)", "(15)", "(16)", "(17)", "(18)", "(19)", "(20)", "(21)", "(22)", "(23)", "(24)", "(25)", "(26)", "(27)", "(28)" };
+
+
+            string NethasHouse = "nethansHouse";
+            string NethasHousemedahve = "nethansHousemwshave";
+            string miniTruck = "Mini_truck";
+            string[] Cars = new string[] { "Cars/truck" };
+            string Gas = "boxs/barrel_top";
+            string motorCykel = "mortorcykel";
+            string serviceStaion = "servicestation";
+            string benzintank = "Tankstation";
+           
+            string fenceVandrat = "fenceVandrat";
+            string fencelodrat = "fencelodrat";
+          
+
+            int Y = -2585;
+            int X = 1400;
+           
+            GameWorld.AddEFfect(new NoneSolidObejts(contents, NethasHousemedahve, X, Y));
+             Y -= 57 ;
+             X -= 30;
+            GameWorld.AddGameObject(new SolidObejts(contents, NethasHouse, X, Y));
+            X = 700;
+            Y = 500;
+            GameWorld.AddGameObject(new Motorcyekel(contents, "mortorcykel", X, Y));
+
+            Y = 1000;
+            X = 1000;
+            // addd fence
+            for (int i = 0; i < 30; i++)
+            {
+                Y -= 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
+            }
+
+            Y -= 700;
+            for (int i = 0; i < 30; i++)
+            {
+                Y -= 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
+            }
+
+            Y = -1745;
+            X = 955;
+            for (int i = 0; i < 30; i++)
+            {
+
+                X += 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
+            }
+            Y = 1000;
+            X = 200;
+            // addd fence
+            for (int i = 0; i < 70; i++)
+            {
+                Y -= 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
+            }
+
+            Y = -3000;
+            X = 955;
+            for (int i = 0; i < 10; i++)
+            {
+
+                X += 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
+            }
+            Y -= 45;
+            X += 45;
+            for (int i = 0; i < 6; i++)
+            {
+
+                Y += 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fencelodrat, X, Y));
+            }
+            Y += 45;
+            X -= 45;
+            for (int i = 0; i < 20; i++)
+            {
+
+                X += 90;
+                GameWorld.AddGameObject(new SolidObejts(contents, fenceVandrat, X, Y));
+            }
+
+         
+            //add truck
+            X = 870;
+            Y = 700;
+            for (int i = 0; i < 3; i++)
+            {
+                GameWorld.AddGameObject(new SolidObejts(contents, Cars[0], X, Y));
+                X -= 260;
+            }
+
+            //add truck
+            X = 870;
+            Y = -4400;
+            for (int i = 0; i < 3; i++)
+            {
+                GameWorld.AddGameObject(new SolidObejts(contents, Cars[0], X, Y));
+                X -= 260;
+            }
+            X = 2440;
+            Y = -2350;
+            /// atminitruck
+            for (int i = 0; i < 4; i++)
+            {
+                GameWorld.AddGameObject(new SolidObejts(contents, miniTruck, X, Y));
+                Y += 175;
+            }
+
+        }
+        /// <summary>
+        /// adds ovejter for lvl 4
+        /// </summary>
+        public void addObejtlvl4()
+        {
+            string[] walls = new string[] { "HouseWallOP","HouseWall300", "HouseWall400", "door" };
+
+            int X = 0;
+            int Y = 0;
+            X += 500;
+            Y += 300;
+            GameWorld.AddGameObject(new SolidObejts(contents, walls[0], X, Y));
+             X += 800;
+            GameWorld.AddGameObject(new SolidObejts(contents, walls[0], X, Y));
+            Y += 400;
+            X = 640;
+            GameWorld.AddGameObject(new SolidObejts(contents, walls[1], X, Y));
+            X += 470;
+            GameWorld.AddGameObject(new SolidObejts(contents, walls[2], X, Y));
+            X = 690;
+            Y -= 800;
+            GameWorld.AddGameObject(new SolidObejts(contents, walls[2], X, Y));
+            X += 470;
+            GameWorld.AddGameObject(new SolidObejts(contents, walls[1], X, Y));
+            X -= 210;
+            Y -= 10;
+            GameWorld.AddGameObject(new SolidObejts(contents, walls[3], X, Y,"door"));
+            Y += 20;
+            GameWorld.AddGameObject(new NoneSolidObejts(contents, walls[3], X, Y,"door"));
+            Y += 810;
+            X -= 100;
+            GameWorld.AddGameObject(new SolidObejts(contents, walls[3], X, Y));
+            Y -= 20;
+            GameWorld.AddGameObject(new NoneSolidObejts(contents, walls[3], X, Y));
+
 
 
 
         }
+
 
         /// <summary>
         /// loader enemies 
@@ -646,39 +1033,179 @@ namespace Game2
                     Thread.Sleep(100);
                 }
             }
+            if(level == 2)
+            {
+                x = -1800;
+                y = -1300;
+                GameWorld.AddGameObject(new Boss(contents, x, y));
+
+                y = 0;
+                for (int i = 0; i <15; i++)
+                {
+                    x = rand.Next(300, 900);
+                    GameWorld.AddGameObject(new Enemy(contents, zombie4, x, y, 11, 15));
+
+                    Thread.Sleep(100);
+                    y -= rand.Next(100, 300);
+                }
+
+
+
+                y = 0;
+                for (int i = 0; i < 15; i++)
+                {
+                    x = rand.Next(300, 900);
+                    GameWorld.AddGameObject(new Enemy(contents, zombie3, x, y, 5, 10));
+
+                    Thread.Sleep(100);
+                    y -= rand.Next(0, 300);
+                }
+
+
+            
+                y = -200;
+                for (int i = 0; i < 15; i++)
+                {
+                    x = rand.Next(300, 900);
+                    GameWorld.AddGameObject(new Enemy2(contents, zombie5, x, y, 16, 8));
+
+                    Thread.Sleep(100);
+                    y -= rand.Next(100, 200);
+                }
+
+
+                /// vandrat
+                x = -1500;
+                for (int i = 0; i < 5; i++)
+                {
+                    y = rand.Next(-1400, -1000);
+                    GameWorld.AddGameObject(new Enemy2(contents, zombie5, x, y, 16, 8));
+                    x += 400;
+                    Thread.Sleep(100);
+                }
+              
+              
+                for (int i = 0; i < 5; i++)
+                {
+
+                    y = rand.Next(-1400, -1000);
+                    GameWorld.AddGameObject(new Enemy(contents, zombie4, x, y, 11, 15));
+                    x += rand.Next(0, 600);
+                 
+                    Thread.Sleep(100);
+                }
+              
+                for (int i = 0; i < 5; i++)
+                {
+                    GameWorld.AddGameObject(new Enemy(contents, zombie3, x, y, 5, 10));
+                    x += rand.Next(0, 500);
+                    Thread.Sleep(100);
+                    y = rand.Next(-1400, -1000);
+                }
+
+
+
+
+
+            }
+            if (level == 3)
+            {
+              
+                y = 0;
+                for (int i = 0; i < 15; i++)
+                {
+                    x = rand.Next(300, 900);
+                    GameWorld.AddGameObject(new Enemy(contents, zombie4, x, y, 11, 15));
+
+                    Thread.Sleep(100);
+                    y -= rand.Next(100, 300);
+                }
+
+
+
+                y = 0;
+                for (int i = 0; i < 15; i++)
+                {
+                    x = rand.Next(300, 900);
+                    GameWorld.AddGameObject(new Enemy(contents, zombie3, x, y, 5, 10));
+
+                    Thread.Sleep(100);
+                    y -= rand.Next(0, 300);
+                }
+
+
+
+                y = -200;
+                for (int i = 0; i < 15; i++)
+                {
+                    x = rand.Next(300, 900);
+                    GameWorld.AddGameObject(new Enemy2(contents, zombie5, x, y, 16, 8));
+
+                    Thread.Sleep(100);
+                    y -= rand.Next(100, 200);
+                }
+
+
+                x = 500;
+                for (int i = 0; i < 15; i++)
+                {
+
+                    y = rand.Next(-2200, -1800);
+                    GameWorld.AddGameObject(new Enemy2(contents, zombie5, x, y, 16, 8));
+                    x += 200;
+                    Thread.Sleep(100);
+                }
+
+                x = 500;
+                for (int i = 0; i < 15; i++)
+                {
+
+                    y = rand.Next(-2200, -1800);
+                    GameWorld.AddGameObject(new Enemy(contents, zombie4, x, y, 11, 15));
+                    x += rand.Next(0, 200);
+
+                    Thread.Sleep(100);
+                }
+                x = 500;
+                for (int i = 0; i < 15; i++)
+                {
+
+                    y = rand.Next(-2200, -1800);
+                    GameWorld.AddGameObject(new Enemy(contents, zombie3, x, y, 5, 10));
+                    x += rand.Next(0, 200);
+                    Thread.Sleep(100);
+                  
+                }
+
+
+            }
         }
-     
-        /// <summary>
-        /// Add zombies in lvl 2
-        /// </summary>
-   public void Zombieslvl2()
-        {
 
-
-            string zombie1 = "zombiesmall";
-            string zombie2 = "zombie1";
-            string zombie3 = "zombie3";
-            string zombie4 = "zombie2";
-            string zombie5 = "zombie/move/skeleton-move_0";
-            string BossZombie = "bosszombie";
-            int y = 300;
-            int x = 500;
-
-            GameWorld.AddGameObject(new Boss(contents, y, x));
-
-        }
          public void vej()
         {
             string vej = "vej";
             string vejop = "vejop";
+            string Plasa = "Plaza_3";
             string TKrydslodrat = "TN_2";
             string krydsvent = "krydsvendt";
             string kryds = "XN_1";
-
+            string TKrydsvenstre = "TN_4";
             int Y = 720;
             int X = 600;
             if (level == 2)
             {
+
+
+      // vej ned
+                for (int i = 0; i < 7; i++)
+                {
+                    GameWorld.AddEFfect(new NoneSolidObejts(contents, vejop, X, Y));
+
+                    Y += 283;
+                }
+                // kryds
+
+                Y -= 283 * 7;
                 // vej op
                 for (int i = 0; i <7; i++)
                 {
@@ -688,8 +1215,8 @@ namespace Game2
                 }
                 // kryds
 
-
-                for (int i = 0; i < 7; i++)
+          
+                for (int i = 0; i <9; i++)
                 {
                     GameWorld.AddEFfect(new NoneSolidObejts(contents, vej, X, Y));
 
@@ -697,7 +1224,7 @@ namespace Game2
                 }
 
                 X = 600;
-                for (int i = 0; i < 7; i++)
+                for (int i = 0; i < 9; i++)
                 {
                     GameWorld.AddEFfect(new NoneSolidObejts(contents, vej, X, Y));
 
@@ -713,8 +1240,61 @@ namespace Game2
 
                     Y -= 283;
                 }
+                X = -2500;
+                Y = -695;
+                for (int x = 0; x < 3; x++)
+                {
+                    
+                    Y -= 283;
+                    for (int y = 0; y < 3; y++)
+                    {
+
+                        X += 283;
+                        GameWorld.AddEFfect(new NoneSolidObejts(contents, Plasa, X, Y));
+                    }
+                    X -= 283 * 3;
+                }
+
+
+
 
             }
+            if(level == 3)
+            {
+                // vej op
+                for (int i = 0; i < 10; i++)
+                {
+                    GameWorld.AddEFfect(new NoneSolidObejts(contents, vejop, X, Y));
+
+                    Y -= 283;
+                }
+
+
+                for (int i = 0; i < 15; i++)
+                {
+                    GameWorld.AddEFfect(new NoneSolidObejts(contents, vej, X, Y));
+
+                    X += 283;
+                }
+
+              
+                X = 600;
+                GameWorld.AddEFfect(new NoneSolidObejts(contents, TKrydsvenstre, X, Y));
+                Y -= 283;
+                // vej op
+                for (int i = 0; i < 7; i++)
+                {
+                    GameWorld.AddEFfect(new NoneSolidObejts(contents, vejop, X, Y));
+
+                    Y -= 283;
+                }
+
+            }
+        }
+
+       
+        public void Zombielvl3()
+        {
 
         }
 

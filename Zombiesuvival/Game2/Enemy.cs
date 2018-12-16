@@ -21,12 +21,12 @@ namespace Game2
         float moveSpeed = 50;
         Random rand = new Random();
         Vector2 distance;
-        private int distanceToAttack = 400;            
-        private int damnge = 10;
-        private double LastAttck=0;
-        private double lastmovemet = 0;
-        private double DistancetoPlayer=0;
-        private double lastfram = 0;    
+        protected int distanceToAttack = 400;            
+        protected int damage = 10;
+        protected double LastAttck=0;
+        protected double lastmovemet = 0;
+        protected double DistancetoPlayer=0;
+        protected double lastfram = 0;    
 
         /// <summary>
         /// Spawns zombies at random sides of the map
@@ -62,7 +62,7 @@ namespace Game2
         /// <summary>
         /// Sets the direction of the zombies in direction of the player
         /// </summary>
-        private void SetRandomDirection()
+        public void SetRandomDirection()
         {
             Random rnd = new Random();
             Direction = new Vector2((rnd.Next(0, 2) * 2 - 1), (rnd.Next(0, 2) * 2 - 1)); //Set direction vector components to -1 or 1
@@ -74,20 +74,15 @@ namespace Game2
         /// </summary>
         private void SetDiraction()
         {
-            Direction = realTimeplayerPosition - position;
-
-            
+            Direction = realTimeplayerPosition - position;   
             Direction.Normalize();
-
         }
         /// <summary>
         /// sætter rotation så enemien vender den vej den bevæger sig
         /// </summary>
         private void SetRotation()
-        {
-           
+        {        
             rotation = (float)Math.Atan2(Direction.Y, Direction.X);
-
         }
         /// <summary>
         /// sætter rotation mod playeren
@@ -178,9 +173,13 @@ namespace Game2
             if (otherObject is Player  && LastAttck > 0.5f)
             {
                 PlayerBlood playerBlood = new PlayerBlood( realTimeplayerPosition, content);
-                GameWorld.DealDamngeToPlayer(damnge);
+                GameWorld.DealDamngeToPlayer(damage);
                 GameWorld.AddGameObject(playerBlood);
                 LastAttck = 0;
+            }
+            if (otherObject is Bullet)
+            {
+                GameWorld.RemoveGameObject(otherObject);
             }
         }  
     }

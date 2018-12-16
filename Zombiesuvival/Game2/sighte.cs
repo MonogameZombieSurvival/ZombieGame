@@ -33,18 +33,6 @@ namespace Game2
 
 
 
-        /// <summary>
-        /// get Position from player
-        /// </summary>
-      public void GetPosition()
-        {
-
-        }
-
-  
-        
-
-
         public override void Update(GameTime gameTime)
         {
             MouseState mouse = Mouse.GetState();
@@ -80,12 +68,6 @@ namespace Game2
 
 
 
-        public override void DoCollision(GameObject otherObject)
-        {
-
-        
-
-        }
 
     }
 

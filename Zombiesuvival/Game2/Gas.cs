@@ -12,11 +12,7 @@ namespace Game2
 {
     class Gas : GameObject
     {
-        public Gas(ContentManager content) : base(content, "Tileset")
-        {
-            position = new Vector2(200, 200);
-
-        }
+     
         public Gas(ContentManager content, string name, int X, int Y) : base(content, name)
         {
 
@@ -28,10 +24,6 @@ namespace Game2
             position = new Vector2(X, Y);
         }
 
-        public override void Update(GameTime gameTime)
-        {
-
-        }
         public override void DoCollision(GameObject otherObject)
         {
             if (otherObject is Player && Keyboard.GetState().IsKeyDown(Keys.Space))
