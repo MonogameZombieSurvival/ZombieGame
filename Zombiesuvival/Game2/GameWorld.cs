@@ -50,7 +50,7 @@ namespace Game2
         private Song backgroundMusic;         
         private Texture2D backgroundImgEnd;
         private Texture2D backgroundImgWin;
-        private Texture2D[] CutScene = new Texture2D[7];
+        private Texture2D[] CutScene = new Texture2D[11];
         private Song bossSound;
 
         private double timer;
@@ -71,6 +71,8 @@ namespace Game2
         private bool level2 = false;
         private bool level3 = false;
         private bool level4 = false;
+        public static bool GameEnding1 = false;
+        public static bool GameEnding2 = false;
         public static int ScreenWith;
         public static int screenHeight;
 
@@ -210,7 +212,7 @@ namespace Game2
             backgroundImgEnd = Content.Load<Texture2D>("gameover");
             backgroundImgWin = Content.Load<Texture2D>("winscreen");
           
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 11; i++)
             {
                 CutScene[i] = Content.Load<Texture2D>($"cutsscene/zombiegame_{i}");
             }
@@ -226,12 +228,8 @@ namespace Game2
             WaveTimer = Content.Load<SpriteFont>("WaveTimer");
             KillCount = Content.Load<SpriteFont>("KillCount");
             collisionTexture = Content.Load<Texture2D>("CollisionTexture");
-            mag = Content.Load<SpriteFont>("mag");
-
-            
-         
+            mag = Content.Load<SpriteFont>("mag");                 
         }
-
         /// <summary>
         /// UnloadContent will be called once per game and is the place to unload
         /// game-specific content.
@@ -239,8 +237,7 @@ namespace Game2
         protected override void UnloadContent()
         {
             // TODO: Unload any non ContentManager content here
-        }
-     
+        }   
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -280,6 +277,12 @@ namespace Game2
                     cutScenemanager = 1;
                 }
 
+                if(player.playerPosition.Y< -1500 && level4 == true)
+                {
+                    level.GameEnding();
+
+                    level4 = false;
+                }
 
                 // check for colisions
                 foreach (GameObject other in gameObjects)
@@ -290,6 +293,9 @@ namespace Game2
                     }
                 }
                 
+
+
+
             }// update gameobejts
 
           
@@ -307,10 +313,7 @@ namespace Game2
                 }
 
             }
-
-
             timer += gameTime.ElapsedGameTime.TotalSeconds;
-
 
             foreach (GameObject go in toBeRemoved)
             {
@@ -322,7 +325,6 @@ namespace Game2
             gameObjects.AddRange(toBeAdded);
             toBeAdded.Clear();         
             }
-  
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
@@ -359,23 +361,18 @@ namespace Game2
 #endif
             }
             spriteBatch.End();
-
             spriteBatch.Begin();
-
-
-
+            // load lvl 1
             if (levels<= 0){
                 spriteBatch.Draw(CutScene[0], new Rectangle(0, 0, 1280, 720), Color.White);
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                 {
-
                     gameObjects.Clear();
-                    Effects.Clear();
-                    solidObejts.Clear();
+                    Effects.Clear();                  
 
                     levels = 1;
                     level1 = true;
-                    level = new LevelManager(Content, 4);
+                    level = new LevelManager(Content, 1);
                     player = new Player(Content);
                     sighte = new sighte(Content);
 
@@ -386,11 +383,9 @@ namespace Game2
                 }
                 
             }
-
-
+            // load lvl 2
             if (Player.IsAlive == true)
             {
-
                 if (levels == 2)
                 {
                     gameObjects.Clear();
@@ -417,10 +412,7 @@ namespace Game2
                             break;                                                 
                         default:
                             break;
-                    }
-                   
-
-
+                    }                 
                     if (Keyboard.GetState().IsKeyDown(Keys.Enter)&& level2 == true)
                     {
                         level = new LevelManager(Content, 2);
@@ -434,14 +426,13 @@ namespace Game2
                     }
                 }
             }
-
+            // load lvl 3
             if (levels == 3 )
             {
                 gameObjects.Clear();
                 Effects.Clear();
                 switch (cutScenemanager)
-                {
-                    
+                {                  
                     case 1:
                         spriteBatch.Draw(CutScene[3], new Rectangle(0, 0, 1280, 720), Color.White);
                         if (Keyboard.GetState().IsKeyDown(Keys.Enter) && timer > 1)
@@ -463,8 +454,6 @@ namespace Game2
                     default:
                         break;                    
                 }
-
-
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter) && level3 == true)
                 {
 
@@ -480,7 +469,7 @@ namespace Game2
                 }
             }
 
-
+            /// load lvl 4
             if (levels == 4)
             {            
                 gameObjects.Clear();
@@ -497,7 +486,6 @@ namespace Game2
                         break;
                     case 2:
                         spriteBatch.Draw(CutScene[6], new Rectangle(0, 0, 1280, 720), Color.White);
-
                         if (Keyboard.GetState().IsKeyDown(Keys.Enter) && timer > 1)
                         {
                             timer = 0;
@@ -508,11 +496,8 @@ namespace Game2
                     default:
                         break;
                 }
-
-
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter) && level4 == true)
                 {
-
                     gameObjects.Clear();
                     Effects.Clear();
                     level = new LevelManager(Content, 4);
@@ -525,13 +510,78 @@ namespace Game2
                 }
             }
 
+            // første slutning
+            if (GameEnding1 == true)
+            {
+                gameObjects.Clear();
+                Effects.Clear();
+                switch (cutScenemanager)
+                {
+                    case 1:
+                        spriteBatch.Draw(CutScene[7], new Rectangle(0, 0, 1280, 720), Color.White);
+                        if (Keyboard.GetState().IsKeyDown(Keys.Enter) && timer > 1)
+                        {
+                            cutScenemanager += 1;
+                            timer = 0;
+                        }
+                        break;
+                    case 2:
+                        spriteBatch.Draw(CutScene[10], new Rectangle(0, 0, 1280, 720), Color.White);
+                        if (Keyboard.GetState().IsKeyDown(Keys.Enter) && timer > 1)
+                        {
+                            timer = 0;
+                            cutScenemanager = 0;
+                            levels = 0;
+                                GameEnding1 = false;
+                        }
+                        break;
+                    default:
+                        break;                 
+                }
+        
+            }
+            // anden spil slutning
+            if (GameEnding2 == true)
+            {
+                gameObjects.Clear();
+                Effects.Clear();
+                switch (cutScenemanager)
+                {
+                    case 1:
+                        spriteBatch.Draw(CutScene[8], new Rectangle(0, 0, 1280, 720), Color.White);
+                        if (Keyboard.GetState().IsKeyDown(Keys.Enter) && timer > 1)
+                        {
+                            cutScenemanager += 1;
+                            timer = 0;
+
+                        }
+                        break;
+                    case 2:
+                        spriteBatch.Draw(CutScene[9], new Rectangle(0, 0, 1280, 720), Color.White);
+                        if (Keyboard.GetState().IsKeyDown(Keys.Enter) && timer > 1)
+                        {
+                            timer = 0;
+                            cutScenemanager = 0;
+                            levels = 0;
+                            GameEnding2 = false;
+                            HaveShotGun = false;
+                            HaveShotGun = false;
+                        }
+                        break;
+                    default:
+                        break;
+
+                }
+               
+            }
+
+
             if (levels>= 1)
             {
                 spriteBatch.DrawString(mag, $"Magasin:{player.Mag} and PlayerPosition X {player.playerPosition.X} and Y {player.playerPosition.Y}    ", new Vector2(90, 5), Color.Blue);
                 spriteBatch.DrawString(WaveTimer, $"Health:{player.Health}", new Vector2(5, 5), Color.Blue);
                 spriteBatch.DrawString(KillCount, $"KilleCount:{Kills}", new Vector2(1160, 5), Color.Red);
             }
-
             if (Player.IsAlive == false)
             {
                    gameObjects.Clear();
@@ -550,14 +600,11 @@ namespace Game2
                 }
             }
 
-        
-            
-            spriteBatch.End();
-            base.Draw(gameTime);
-            
+
+
+                spriteBatch.End();
+            base.Draw(gameTime);         
         }
-
-
         private void DrawCollisionBox(GameObject go)
         {
             Rectangle collisionBox = go.CollisionBox;

@@ -1310,3 +1310,7 @@ C:\Users\Kuikai\Desktop\myschoolgames and sprits and stuff\ZombieGame\ZombieGame
 C:\Users\Kuikai\Desktop\myschoolgames and sprits and stuff\ZombieGame\ZombieGame\Zombiesuvival\Game2\obj\x86\Debug\Game2.csproj.CopyComplete
 C:\Users\Kuikai\Desktop\myschoolgames and sprits and stuff\ZombieGame\ZombieGame\Zombiesuvival\Game2\obj\x86\Debug\Game2.exe
 C:\Users\Kuikai\Desktop\myschoolgames and sprits and stuff\ZombieGame\ZombieGame\Zombiesuvival\Game2\obj\x86\Debug\Game2.pdb
+C:\Users\Kuikai\Desktop\myschoolgames and sprits and stuff\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\TeakstBox.xnb
+C:\Users\Kuikai\Desktop\myschoolgames and sprits and stuff\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\TeakstBox2.xnb
+C:\Users\Kuikai\Desktop\myschoolgames and sprits and stuff\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\cutsscene\zombiegame_8.xnb
+C:\Users\Kuikai\Desktop\myschoolgames and sprits and stuff\ZombieGame\ZombieGame\Zombiesuvival\Game2\bin\Windows\x86\Debug\Content\cutsscene\zombiegame_9.xnb

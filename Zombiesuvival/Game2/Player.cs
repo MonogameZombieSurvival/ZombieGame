@@ -40,7 +40,7 @@ namespace Game2
 
 
         ///fileds
-        private float moveSpeed = 1000;
+        private float moveSpeed = 200;
         public static bool KilledBoss = false;
 
         private int mag;
@@ -110,7 +110,7 @@ namespace Game2
         public Player(ContentManager content) : base(1,10, new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2), content, "playerImg")
         {
             this.content = content;
-            health =100;
+            health =1000;
            
             
             
@@ -118,7 +118,7 @@ namespace Game2
         public Player(ContentManager content,bool haveMachinGun, bool haveShotgun) : base(1, 10, new Vector2(GameWorld.ScreenSize.Width / 2, GameWorld.ScreenSize.Height / 2), content, "playerImg")
         {
             this.content = content;
-            health = 100;
+            health = 1000;
 
             HaveMachinGun = haveMachinGun;
             Haveshotgun = haveShotgun;
@@ -412,7 +412,7 @@ namespace Game2
 
             if (otherObject is NoneSolidObejts && NoneSolidObejts.Tag =="door"&& Keyboard.GetState().IsKeyDown(Keys.Space))
             {
-                LevelManager.door1lvl2 = true;
+                LevelManager.door1lvl4 = true;
             }
 
             if (otherObject is Bullet)

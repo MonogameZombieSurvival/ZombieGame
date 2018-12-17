@@ -15,7 +15,8 @@ namespace Game2
     class LevelManager
     {
         private int level;
-        public static bool door1lvl2 = false;    
+        public static bool door1lvl4 = false;
+        public static bool door2lvl4  = false;
         private ContentManager contents;
         private Random rand = new Random();
         public int Level
@@ -34,8 +35,6 @@ namespace Game2
             contents = content;
             int X;
             int Y;
-
-
             switch (level)
             {
 
@@ -66,12 +65,7 @@ namespace Game2
                 case 4:
                     addGround();
                     addObejtlvl4();
-                    addEnemy();
-
-               
-
-
-
+                    //addEnemy();
                     break;
                 default:
                     break;
@@ -299,6 +293,10 @@ namespace Game2
                 
             }
         }
+
+        /// <summary>
+        /// adddnext room in lvl 4
+        /// </summary>
         public void addNextRooom()
         {
             string[] ground = new string[] { "bg-grass2000'2", "Dirt 2 ", "BlackBagground", "floor" };
@@ -311,7 +309,7 @@ namespace Game2
             int X = 450;
             int Y = -1100;
 
-            if (door1lvl2 == true)
+            if (door1lvl4 == true)
             {
                 for (int x = 0; x < 4; x++)
                 {
@@ -321,53 +319,92 @@ namespace Game2
                         Y += 200;
                     }
                     X += 200;
-                    Y =-1100;
+                    Y = -1100;
                 }
-                 X = 350;
+                X = 350;
                 Y = -800;
                 GameWorld.AddGameObject(new SolidObejts(contents, walls[0], X, Y));
                 X += 800;
                 GameWorld.AddGameObject(new SolidObejts(contents, walls[0], X, Y));
                 X -= 400;
                 Y -= 400;
-                GameWorld.AddGameObject(new SolidObejts(contents, walls[4], X, Y));
+                X = 540;
+
+                GameWorld.AddGameObject(new SolidObejts(contents, walls[2], X, Y));
+                X += 470;
+                GameWorld.AddGameObject(new SolidObejts(contents, walls[1], X, Y));
 
                 /// add Zombies
                 /// 
-                for (int i = 0; i < 15; i++)
+                //for (int i = 0; i < 15; i++)
+                //{
+                //    X = rand.Next(400, 1000);
+                //    GameWorld.AddGameObject(new Enemy(contents, zombie4, X, Y, 11, 15));
+
+                //    Y = rand.Next(-800, -450);
+                //}
+                //Y = 0;
+                //for (int i = 0; i < 15; i++)
+                //{
+                //    X = rand.Next(400, 1000);
+                //    GameWorld.AddGameObject(new Enemy(contents, zombie3, X, Y, 5, 10));
+
+
+                //    Y = rand.Next(-800, -450);
+                //}
+                //Y = -200;
+                //for (int i = 0; i < 15; i++)
+                //{
+                //    X = rand.Next(400, 1000);
+                //    GameWorld.AddGameObject(new Enemy2(contents, zombie5, X, Y, 16, 8));
+
+                //    Y = rand.Next(-800, -450);
+                //}
+
+                //door1lvl4 = false;
+            }         
+
+            if (door1lvl4 == true)
+            {
+                X = 450;
+                Y = -1900;
+                for (int x = 0; x < 4; x++)
                 {
-                    X = rand.Next(400, 1000);
-                    GameWorld.AddGameObject(new Enemy(contents, zombie4, X, Y, 11, 15));
+                    for (int y = 0; y < 4; y++)
+                    {
+                        GameWorld.AddEFfect(new NoneSolidObejts(contents, ground[3], X, Y));
+                        Y += 200;
+                    }
+                    X += 200;
+                    Y = -1900;
 
-                                    Y = rand.Next(-800, -450);
                 }
+                Y = -1600;
+                X = 350;
+                GameWorld.AddGameObject(new SolidObejts(contents, walls[0], X, Y));
+                X += 800;
+                GameWorld.AddGameObject(new SolidObejts(contents, walls[0], X, Y));
+                X -= 400;
+                Y -= 400;
 
-
-
-                Y = 0;
-                for (int i = 0; i < 15; i++)
-                {
-                    X = rand.Next(400, 1000);
-                    GameWorld.AddGameObject(new Enemy(contents, zombie3, X, Y, 5, 10));
-
-          
-                    Y = rand.Next(-800, -450);
-                }
-
-
-
-                Y = -200;
-                for (int i = 0; i < 15; i++)
-                {
-                    X = rand.Next(400, 1000);
-                    GameWorld.AddGameObject(new Enemy2(contents, zombie5, X, Y, 16, 8));
-
-                    Y = rand.Next(-800, -450);
-                }
+                GameWorld.AddGameObject(new SolidObejts(contents, walls[4], X, Y));
+door1lvl4 = false;
 
             }
-            door1lvl2 = false;
         }
+public void GameEnding()
+        {
+
+            int Y = -1750;
+            int X = 650;
+            string box1 = "TeakstBox";
+            string box2 = "TeakstBox2";
+
+            GameWorld.AddGameObject(new NoneSolidObejts(contents, box1, X, Y, "TeakstBox"));
+            X += 200;
+            GameWorld.AddGameObject(new NoneSolidObejts(contents, box2, X, Y,  "TeakstBox2"));
+        }
+
         /// <summary>
         /// add water
         /// </summary>
@@ -952,13 +989,7 @@ namespace Game2
             GameWorld.AddGameObject(new SolidObejts(contents, walls[3], X, Y));
             Y -= 20;
             GameWorld.AddGameObject(new NoneSolidObejts(contents, walls[3], X, Y));
-
-
-
-
         }
-
-
         /// <summary>
         /// loader enemies 
         /// </summary>
@@ -1256,7 +1287,9 @@ namespace Game2
 
             }
         }
-
+        /// <summary>
+        /// addvej
+        /// </summary>
          public void vej()
         {
             string vej = "vej";
@@ -1367,7 +1400,9 @@ namespace Game2
 
             }
         }
-
+        /// <summary>
+        /// addzmbie til lvl 3
+        /// </summary>
        
         public void Zombielvl3()
         {

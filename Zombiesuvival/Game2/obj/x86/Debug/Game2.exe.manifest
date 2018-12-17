@@ -31,14 +31,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="192936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Game2.exe" size="193960">
       <assemblyIdentity name="Game2" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>tz6lKkyqNNYgSOeg4tSt3ISjK3mq4wFqDXZdRphhc70=</dsig:DigestValue>
+        <dsig:DigestValue>kUIFuTsqLYzavbuJ+smuyqyhqFxNcsohPuTkuPs0xaM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1062,7 +1062,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HfaA1nWvb7icz3iOxrM5Tckna214jgPWzl70O9TekCs=</dsig:DigestValue>
+      <dsig:DigestValue>bMZPHCMTYOWhfCjlEtm4OOiEMg4k2sBun0S2MVvTFWQ=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\cutsscene\zombiegame_13.xnb" size="1638485">
@@ -1134,7 +1134,25 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>0EjJb6bhBUd2h9pas7NawVB8sl6Z1y+Vk6PacYOxOso=</dsig:DigestValue>
+      <dsig:DigestValue>nrzaQon2p0pRVA1a2lt8eYNNSHR6PDRF91yzagcb6fY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_8.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nrzaQon2p0pRVA1a2lt8eYNNSHR6PDRF91yzagcb6fY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\cutsscene\zombiegame_9.xnb" size="1638485">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>WwcseSrRhDNpiIFH0xCIZRdP3xNvauMOK2neAiFmFgA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Dirt 2 .xnb" size="16777301">
@@ -1522,6 +1540,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>nAROMRKIMErKevJEUrvfg7OPoBh7bZ/Xk2lSQXq0UtA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\TeakstBox.xnb" size="40085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>PZTUxZv5XpLeveArCc7lSS4+RyJhEcHBCGx93BCvFWk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\TeakstBox2.xnb" size="40085">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>SN6t3azPAIU5ZoN0/6NUObLktpL0xf6xECpDyAuAAnA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Tileset.xnb" size="2061">

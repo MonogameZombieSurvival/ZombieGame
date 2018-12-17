@@ -14,7 +14,7 @@ namespace Game2
     {
 
 
-        private float moveSpeed = 1000;
+        private float moveSpeed = 200;
 
         private Vector2 sightepos;
         public Vector2 Sightepos
@@ -30,16 +30,13 @@ namespace Game2
             
         }
 
-
-
-
         public override void Update(GameTime gameTime)
         {
             MouseState mouse = Mouse.GetState();
 
             sightepos.Y = mouse.Y;
             sightepos.X = mouse.X;
-                 
+
             if (Keyboard.GetState().IsKeyDown(Keys.A))
             {
                 sighteofset.X -= (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
@@ -59,13 +56,19 @@ namespace Game2
 
             if (Keyboard.GetState().IsKeyDown(Keys.S))
             {
-               sighteofset.Y += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
+                sighteofset.Y += (float)(moveSpeed * gameTime.ElapsedGameTime.TotalSeconds);
 
             }
             sightepos += sighteofset;
-             position = sightepos;
+            position = sightepos;
         }
 
+
+        public override void DoCollision(GameObject otherObject)
+        {
+
+
+        }
 
 
 

@@ -70,11 +70,15 @@
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/CollisionTexture.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/cutsscene/zombiegame_0.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/cutsscene/zombiegame_1.png</File>
+    <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/cutsscene/zombiegame_10.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/cutsscene/zombiegame_2.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/cutsscene/zombiegame_3.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/cutsscene/zombiegame_4.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/cutsscene/zombiegame_5.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/cutsscene/zombiegame_6.png</File>
+    <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/cutsscene/zombiegame_7.png</File>
+    <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/cutsscene/zombiegame_8.png</File>
+    <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/cutsscene/zombiegame_9.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/Dirt 2 .png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/door.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/ExampleFont.spritefont</File>
@@ -111,6 +115,8 @@
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/smallbullet.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/survivor-idle_handgun_0.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/Tankstation.png</File>
+    <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/TeakstBox.png</File>
+    <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/TeakstBox2.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/Tileset.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/TN_2.png</File>
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/TN_4.png</File>
@@ -182,6 +188,12 @@
     <File>C:/Users/Kuikai/Desktop/myschoolgames and sprits and stuff/ZombieGame/ZombieGame/Zombiesuvival/Game2/Content/zombiesound.mp3</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

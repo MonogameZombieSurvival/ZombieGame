@@ -38,7 +38,7 @@ namespace Game2
 
         public override void Update(GameTime gameTime)
         {
-        if (Tag == "door" && LevelManager.door1lvl2 == true)
+        if (Tag == "door" && LevelManager.door1lvl4 == true)
             {
                 GameWorld.RemoveGameObject(this);
             }

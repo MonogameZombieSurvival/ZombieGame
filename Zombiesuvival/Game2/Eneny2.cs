@@ -18,7 +18,7 @@ namespace Game2
         /// <summary>
         /// Sets the zombie stats
         /// </summary>
-        float moveSpeed = 50;
+        float moveSpeed = 150;
         Random rand = new Random();
         Vector2 distance;
         private int distanceToAttack = 400;
