@@ -42,13 +42,13 @@ namespace Game2
                     addGround();
                     addwater();
                     addobejt();
-                    addEnemy();
+                  //  addEnemy();
                     break;
                 case 2:
                     addGround();
                     addwater();
                     addobejt();
-                    addEnemy();                
+                  //  addEnemy();                
                     vej();
                    addObejtLvl2();
              
@@ -56,7 +56,7 @@ namespace Game2
 
                 case 3:
                     addGround();
-                    addEnemy();
+                //    addEnemy();
                     vej();
                     addobejtlvl3();
 
@@ -392,7 +392,10 @@ door1lvl4 = false;
 
             }
         }
-public void GameEnding()
+    /// <summary>
+    /// GameEndingsprites
+    /// </summary>
+         public void GameEnding()
         {
 
             int Y = -1750;

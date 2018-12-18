@@ -40,7 +40,7 @@ namespace Game2
 
 
         ///fileds
-        private float moveSpeed = 200;
+        private float moveSpeed = 1200;
         public static bool KilledBoss = false;
 
         private int mag;

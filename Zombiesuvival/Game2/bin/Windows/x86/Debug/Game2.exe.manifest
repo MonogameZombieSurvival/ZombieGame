@@ -38,7 +38,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kUIFuTsqLYzavbuJ+smuyqyhqFxNcsohPuTkuPs0xaM=</dsig:DigestValue>
+        <dsig:DigestValue>eMpQGuH5DgqjyArt9/zJexvSxroydkGanvJqWgMq34s=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

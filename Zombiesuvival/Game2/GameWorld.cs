@@ -76,7 +76,7 @@ namespace Game2
         public static int ScreenWith;
         public static int screenHeight;
 
-        public static int levels =0;
+        public static int levels =1;
         public static int cutScenemanager=1;
         private int NumberOfgameObejts;// blive brugt til at sore for at der ikke kommer til at være for mange effetct obejter
         static private int healthHold;
@@ -211,7 +211,7 @@ namespace Game2
             
             backgroundImgEnd = Content.Load<Texture2D>("gameover");
             backgroundImgWin = Content.Load<Texture2D>("winscreen");
-          
+            player = new Player(Content);
             for (int i = 0; i < 11; i++)
             {
                 CutScene[i] = Content.Load<Texture2D>($"cutsscene/zombiegame_{i}");
@@ -363,30 +363,48 @@ namespace Game2
             spriteBatch.End();
             spriteBatch.Begin();
             // load lvl 1
-            if (levels<= 0){
-                spriteBatch.Draw(CutScene[0], new Rectangle(0, 0, 1280, 720), Color.White);
-                if (Keyboard.GetState().IsKeyDown(Keys.Enter))
-                {
-                    gameObjects.Clear();
-                    Effects.Clear();                  
+            if (levels== 1){
 
-                    levels = 1;
+                gameObjects.Clear();
+                Effects.Clear();
+                switch (cutScenemanager)
+                {
+                    case 1:// startscreen
+                        spriteBatch.Draw(CutScene[5], new Rectangle(0, 0, 1280, 720), Color.White);
+                        if (Keyboard.GetState().IsKeyDown(Keys.Enter) && timer > 1)
+                        {
+                            cutScenemanager += 1;
+                            timer = 0;
+                        }
+                        break;
+                    case 2:
+                        spriteBatch.Draw(CutScene[0], new Rectangle(0, 0, 1280, 720), Color.White);
+                        if (Keyboard.GetState().IsKeyDown(Keys.Enter) && timer > 1)
+                        {
+                            timer = 0;
+                            cutScenemanager = 0;
+                            level1 = true;
+                        }
+                        break;
+                    default:
+                        break;
+                } 
+                if (Keyboard.GetState().IsKeyDown(Keys.Enter)&&level1 ==true)
+                {
+                    levels = 100;
                     level1 = true;
                     level = new LevelManager(Content, 1);
-                    player = new Player(Content);
-                    sighte = new sighte(Content);
-
-                    gameObjects.Add(player);
-                    gameObjects.Add(sighte);
+                    gameObjects.Add(player = new Player(Content));
+                    gameObjects.Add(sighte = new sighte(Content));
                     healthHold = player.Health;
-                    IsPlayer = true;                  
+                    IsPlayer = true;
+                    healthHold = 1000;
                 }
                 
             }
             // load lvl 2
-            if (Player.IsAlive == true)
-            {
-                if (levels == 2)
+          
+          if (levels == 2)
                 {
                     gameObjects.Clear();
                     Effects.Clear();                    
@@ -420,12 +438,12 @@ namespace Game2
                         gameObjects.Add(sighte = new sighte(Content));
                         gametimer = new GameTimer();
 
-                        healthHold = 100;
 
-                        levels = 100;
+                    healthHold = 1000;
+                    levels = 100;
                     }
                 }
-            }
+          
             // load lvl 3
             if (levels == 3 )
             {
@@ -463,8 +481,8 @@ namespace Game2
                     gameObjects.Add(sighte = new sighte(Content));
                     gameObjects.Add(player = new Player(Content, HavsMachinGun, HaveShotGun));
                     gametimer = new GameTimer();
+                    healthHold = 1000;
 
-                    healthHold = 100;
                     levels = 100;
                 }
             }
@@ -505,10 +523,11 @@ namespace Game2
                     gameObjects.Add(player = new Player(Content, HavsMachinGun, HaveShotGun));
                     gametimer = new GameTimer();
 
-                    healthHold = 100;
+                    healthHold = 1000;
                     levels = 100;
                 }
             }
+           
 
             // første slutning
             if (GameEnding1 == true)
@@ -530,9 +549,10 @@ namespace Game2
                         if (Keyboard.GetState().IsKeyDown(Keys.Enter) && timer > 1)
                         {
                             timer = 0;
-                            cutScenemanager = 0;
-                            levels = 0;
+                           
+                            levels = 1;
                                 GameEnding1 = false;
+                            cutScenemanager = 1;
                         }
                         break;
                     default:
@@ -561,8 +581,9 @@ namespace Game2
                         if (Keyboard.GetState().IsKeyDown(Keys.Enter) && timer > 1)
                         {
                             timer = 0;
-                            cutScenemanager = 0;
-                            levels = 0;
+                          
+                            levels = 1;
+                            cutScenemanager = 1;
                             GameEnding2 = false;
                             HaveShotGun = false;
                             HaveShotGun = false;
@@ -570,11 +591,8 @@ namespace Game2
                         break;
                     default:
                         break;
-
-                }
-               
+                }             
             }
-
 
             if (levels>= 1)
             {
@@ -586,17 +604,21 @@ namespace Game2
             {
                    gameObjects.Clear();
                    Effects.Clear();
-                   spriteBatch.Draw(backgroundImgEnd, new Rectangle(0, 0, 1280, 720), Color.White);
-      
+                                   spriteBatch.Draw(backgroundImgEnd, new Rectangle(0, 0, 1280, 720), Color.White);
                 if (Keyboard.GetState().IsKeyDown(Keys.Enter))
                 {
 
-                    level = new LevelManager(Content, 1);
-                    gameObjects.Add(player = new Player(Content));
-                    gameObjects.Add(sighte = new sighte(Content));
-                    gametimer = new GameTimer();               
-                    healthHold = 100;
+                    timer = 0;
+                    cutScenemanager = 0;
+                    levels = 1;
+                    cutScenemanager = 1;
+
+                    healthHold = 1000;
                     Player.IsAlive = true;
+                    HaveShotGun = false;
+                    HaveShotGun = false;
+
+
                 }
             }
 

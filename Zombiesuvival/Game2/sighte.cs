@@ -14,7 +14,7 @@ namespace Game2
     {
 
 
-        private float moveSpeed = 200;
+        private float moveSpeed = 1200;
 
         private Vector2 sightepos;
         public Vector2 Sightepos
